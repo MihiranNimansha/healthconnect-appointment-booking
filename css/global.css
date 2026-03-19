@@ -15,9 +15,12 @@
     /* Deep Navy Primary Hub */
     --color-bg: #ffffff;
     --color-bg-soft: #f8fafc;
+    --color-bg-alt: #f8fafc;
     /* Slate 50 - extremely soft background */
     --color-text-primary: #0f172a;
     --color-text-secondary: #475569;
+    --color-text-light: #64748b;
+    --color-primary-light: #e0e7ff;
     /* Slate 600 - softer but high contrast */
     --color-success: #059669;
     /* Emerald 600 */
@@ -61,6 +64,7 @@
     /* Transitions */
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ===== CSS RESET ===== */
@@ -2167,102 +2171,6 @@ header.site-header {
 /* Spec: .spec-tags margin update */
 .spec-tags {
     margin-top: 0.5rem;
-}
-
-/* ===== FOOTER SPEC ALIASES ===== */
-
-/* Spec: footer.site-footer (HTML uses plain <footer>) */
-footer.site-footer {
-    background-color: var(--color-primary);
-    color: white;
-    padding: 3.5rem 0 0;
-}
-
-/* Spec: .footer-column (HTML uses .footer-col) — shared layout rules below */
-
-/* Spec: .footer-brand p */
-.footer-brand p {
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 0.875rem;
-    margin-top: 0.75rem;
-    line-height: 1.6;
-    max-width: 260px;
-}
-
-/* Spec: .footer-column h4 */
-.footer-column h4 {
-    font-size: 0.875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: white;
-    margin-bottom: 1rem;
-}
-
-/* Spec: .footer-column ul */
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-column ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-column ul li a {
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 0.875rem;
-    text-decoration: none;
-    transition: color var(--transition-fast);
-}
-
-.footer-column ul li a:hover {
-    color: white;
-    text-decoration: none;
-}
-
-/* Spec: .footer-contact */
-.footer-contact {
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 0.875rem;
-    line-height: 1.8;
-}
-
-/* Spec: .footer-bottom (HTML uses .copyright-bar) */
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.footer-bottom p {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.8rem;
-    margin: 0;
-}
-
-/* Spec: .footer-bottom-links (HTML uses .copyright-links) */
-.footer-bottom-links {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.footer-bottom-links a {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.8rem;
-    text-decoration: none;
-    transition: color var(--transition-fast);
-}
-
-.footer-bottom-links a:hover {
-    color: white;
-    text-decoration: none;
 }
 
 /* ===== CONFIRMATION PAGE SPEC ALIASES ===== */
