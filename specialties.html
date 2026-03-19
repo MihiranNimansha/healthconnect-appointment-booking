@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Specialties — HealthConnect</title>
+    <meta name="description"
+        content="Explore all medical specialties available on HealthConnect. Find expert doctors in cardiology, dermatology, neurology, pediatrics, orthopedics, and more.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/specialties.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ===== HEADER / NAVIGATION ===== -->
+    <header>
+        <nav aria-label="Main navigation">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                    <span class="logo-text">HealthConnect</span>
+                </a>
+                <button class="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="search.html">Find Doctors</a></li>
+                    <li><a href="specialties.html" class="active" aria-current="page">Specialties</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="nav-icon-btn" aria-label="Saved Doctors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="#e11d48" stroke="#e11d48" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                    </button>
+                    <a href="#" class="btn-sign-in">Sign In</a>
+                    <a href="#" class="btn-primary btn-sm">Get Started</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main id="main-content">
+
+        <!-- ===== HERO ===== -->
+        <section class="sp-hero" aria-labelledby="sp-hero-heading">
+            <div class="sp-hero-overlay"></div>
+            <div class="container sp-hero-content">
+                <span class="section-pill">ALL SPECIALTIES</span>
+                <h1 id="sp-hero-heading">Medical Specialties</h1>
+                <p>From heart health to mental wellness — explore our full network of trusted specialist doctors, and
+                    find the
+                    right care for every need.</p>
+                <div class="sp-hero-stats">
+                    <div class="sp-hero-stat">
+                        <span class="sp-stat-number">8</span>
+                        <span class="sp-stat-label">Medical Specialties</span>
+                    </div>
+                    <div class="sp-stat-divider" aria-hidden="true"></div>
+                    <div class="sp-hero-stat">
+                        <span class="sp-stat-number">50+</span>
+                        <span class="sp-stat-label">Specialist Doctors</span>
+                    </div>
+                    <div class="sp-stat-divider" aria-hidden="true"></div>
+                    <div class="sp-hero-stat">
+                        <span class="sp-stat-number">5,000+</span>
+                        <span class="sp-stat-label">Patients Served</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SPECIALTY CARDS ===== -->
+        <section class="sp-cards-section" aria-label="Browse all medical specialties">
+            <div class="container">
+                <div class="sp-grid">
+
+                    <!-- ===== CARDIOLOGY ===== -->
+                    <article class="sp-card" aria-label="Cardiology specialty">
+                        <div class="sp-card-header sp-card-header--red">
+                            <div class="sp-card-icon" aria-hidden="true">❤️</div>
+                            <div>
+                                <h2 class="sp-card-title">Cardiology</h2>
+                                <span class="sp-badge sp-badge--available">3 Doctors Available</span>
+                            </div>
+                        </div>
+                        <div class="sp-card-body">
+                            <p class="sp-card-desc">Cardiology is the branch of medicine that deals with disorders of
+                                the heart and
+                                the cardiovascular system. Our cardiologists are experts in diagnosing, treating, and
+                                preventing heart
+                                disease — from high blood pressure to complex heart conditions.</p>
+                            <div class="sp-info-row">
+                                <div class="sp-info-block">
+                                    <h3>Common Conditions</h3>
+                                    <ul>
+                                        <li>Coronary Artery Disease</li>
+                                        <li>Heart Failure</li>
+                                        <li>Arrhythmia</li>
+                                        <li>Hypertension</li>
+                                        <li>Valvular Heart Disease</li>
+                                    </ul>
+                                </div>
+                                <div class="sp-info-block">
+                                    <h3>What to Expect</h3>
+                                    <ul>
+                                        <li>ECG &amp; Stress Testing</li>
+                                        <li>Echocardiography</li>
+                                        <li>Risk Factor Assessment</li>
+                                        <li>Medication Management</li>
+                                        <li>Lifestyle Counselling</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sp-card-footer">
+                            <a href="search.html?specialty=cardiology" class="btn-primary sp-cta-btn">Find
+                                Cardiologists</a>
+                        </div>
+                    </article>
+
+                    <!-- ===== DERMATOLOGY ===== -->
+                    <article class="sp-card" aria-label="Dermatology specialty">
+                        <div class="sp-card-header sp-card-header--orange">
+                            <div class="sp-card-icon" aria-hidden="true">🔬</div>
+                            <div>
+                                <h2 class="sp-card-title">Dermatology</h2>
+                                <span class="sp-badge sp-badge--available">2 Doctors Available</span>
+                            </div>
+                        </div>
+                        <div class="sp-card-body">
+                            <p class="sp-card-desc">Dermatology focuses on the diagnosis and treatment of conditions
+                                affecting the
+                                skin, hair, and nails. Our dermatologists provide care for everything from acne and
+                                eczema to complex
+                                skin cancers, using the latest evidence-based therapies.</p>
+                            <div class="sp-info-row">
+                                <div class="sp-info-block">
+                                    <h3>Common Conditions</h3>
+                                    <ul>
+                                        <li>Acne &amp; Rosacea</li>
+                                        <li>Eczema &amp; Psoriasis</li>
+                                        <li>Skin Cancer Screening</li>
+                                        <li>Alopecia (Hair Loss)</li>
+                                        <li>Fungal Infections</li>
+                                    </ul>
+                                </div>
+                                <div class="sp-info-block">
+                                    <h3>What to Expect</h3>
+                                    <ul>
+                                        <li>Skin Biopsy &amp; Histology</li>
+                                        <li>Phototherapy (UV Treatment)</li>
+                                        <li>Topical &amp; Oral Medications</li>
+                                        <li>Dermatoscopy</li>
+                                        <li>Cosmetic Procedures</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sp-card-footer">
+                            <a href="search.html?specialty=dermatology" class="btn-primary sp-cta-btn">Find
+                                Dermatologists</a>
+                        </div>
+                    </article>
+
+                    <!-- ===== PEDIATRICS ===== -->
+                    <article class="sp-card" aria-label="Pediatrics specialty">
+                        <div class="sp-card-header sp-card-header--green">
+                            <div class="sp-card-icon" aria-hidden="true">👶</div>
+                            <div>
+                                <h2 class="sp-card-title">Pediatrics</h2>
+                                <span class="sp-badge sp-badge--available">2 Doctors Available</span>
+                            </div>
+                        </div>
+                        <div class="sp-card-body">
+                            <p class="sp-card-desc">Pediatrics is dedicated to the health and well-being of children
+                                from birth
+                                through adolescence. Our pediatricians offer compassionate, family-centred care
+                                combining preventive
+                                medicine, early developmental tracking, and management of childhood illnesses.</p>
+                            <div class="sp-info-row">
+                                <div class="sp-info-block">
+                                    <h3>Common Conditions</h3>
+                                    <ul>
+                                        <li>Asthma &amp; Allergies</li>
+                                        <li>Developmental Delays</li>
+                                        <li>Infectious Diseases</li>
+                                        <li>Nutritional Disorders</li>
+                                        <li>ADHD &amp; Behavioural Issues</li>
+                                    </ul>
+                                </div>
+                                <div class="sp-info-block">
+                                    <h3>What to Expect</h3>
+                                    <ul>
+                                        <li>Routine Vaccinations</li>
+                                        <li>Growth &amp; Development Review</li>
+                                        <li>Newborn Screening</li>
+                                        <li>School Health Assessments</li>
+                                        <li>Parent Counselling</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sp-card-footer">
+                            <a href="search.html?specialty=pediatrics" class="btn-primary sp-cta-btn">Find
+                                Pediatricians</a>
+                        </div>
+                    </article>
+
+                    <!-- ===== ORTHOPEDICS ===== -->
+                    <article class="sp-card" aria-label="Orthopedics specialty">
+                        <div class="sp-card-header sp-card-header--yellow">
+                            <div class="sp-card-icon" aria-hidden="true">🦴</div>
+                            <div>
+                                <h2 class="sp-card-title">Orthopedics</h2>
+                                <span class="sp-badge sp-badge--available">1 Doctor Available</span>
+                            </div>
+                        </div>
+                        <div class="sp-card-body">
+                            <p class="sp-card-desc">Orthopedics specialises in the diagnosis, treatment, and
+                                rehabilitation of
+                                disorders and injuries affecting the musculoskeletal system — including bones, joints,
+                                muscles, tendons,
+                                and ligaments. Our surgeons and specialists help patients regain mobility and quality of
+                                life.</p>
+                            <div class="sp-info-row">
+                                <div class="sp-info-block">
+                                    <h3>Common Conditions</h3>
+                                    <ul>
+                                        <li>Fractures &amp; Dislocations</li>
+                                        <li>Arthritis &amp; Joint Pain</li>
+                                        <li>Sports Injuries</li>
+                                        <li>Spinal Disorders</li>
+                                        <li>Tendon &amp; Ligament Tears</li>
+                                    </ul>
+                                </div>
+                                <div class="sp-info-block">
+                                    <h3>What to Expect</h3>
+                                    <ul>
+                                        <li>X-Ray &amp; MRI Imaging</li>
+                                        <li>Physical Therapy Referrals</li>
+                                        <li>Joint Replacement Surgery</li>
+                                        <li>Arthroscopic Procedures</li>
+                                        <li>Cast &amp; Splint Management</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sp-card-footer">
+                            <a href="search.html?specialty=orthopedics" class="btn-primary sp-cta-btn">Find Orthopedic
+                                Surgeons</a>
+                        </div>
+                    </article>
+
+                    <!-- ===== NEUROLOGY ===== -->
+                    <article class="sp-card" aria-label="Neurology specialty">
+                        <div class="sp-card-header sp-card-header--purple">
+                            <div class="sp-card-icon" aria-hidden="true">🧠</div>
+                            <div>
+                                <h2 class="sp-card-title">Neurology</h2>
+                                <span class="sp-badge sp-badge--available">1 Doctor Available</span>
+                            </div>
+                        </div>
+                        <div class="sp-card-body">
+                            <p class="sp-card-desc">Neurology is the branch of medicine concerned with the study and
+                                treatment of
+                                disorders of the nervous system — encompassing the brain, spinal cord, and all
+                                peripheral nerves. Our
+                                neurologists offer expert evaluation for complex neurological conditions.</p>
+                            <div class="sp-info-row">
+                                <div class="sp-info-block">
+                                    <h3>Common Conditions</h3>
+                                    <ul>
+                                        <li>Epilepsy &amp; Seizures</li>
+                                        <li>Migraines &amp; Headaches</li>
+                                        <li>Multiple Sclerosis</li>
+                                        <li>Parkinson's Disease</li>
+                                        <li>Stroke &amp; TIA</li>
+                                    </ul>
+                                </div>
+                                <div class="sp-info-block">
+                                    <h3>What to Expect</h3>
+                                    <ul>
+                                        <li>EEG &amp; Brain Imaging (MRI)</li>
+                                        <li>Nerve Conduction Studies</li>
+                                        <li>Lumbar Puncture</li>
+                                        <li>Medication Optimisation</li>
+                                        <li>Cognitive Assessments</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sp-card-footer">
+                            <a href="search.html?specialty=neurology" class="btn-primary sp-cta-btn">Find
+                                Neurologists</a>
+                        </div>
+                    </article>
+
+                    <!-- ===== GENERAL PRACTICE ===== -->
+                    <article class="sp-card" aria-label="General Practice specialty">
+                        <div class="sp-card-header sp-card-header--teal">
+                            <div class="sp-card-icon" aria-hidden="true">🩺</div>
+                            <div>
+                                <h2 class="sp-card-title">General Practice</h2>
+                                <span class="sp-badge sp-badge--available">1 Doctor Available</span>
+                            </div>
+                        </div>
+                        <div class="sp-card-body">
+                            <p class="sp-card-desc">General Practitioners (GPs) are your first point of contact for any
+                                health
+                                concern. They provide comprehensive, continuous care for patients of all ages, managing
+                                a wide range of
+                                conditions and coordinating referrals to specialists when needed.</p>
+                            <div class="sp-info-row">
+                                <div class="sp-info-block">
+                                    <h3>Common Services</h3>
+                                    <ul>
+                                        <li>Annual Health Check-Ups</li>
+                                        <li>Chronic Disease Management</li>
+                                        <li>Minor Ailments &amp; Infections</li>
+                                        <li>Family Planning</li>
+                                        <li>Mental Health First Step</li>
+                                    </ul>
+                                </div>
+                                <div class="sp-info-block">
+                                    <h3>What to Expect</h3>
+                                    <ul>
+                                        <li>Full Medical History Review</li>
+                                        <li>Blood Tests &amp; Screening</li>
+                                        <li>Prescriptions &amp; Referrals</li>
+                                        <li>Preventive Care Advice</li>
+                                        <li>Vaccination Management</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sp-card-footer">
+                            <a href="search.html?specialty=general-practice" class="btn-primary sp-cta-btn">Find GPs</a>
+                        </div>
+                    </article>
+
+                    <!-- ===== OPHTHALMOLOGY ===== -->
+                    <article class="sp-card sp-card--coming-soon" aria-label="Ophthalmology specialty - Coming soon">
+                        <div class="sp-card-header sp-card-header--blue">
+                            <div class="sp-card-icon" aria-hidden="true">👁️</div>
+                            <div>
+                                <h2 class="sp-card-title">Ophthalmology</h2>
+                                <span class="sp-badge sp-badge--soon">Coming Soon</span>
+                            </div>
+                        </div>
+                        <div class="sp-card-body">
+                            <p class="sp-card-desc">Ophthalmology covers the anatomy, physiology, and diseases of the
+                                eye. Our eye
+                                specialists (ophthalmologists) carry out comprehensive eye examinations, vision
+                                correction, and
+                                treatment of serious conditions like cataracts, glaucoma, and diabetic retinopathy.</p>
+                            <div class="sp-info-row">
+                                <div class="sp-info-block">
+                                    <h3>Common Conditions</h3>
+                                    <ul>
+                                        <li>Cataracts</li>
+                                        <li>Glaucoma</li>
+                                        <li>Diabetic Retinopathy</li>
+                                        <li>Refractive Errors</li>
+                                        <li>Macular Degeneration</li>
+                                    </ul>
+                                </div>
+                                <div class="sp-info-block">
+                                    <h3>What to Expect</h3>
+                                    <ul>
+                                        <li>Comprehensive Eye Exam</li>
+                                        <li>Visual Acuity Testing</li>
+                                        <li>Tonometry (Pressure Test)</li>
+                                        <li>Retinal Imaging</li>
+                                        <li>Laser Eye Surgery</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sp-card-footer">
+                            <span class="sp-coming-soon-btn">Doctors joining soon</span>
+                        </div>
+                    </article>
+
+                    <!-- ===== PSYCHIATRY ===== -->
+                    <article class="sp-card sp-card--coming-soon" aria-label="Psychiatry specialty - Coming soon">
+                        <div class="sp-card-header sp-card-header--indigo">
+                            <div class="sp-card-icon" aria-hidden="true">💬</div>
+                            <div>
+                                <h2 class="sp-card-title">Psychiatry</h2>
+                                <span class="sp-badge sp-badge--soon">Coming Soon</span>
+                            </div>
+                        </div>
+                        <div class="sp-card-body">
+                            <p class="sp-card-desc">Psychiatry is dedicated to the diagnosis, treatment, and prevention
+                                of mental,
+                                emotional, and behavioural disorders. Our psychiatrists take a holistic approach,
+                                combining medication
+                                management with evidence-based therapy to support mental well-being.</p>
+                            <div class="sp-info-row">
+                                <div class="sp-info-block">
+                                    <h3>Common Conditions</h3>
+                                    <ul>
+                                        <li>Depression &amp; Anxiety</li>
+                                        <li>Bipolar Disorder</li>
+                                        <li>ADHD</li>
+                                        <li>PTSD &amp; Trauma</li>
+                                        <li>Schizophrenia</li>
+                                    </ul>
+                                </div>
+                                <div class="sp-info-block">
+                                    <h3>What to Expect</h3>
+                                    <ul>
+                                        <li>Psychiatric Evaluation</li>
+                                        <li>Cognitive Behavioural Therapy</li>
+                                        <li>Medication Review</li>
+                                        <li>Crisis Support Planning</li>
+                                        <li>Family Therapy Sessions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sp-card-footer">
+                            <span class="sp-coming-soon-btn">Doctors joining soon</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA SECTION ===== -->
+        <section class="home-cta-section" aria-labelledby="sp-cta-heading">
+            <div class="container home-cta-content">
+                <h2 id="sp-cta-heading">Ready to Find Your Doctor?</h2>
+                <p>Browse our network of 50+ specialists and book your appointment today.</p>
+                <div class="home-cta-buttons">
+                    <a href="search.html" class="home-cta-btn-primary">Find Doctors</a>
+                    <a href="contact.html" class="home-cta-btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+      <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Column 1: Brand & Site Navigation -->
+          <div class="footer-col">
+            <a href="index.html" class="logo" aria-label="HealthConnect home">
+              <span class="logo-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+              </span>
+              HealthConnect
+            </a>
+            <p>Connecting patients with trusted healthcare providers nationwide. Book appointments online in minutes.</p>
+            <nav class="footer-nav" aria-label="Footer navigation">
+              <a href="index.html">Home</a>
+              <a href="search.html">Find Doctors</a>
+              <a href="specialties.html">Specialties</a>
+              <a href="about.html">About Us</a>
+              <a href="contact.html">Contact</a>
+            </nav>
+          </div>
+
+          <!-- Column 2: Contact Information -->
+          <div class="footer-col footer-contact">
+            <h3>Contact Us</h3>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015.13 12.8a19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Phone</span>
+                <a href="tel:+18005550199" class="footer-contact-value">1-800-HEALTH-1</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Email</span>
+                <a href="mailto:support@healthconnect.com" class="footer-contact-value">support@healthconnect.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Hours</span>
+                <span class="footer-contact-value">Mon &ndash; Fri: 8am &ndash; 8pm EST</span>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Address</span>
+                <span class="footer-contact-value">42 Hospital Road, Colombo 07</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Newsletter -->
+          <div class="footer-col footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>Subscribe for the latest health tips and clinic updates delivered to your inbox.</p>
+            <form class="newsletter-form" action="#"
+              onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+              <input type="email" placeholder="your.email@example.com" required aria-label="Email address for newsletter">
+              <button type="submit" class="btn-primary" aria-label="Subscribe to newsletter">Subscribe</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="copyright-bar">
+      <div class="container">
+        <p>&#169; 2026 HealthConnect. All rights reserved. @codeMNS</p>
+        <nav class="copyright-links" aria-label="Legal links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+    <script src="js/mobile-nav.js"></script>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+    </button>
+    <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
