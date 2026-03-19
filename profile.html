@@ -1,0 +1,552 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Sarah Johnson — HealthConnect</title>
+  <meta name="description"
+    content="View doctor profile, credentials, patient reviews, and available appointment slots. Book your appointment on HealthConnect.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <header>
+    <nav aria-label="Main navigation">
+      <div class="container">
+                <a href="index.html" class="logo">
+          <div class="logo-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <span class="logo-text">HealthConnect</span>
+        </a>
+        <button class="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="search.html" class="active" aria-current="page">Find Doctors</a></li>
+          <li><a href="specialties.html">Specialties</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+                <div class="nav-actions">
+          <button class="nav-icon-btn" aria-label="Saved Doctors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#e11d48"
+              stroke="#e11d48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+              </path>
+            </svg>
+          </button>
+          <a href="#" class="btn-sign-in">Sign In</a>
+          <a href="#" class="btn-primary btn-sm">Get Started</a>
+        </div></div>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content">
+    <div class="profile-page">
+      <div class="container">
+
+        <!-- ===== BREADCRUMB ===== -->
+        <nav class="breadcrumb" aria-label="Page breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <a href="search.html">Search Results</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span>Dr. Sarah Johnson</span>
+        </nav>
+
+        <!-- ===== TWO-COLUMN PROFILE LAYOUT ===== -->
+        <div class="profile-layout">
+
+          <!-- ===== LEFT SIDEBAR ===== -->
+          <aside class="profile-sidebar" aria-label="Doctor information">
+
+            <!-- Doctor Overview Card -->
+            <div class="sidebar-card">
+              <img src="images/avatar.svg" alt="Profile photo of Dr. Priya Perera" class="profile-doctor-img"
+                id="profile-doctor-img" width="120" height="120">
+
+              <h1 class="sidebar-name">Dr. Sarah Johnson</h1>
+              <p class="sidebar-specialty text-muted">Cardiologist</p>
+
+              <div class="star-rating" aria-label="Rating: 5.0 out of 5 stars, 124 reviews">
+                <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
+                <span class="rating-number">5.0</span>
+                <span class="rating-count">(124 reviews)</span>
+              </div>
+
+              <!-- Key Stats -->
+              <div class="sidebar-stats" role="list" aria-label="Doctor details">
+                <div class="sidebar-stat" role="listitem">
+                  <span class="stat-dot" aria-hidden="true"></span>
+                  <span><strong>Experience:</strong> 15+ years</span>
+                </div>
+                <div class="sidebar-stat" role="listitem">
+                  <span class="stat-dot" aria-hidden="true"></span>
+                  <span><strong>Hospital:</strong> UCSF Medical Center</span>
+                </div>
+                <div class="sidebar-stat" role="listitem">
+                  <span class="stat-dot" aria-hidden="true"></span>
+                  <span><strong>Location:</strong> San Francisco, CA</span>
+                </div>
+                <div class="sidebar-stat" role="listitem">
+                  <span class="stat-dot" aria-hidden="true"></span>
+                  <span>2.3 miles away</span>
+                </div>
+                <div class="sidebar-stat" role="listitem">
+                  <span class="stat-dot" aria-hidden="true"></span>
+                  <span><strong>Languages:</strong> English, Spanish</span>
+                </div>
+                <div class="sidebar-stat sidebar-fee" role="listitem">
+                  <span class="stat-dot" aria-hidden="true"></span>
+                  <span><strong>Consultation Fee:</strong> LKR 4,500</span>
+                </div>
+              </div>
+
+              <a href="booking.html" class="btn-primary sidebar-book-btn">Book Appointment</a>
+            </div>
+
+            <!-- Credentials Card -->
+            <div class="sidebar-card">
+              <h2 class="sidebar-section-title">Credentials</h2>
+              <div class="credentials-list">
+                <div class="credential-item">
+                  <p class="credential-label">Education</p>
+                  <p class="credential-value">MD &mdash; Harvard Medical School</p>
+                  <p class="credential-year">2005</p>
+                </div>
+                <div class="credential-item">
+                  <p class="credential-label">Residency</p>
+                  <p class="credential-value">Internal Medicine &mdash; Johns Hopkins</p>
+                  <p class="credential-year">2005&ndash;2008</p>
+                </div>
+                <div class="credential-item">
+                  <p class="credential-label">Fellowship</p>
+                  <p class="credential-value">Cardiology &mdash; Mayo Clinic</p>
+                  <p class="credential-year">2008&ndash;2011</p>
+                </div>
+                <div class="credential-item">
+                  <p class="credential-label">Board Certifications</p>
+                  <p class="credential-value">American Board of Internal Medicine</p>
+                  <p class="credential-value">American Board of Cardiovascular Disease</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Specializations Card -->
+            <div class="sidebar-card">
+              <h2 class="sidebar-section-title">Specializations</h2>
+              <div class="spec-tags" role="list" aria-label="Specializations">
+                <span class="spec-tag" role="listitem">Heart Disease</span>
+                <span class="spec-tag" role="listitem">Hypertension</span>
+                <span class="spec-tag" role="listitem">Arrhythmia</span>
+                <span class="spec-tag" role="listitem">Heart Failure</span>
+                <span class="spec-tag" role="listitem">Preventive Cardiology</span>
+              </div>
+            </div>
+
+          </aside>
+
+          <!-- ===== RIGHT MAIN AREA ===== -->
+          <div class="profile-main">
+
+            <!-- About Section -->
+            <section class="fade-up" aria-labelledby="about-heading">
+              <h2 id="about-heading">About Dr. Sarah Johnson</h2>
+              <p>
+                Dr. Sarah Johnson is a board-certified cardiologist with over 15 years of experience in
+                diagnosing and treating cardiovascular conditions. She specializes in preventive cardiology,
+                heart disease management, and advanced cardiac imaging.
+              </p>
+              <p>
+                Dr. Johnson is committed to providing personalized, compassionate care to each of her patients.
+                She takes the time to listen to concerns and works collaboratively to develop treatment plans
+                that align with individual health goals.
+              </p>
+            </section>
+
+            <!-- Available Appointment Slots Section -->
+            <section class="fade-up" aria-labelledby="slots-heading">
+              <h2 id="slots-heading">Available Appointment Slots</h2>
+
+              <!-- Calendar (March 2024) -->
+              <div class="calendar-wrapper" role="application" aria-label="Appointment calendar">
+                <div class="calendar-header">
+                  <button class="calendar-nav-btn" type="button" aria-label="Previous month">&#8249;</button>
+                  <h4><span id="calendar-month-title">Loading...</span></h4>
+                  <button class="calendar-nav-btn" type="button" aria-label="Next month">&#8250;</button>
+                </div>
+                <div class="calendar-grid" role="grid" aria-label="Calendar dates">
+                  <!-- Day name headers -->
+                  <div class="calendar-day-name" role="columnheader" aria-label="Sunday">Sun</div>
+                  <div class="calendar-day-name" role="columnheader" aria-label="Monday">Mon</div>
+                  <div class="calendar-day-name" role="columnheader" aria-label="Tuesday">Tue</div>
+                  <div class="calendar-day-name" role="columnheader" aria-label="Wednesday">Wed</div>
+                  <div class="calendar-day-name" role="columnheader" aria-label="Thursday">Thu</div>
+                  <div class="calendar-day-name" role="columnheader" aria-label="Friday">Fri</div>
+                  <div class="calendar-day-name" role="columnheader" aria-label="Saturday">Sat</div>
+
+                  <!-- Week 1 (March starts on Friday) -->
+                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 1, available">1
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 2, available">2
+                  </div>
+
+                  <!-- Week 2 -->
+                  <div class="calendar-day unavailable" role="gridcell" aria-label="March 3, unavailable"
+                    aria-disabled="true">3</div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 4, available">4
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 5, available">5
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 6, available">6
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 7, available">7
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 8, available">8
+                  </div>
+                  <div class="calendar-day unavailable" role="gridcell" aria-label="March 9, unavailable"
+                    aria-disabled="true">9</div>
+
+                  <!-- Week 3 -->
+                  <div class="calendar-day unavailable" role="gridcell" aria-label="March 10, unavailable"
+                    aria-disabled="true">10</div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 11, available">11
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 12, available">12
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 13, available">13
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 14, available">14
+                  </div>
+                  <div class="calendar-day selected" role="gridcell" tabindex="0" aria-label="March 15, selected"
+                    aria-selected="true">15</div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 16, available">16
+                  </div>
+
+                  <!-- Week 4 -->
+                  <div class="calendar-day unavailable" role="gridcell" aria-label="March 17, unavailable"
+                    aria-disabled="true">17</div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 18, available">18
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 19, available">19
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 20, available">20
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 21, available">21
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 22, available">22
+                  </div>
+                  <div class="calendar-day unavailable" role="gridcell" aria-label="March 23, unavailable"
+                    aria-disabled="true">23</div>
+
+                  <!-- Week 5 -->
+                  <div class="calendar-day unavailable" role="gridcell" aria-label="March 24, unavailable"
+                    aria-disabled="true">24</div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 25, available">25
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 26, available">26
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 27, available">27
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 28, available">28
+                  </div>
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 29, available">29
+                  </div>
+                  <div class="calendar-day unavailable" role="gridcell" aria-label="March 30, unavailable"
+                    aria-disabled="true">30</div>
+
+                  <!-- Week 6 -->
+                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 31, available">31
+                  </div>
+                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                </div>
+
+                <!-- Calendar Legend -->
+                <div class="calendar-legend" aria-label="Calendar legend">
+                  <div class="legend-item">
+                    <span class="legend-dot selected" aria-hidden="true"></span>
+                    <span>Selected</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-dot available" aria-hidden="true"></span>
+                    <span>Available</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-dot unavailable" aria-hidden="true"></span>
+                    <span>Unavailable</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Time Slots for Selected Date -->
+              <h3 class="available-times-heading">Available Times &mdash; Friday, March 15</h3>
+
+              <!-- Morning Slots -->
+              <div class="timeslot-section" id="morning-slots">
+                <p class="timeslot-period">Morning</p>
+                <div class="timeslot-grid" role="group" aria-label="Morning time slots">
+                  <button class="timeslot-btn" type="button" aria-label="Book appointment at 9:00 AM">9:00 AM</button>
+                  <button class="timeslot-btn" type="button" aria-label="Book appointment at 9:30 AM">9:30 AM</button>
+                  <button class="timeslot-btn" type="button" aria-label="Book appointment at 10:00 AM">10:00 AM</button>
+                  <button class="timeslot-btn selected" type="button" aria-label="Book appointment at 10:30 AM"
+                    aria-pressed="true">10:30 AM</button>
+                  <button class="timeslot-btn" type="button" aria-label="Book appointment at 11:00 AM">11:00 AM</button>
+                  <button class="timeslot-btn" type="button" aria-label="Book appointment at 11:30 AM">11:30 AM</button>
+                </div>
+              </div>
+
+              <!-- Afternoon Slots -->
+              <div class="timeslot-section" id="afternoon-slots">
+                <p class="timeslot-period">Afternoon</p>
+                <div class="timeslot-grid" role="group" aria-label="Afternoon time slots">
+                  <button class="timeslot-btn" type="button" aria-label="Book appointment at 1:00 PM">1:00 PM</button>
+                  <button class="timeslot-btn" type="button" aria-label="Book appointment at 1:30 PM">1:30 PM</button>
+                  <button class="timeslot-btn" type="button" aria-label="Book appointment at 2:00 PM">2:00 PM</button>
+                  <button class="timeslot-btn" type="button" aria-label="Book appointment at 2:30 PM">2:30 PM</button>
+                  <button class="timeslot-btn" type="button" aria-label="Book appointment at 3:00 PM">3:00 PM</button>
+                  <button class="timeslot-btn" type="button" aria-label="Book appointment at 3:30 PM">3:30 PM</button>
+                  <button class="timeslot-btn" type="button" aria-label="Book appointment at 4:00 PM">4:00 PM</button>
+                  <button class="timeslot-btn" type="button" aria-label="Book appointment at 4:30 PM">4:30 PM</button>
+                </div>
+              </div>
+
+            </section>
+
+            <!-- Patient Reviews Section -->
+            <section class="fade-up" aria-labelledby="reviews-heading">
+              <div class="reviews-header">
+                <h2 id="reviews-heading">Patient Reviews</h2>
+                <div class="reviews-summary" aria-label="Overall rating: 5.0 out of 5, 124 reviews">
+                  <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
+                  <span> 5.0 </span>
+                  <span class="text-muted">(124 reviews)</span>
+                </div>
+              </div>
+
+              <!-- Review 1 -->
+              <article class="review-card" aria-label="Review by Jennifer M.">
+                <div class="review-header">
+                  <div class="reviewer-info">
+                    <div class="reviewer-avatar" role="img" aria-label="Reviewer avatar for Jennifer M.">JM</div>
+                    <div>
+                      <p class="reviewer-name">Jennifer M.</p>
+                      <div class="star-rating" aria-label="Rating: 5 out of 5 stars">
+                        <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="review-date">2 weeks ago</span>
+                </div>
+                <p class="review-text">
+                  Dr. Johnson is exceptional! She took the time to thoroughly explain my condition and treatment
+                  options. Her compassionate approach made me feel comfortable and confident in my care plan.
+                  Highly recommend!
+                </p>
+              </article>
+
+              <!-- Review 2 -->
+              <article class="review-card" aria-label="Review by Robert T.">
+                <div class="review-header">
+                  <div class="reviewer-info">
+                    <div class="reviewer-avatar" role="img" aria-label="Reviewer avatar for Robert T.">RT</div>
+                    <div>
+                      <p class="reviewer-name">Robert T.</p>
+                      <div class="star-rating" aria-label="Rating: 5 out of 5 stars">
+                        <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="review-date">1 month ago</span>
+                </div>
+                <p class="review-text">
+                  Outstanding cardiologist! Dr. Johnson's expertise and attention to detail are remarkable. She
+                  answered all my questions and made sure I understood everything. The office staff is also very
+                  professional and friendly.
+                </p>
+              </article>
+
+              <!-- Review 3 -->
+              <article class="review-card" aria-label="Review by Maria S.">
+                <div class="review-header">
+                  <div class="reviewer-info">
+                    <div class="reviewer-avatar" role="img" aria-label="Reviewer avatar for Maria S.">MS</div>
+                    <div>
+                      <p class="reviewer-name">Maria S.</p>
+                      <div class="star-rating" aria-label="Rating: 5 out of 5 stars">
+                        <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="review-date">2 months ago</span>
+                </div>
+                <p class="review-text">
+                  I've been seeing Dr. Johnson for three years now and she's been instrumental in managing my
+                  heart condition. She's knowledgeable, caring, and always available when I have concerns.
+                  Best cardiologist in the area!
+                </p>
+              </article>
+
+              <button class="view-all-reviews" type="button" aria-label="View all 124 reviews for Dr. Sarah Johnson">
+                View All Reviews
+              </button>
+
+            </section>
+
+          </div>
+          <!-- end .profile-main -->
+
+        </div>
+        <!-- end .profile-layout -->
+
+      </div>
+    </div>
+  </main>
+
+    <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Column 1: Brand & Site Navigation -->
+          <div class="footer-col">
+            <a href="index.html" class="logo" aria-label="HealthConnect home">
+              <span class="logo-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+              </span>
+              HealthConnect
+            </a>
+            <p>Connecting patients with trusted healthcare providers nationwide. Book appointments online in minutes.</p>
+            <nav class="footer-nav" aria-label="Footer navigation">
+              <a href="index.html">Home</a>
+              <a href="search.html">Find Doctors</a>
+              <a href="specialties.html">Specialties</a>
+              <a href="about.html">About Us</a>
+              <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copyright">&#169; 2026 HealthConnect. All rights reserved. @codeMNS</p>
+          </div>
+
+          <!-- Column 2: Contact Information -->
+          <div class="footer-col footer-contact">
+            <h3>Contact Us</h3>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015.13 12.8a19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Phone</span>
+                <a href="tel:+18005550199" class="footer-contact-value">1-800-HEALTH-1</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Email</span>
+                <a href="mailto:support@healthconnect.com" class="footer-contact-value">support@healthconnect.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Hours</span>
+                <span class="footer-contact-value">Mon &ndash; Fri: 8am &ndash; 8pm EST</span>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Address</span>
+                <span class="footer-contact-value">42 Hospital Road, Colombo 07</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Newsletter -->
+          <div class="footer-col footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>Subscribe for the latest health tips and clinic updates delivered to your inbox.</p>
+            <form class="newsletter-form" action="#"
+              onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+              <input type="email" placeholder="your.email@example.com" required aria-label="Email address for newsletter">
+              <button type="submit" class="btn-primary" aria-label="Subscribe to newsletter">Subscribe</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script src="js/xml-loader.js"></script>
+  <script src="js/timeslots.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/mobile-nav.js"></script>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- Professional Enhancements JS -->
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

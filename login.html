@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In — HealthConnect</title>
+    <meta name="description"
+        content="Sign in to your HealthConnect account to save your favorite doctors and view your recent activity.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ===== HEADER / NAVIGATION ===== -->
+    <header>
+        <nav aria-label="Main navigation">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                    <span class="logo-text">HealthConnect</span>
+                </a>
+                <button class="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="search.html">Find Doctors</a></li>
+                    <li><a href="specialties.html">Specialties</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="nav-icon-btn" aria-label="Saved Doctors" onclick="Auth.toggleFavorite('dummy')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                    </button>
+                    <a href="login.html" class="btn-sign-in">Sign In</a>
+                    <a href="login.html" class="btn-primary btn-sm">Get Started</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main id="main-content">
+        <section class="auth-page fade-up" aria-labelledby="auth-heading">
+            <div class="container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h1 id="auth-heading">Welcome Back</h1>
+                        <p>Sign in to access your saved doctors and appointments</p>
+                    </div>
+
+                    <form id="login-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="name@example.com" required
+                                aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="••••••••" required
+                                aria-required="true">
+                        </div>
+
+                        <div class="auth-options">
+                            <label
+                                style="font-weight: 400; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--color-text-light);">
+                                <input type="checkbox" id="rememberMe"> Remember me
+                            </label>
+                            <a href="#">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="btn-primary auth-submit-btn">Sign In</button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <p>Don't have an account? <a href="#">Create one now</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+
+                    <!-- Column 1: Brand & Site Navigation -->
+                    <div class="footer-col">
+                        <a href="index.html" class="logo" aria-label="HealthConnect home">
+                            <span class="logo-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                                </svg>
+                            </span>
+                            HealthConnect
+                        </a>
+                        <p>Connecting patients with trusted healthcare providers nationwide. Book appointments online in
+                            minutes.</p>
+                        <nav class="footer-nav" aria-label="Footer navigation">
+                            <a href="index.html">Home</a>
+                            <a href="search.html">Find Doctors</a>
+                            <a href="specialties.html">Specialties</a>
+                            <a href="about.html">About Us</a>
+                            <a href="contact.html">Contact</a>
+                        </nav>
+                    </div>
+
+                    <!-- Column 2: Contact Information -->
+                    <div class="footer-col footer-contact">
+                        <h3>Contact Us</h3>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                                    height="16">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015.13 12.8a19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                                </svg>
+                            </span>
+                            <div class="footer-contact-text">
+                                <span class="footer-contact-label">Phone</span>
+                                <a href="tel:+18005550199" class="footer-contact-value">1-800-HEALTH-1</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                                    height="16">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </span>
+                            <div class="footer-contact-text">
+                                <span class="footer-contact-label">Email</span>
+                                <a href="mailto:support@healthconnect.com"
+                                    class="footer-contact-value">support@healthconnect.com</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                                    height="16">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </span>
+                            <div class="footer-contact-text">
+                                <span class="footer-contact-label">Hours</span>
+                                <span class="footer-contact-value">Mon &ndash; Fri: 8am &ndash; 8pm EST</span>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                                    height="16">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </span>
+                            <div class="footer-contact-text">
+                                <span class="footer-contact-label">Address</span>
+                                <span class="footer-contact-value">42 Hospital Road, Colombo 07</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Newsletter -->
+                    <div class="footer-col footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe for the latest health tips and clinic updates delivered to your inbox.</p>
+                        <form class="newsletter-form" action="#"
+                            onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                            <input type="email" placeholder="your.email@example.com" required
+                                aria-label="Email address for newsletter">
+                            <button type="submit" class="btn-primary"
+                                aria-label="Subscribe to newsletter">Subscribe</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="copyright-bar">
+            <div class="container">
+                <p>&#169; 2026 HealthConnect. All rights reserved. @codeMNS</p>
+                <nav class="copyright-links" aria-label="Legal links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="about.html">About</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('login-form');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const email = document.getElementById('email').value.trim();
+                    const password = document.getElementById('password').value.trim();
+
+                    if (Auth.login(email, password)) {
+                        // Success - redirect to search page so they can start finding doctors
+                        window.location.href = 'search.html';
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

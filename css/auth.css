@@ -1,0 +1,199 @@
+/* ===== AUTHENTICATION CSS ===== */
+.auth-page {
+    background-color: var(--color-bg-alt);
+    padding: var(--spacing-3xl) 0;
+    min-height: calc(100vh - 400px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-card {
+    background-color: var(--color-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-2xl);
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.auth-header h1 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.auth-header p {
+    color: var(--color-text-light);
+    font-size: 1rem;
+}
+
+.auth-form .form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family-base);
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.auth-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.9rem;
+}
+
+.auth-options a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.auth-options a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.auth-submit-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+}
+
+.auth-footer {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+}
+
+.auth-footer a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-fast);
+}
+
+.auth-footer a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Auth Modal (for Guest users trying to favorite) */
+.auth-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(15, 23, 42, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(4px);
+}
+
+.auth-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.auth-modal {
+    background-color: var(--color-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 90%;
+    max-width: 400px;
+    padding: var(--spacing-xl);
+    position: relative;
+    transform: translateY(20px);
+    transition: transform var(--transition-normal);
+    text-align: center;
+}
+
+.auth-modal-overlay.active .auth-modal {
+    transform: translateY(0);
+}
+
+.auth-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-light);
+    transition: color var(--transition-fast);
+    padding: 5px;
+}
+
+.auth-modal-close:hover {
+    color: var(--color-primary);
+}
+
+.auth-modal-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(225, 29, 72, 0.1);
+    color: #e11d48;
+    border-radius: 50%;
+    margin-bottom: var(--spacing-md);
+}
+
+.auth-modal h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.auth-modal p {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+.auth-modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.auth-modal-actions .btn-primary,
+.auth-modal-actions .btn-outline {
+    width: 100%;
+}

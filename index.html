@@ -1,0 +1,616 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthConnect — Find Trusted Healthcare Providers</title>
+  <meta name="description"
+    content="HealthConnect helps you find trusted healthcare providers across Sri Lanka. Browse 50+ specialist doctors, view availability, and book appointments online.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <header>
+    <nav aria-label="Main navigation">
+      <div class="container">
+        <a href="index.html" class="logo">
+          <div class="logo-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <span class="logo-text">HealthConnect</span>
+        </a>
+        <button class="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+          <li><a href="search.html">Find Doctors</a></li>
+          <li><a href="specialties.html">Specialties</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="nav-icon-btn" aria-label="Saved Doctors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#e11d48"
+              stroke="#e11d48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+              </path>
+            </svg>
+          </button>
+          <a href="#" class="btn-sign-in">Sign In</a>
+          <a href="#how-it-works" class="btn-primary btn-sm">Get Started</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content">
+
+    <!-- ===== PHONE BOOKING BANNER ===== -->
+    <div class="phone-banner" role="complementary" aria-label="Phone booking information">
+      <div class="container">
+        <p>
+          Prefer to book by phone? Call us at
+          <a href="tel:+18005550199" aria-label="Call HealthConnect on 1-800-555-0199">1-800-555-0199</a>
+          &mdash; available Monday to Friday, 8&nbsp;am &ndash; 6&nbsp;pm.
+        </p>
+      </div>
+    </div>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="fade-up hero-section hero" aria-labelledby="hero-heading">
+      <div class="container hero-container">
+
+        <div class="hero-top-pill">
+          <span class="pill-text">TRUSTED BY 50,000+ PATIENTS</span>
+        </div>
+
+        <div class="hero-content">
+          <h1 id="hero-heading">Find Trusted Healthcare<br>Providers Near You</h1>
+          <p class="hero-sub">
+            Connect with qualified doctors and specialists in your area.<br>
+            Book appointments online and get the care you need &mdash;<br>
+            quickly, easily, and securely.
+          </p>
+
+          <!-- Search Card -->
+          <div class="hero-search-wrapper" role="search" aria-label="Search for healthcare providers">
+
+            <!-- Filter Row -->
+            <div class="hero-filter-row">
+
+              <div class="hero-filter-col">
+                <label for="hero-specialty">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                  </svg>
+                  Specialty
+                </label>
+                <select id="hero-specialty" name="specialty">
+                  <option value="">All Specialties</option>
+                  <option value="Cardiology">Cardiology</option>
+                  <option value="General Practice">General Practice</option>
+                  <option value="Pediatrics">Pediatrics</option>
+                  <option value="Dermatology">Dermatology</option>
+                  <option value="Orthopedics">Orthopedics</option>
+                  <option value="Neurology">Neurology</option>
+                  <option value="Oncology">Oncology</option>
+                  <option value="Ophthalmology">Ophthalmology</option>
+                </select>
+              </div>
+
+              <span class="hero-filter-divider" aria-hidden="true"></span>
+
+              <div class="hero-filter-col">
+                <label for="hero-city">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  City
+                </label>
+                <select id="hero-city" name="city">
+                  <option value="">All Cities</option>
+                  <option value="Colombo">Colombo</option>
+                  <option value="Kandy">Kandy</option>
+                  <option value="Jaffna">Jaffna</option>
+                  <option value="Negombo">Negombo</option>
+                  <option value="Galle">Galle</option>
+                  <option value="Kurunegala">Kurunegala</option>
+                </select>
+              </div>
+
+              <span class="hero-filter-divider" aria-hidden="true"></span>
+
+              <div class="hero-filter-col">
+                <label for="hero-availability">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  Availability
+                </label>
+                <select id="hero-availability" name="availability">
+                  <option value="">Any Availability</option>
+                  <option value="accepting">Accepting Patients</option>
+                  <option value="not">Not Accepting</option>
+                </select>
+              </div>
+
+              <span class="hero-filter-divider" aria-hidden="true"></span>
+
+              <div class="hero-filter-col">
+                <label for="hero-price">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <line x1="12" y1="1" x2="12" y2="23" />
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                  </svg>
+                  Price Range
+                </label>
+                <select id="hero-price" name="price">
+                  <option value="">Any Price</option>
+                  <option value="under-2000">Under LKR 2,000</option>
+                  <option value="2000-3000">LKR 2,000 – 3,000</option>
+                  <option value="3000-5000">LKR 3,000 – 5,000</option>
+                  <option value="above-5000">Above LKR 5,000</option>
+                </select>
+              </div>
+
+            </div>
+
+            <!-- Search button — full-width strip below filters -->
+            <div class="hero-search-row">
+              <button type="button" id="hero-search-btn" class="hero-search-btn"
+                aria-label="Search for healthcare providers">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                Search Doctors
+              </button>
+            </div>
+
+            <!-- Quick Access -->
+            <div class="hero-quick-links">
+              <span class="hero-quick-label">Popular:</span>
+              <a href="search.html?specialty=General Practice" class="hero-quick-tag">General Practice</a>
+              <a href="search.html?specialty=Cardiology" class="hero-quick-tag">Cardiology</a>
+              <a href="search.html?specialty=Dermatology" class="hero-quick-tag">Dermatology</a>
+              <a href="search.html?specialty=Pediatrics" class="hero-quick-tag">Pediatrics</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Glassmorphic Stats Bar -->
+        <div class="stats-glass-bar" aria-label="HealthConnect statistics">
+          <div class="stats-glass-grid">
+            <div class="stat-glass-item">
+              <span class="stat-glass-number">500+</span>
+              <span class="stat-glass-label">Verified Doctors</span>
+            </div>
+            <div class="stat-glass-item">
+              <span class="stat-glass-number">50K+</span>
+              <span class="stat-glass-label">Patients Served</span>
+            </div>
+            <div class="stat-glass-item">
+              <span class="stat-glass-number">4.9 <span class="star-icon">★</span></span>
+              <span class="stat-glass-label">Average Rating</span>
+            </div>
+            <div class="stat-glass-item">
+              <span class="stat-glass-number">24/7</span>
+              <span class="stat-glass-label">Online Booking</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS (3 STEPS) ===== -->
+    <section id="how-it-works" class="fade-up how-it-works-section" aria-labelledby="how-it-works-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 id="how-it-works-heading">Book Your Appointment in 3 Easy Steps</h2>
+          <p class="section-sub text-muted">Get the care you need without the hassle. It's safe, secure, and fast.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Search Providers</h3>
+            <p>Use our advanced search to find trusted doctors by specialty, location, or rating.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Choose a Time</h3>
+            <p>View real-time availability and select an appointment slot that fits your schedule.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Book instantly</h3>
+            <p>Fill in your patient details and receive an immediate confirmation email.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES / SPECIALTIES SECTION ===== -->
+    <section class="fade-up specialties-section" aria-labelledby="specialties-heading">
+      <div class="container">
+        <div class="section-header text-center w-full">
+          <span class="section-pill">ALL SPECIALTIES</span>
+          <h2 id="specialties-heading" class="section-heading-large">Find Care for Every Need</h2>
+          <p class="section-sub-large">
+            Browse our comprehensive network of medical specialists across all disciplines.
+          </p>
+        </div>
+
+        <div class="specialties-grid">
+          <!-- Card 1 -->
+          <a href="search.html?specialty=cardiology" class="specialty-card">
+            <div class="specialty-emoji">❤️</div>
+            <h3>Cardiology</h3>
+            <p>Diagnosis and treatment of heart conditions, including coronary artery disease, heart failure, and
+              arrhythmias.</p>
+            <span class="specialty-tag">3 doctors</span>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="search.html?specialty=dermatology" class="specialty-card">
+            <div class="specialty-emoji">🔬</div>
+            <h3>Dermatology</h3>
+            <p>Treatment of skin, hair, and nail disorders including acne, eczema, psoriasis, and skin cancer screening.
+            </p>
+            <span class="specialty-tag">2 doctors</span>
+          </a>
+
+          <!-- Card 3 -->
+          <a href="search.html?specialty=pediatrics" class="specialty-card">
+            <div class="specialty-emoji">👶</div>
+            <h3>Pediatrics</h3>
+            <p>Comprehensive healthcare for children from newborns to adolescents, including vaccinations and
+              developmental care.</p>
+            <span class="specialty-tag">2 doctors</span>
+          </a>
+
+          <!-- Card 4 -->
+          <a href="search.html?specialty=orthopedics" class="specialty-card">
+            <div class="specialty-emoji">🦴</div>
+            <h3>Orthopedics</h3>
+            <p>Treatment of musculoskeletal system disorders including joint replacement, sports injuries, and fracture
+              care.</p>
+            <span class="specialty-tag">1 doctor</span>
+          </a>
+
+          <!-- Card 5 -->
+          <a href="search.html?specialty=neurology" class="specialty-card">
+            <div class="specialty-emoji">🧠</div>
+            <h3>Neurology</h3>
+            <p>Expert care for neurological disorders including epilepsy, migraine, multiple sclerosis, and Parkinson's
+              disease.</p>
+            <span class="specialty-tag">1 doctor</span>
+          </a>
+
+          <!-- Card 6 -->
+          <a href="search.html?specialty=general-practice" class="specialty-card">
+            <div class="specialty-emoji">🩺</div>
+            <h3>General Practice</h3>
+            <p>Primary care for all ages including preventive screenings, chronic disease management, and routine
+              check-ups.</p>
+            <span class="specialty-tag">1 doctor</span>
+          </a>
+
+          <!-- Card 7 -->
+          <a href="search.html?specialty=ophthalmology" class="specialty-card">
+            <div class="specialty-emoji">👁️</div>
+            <h3>Ophthalmology</h3>
+            <p>Comprehensive eye care including vision correction, cataract surgery, glaucoma treatment, and retinal
+              conditions.</p>
+            <span class="specialty-tag">0 doctors</span>
+          </a>
+
+          <!-- Card 8 -->
+          <a href="search.html?specialty=psychiatry" class="specialty-card">
+            <div class="specialty-emoji">💬</div>
+            <h3>Psychiatry</h3>
+            <p>Mental health care including treatment for depression, anxiety, ADHD, and other psychiatric conditions.
+            </p>
+            <span class="specialty-tag">0 doctors</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURED HEALTHCARE PROVIDERS ===== -->
+    <section class="fade-up featured-section" aria-labelledby="featured-heading">
+      <div class="container">
+        <h2 id="featured-heading" class="section-heading">Featured Healthcare Providers</h2>
+        <div class="section-divider" aria-hidden="true"></div>
+        <p class="section-sub text-muted">
+          Meet some of our top-rated doctors and specialists ready to provide exceptional care.
+        </p>
+
+        <div class="featured-grid">
+
+          <!-- Doctor Card 1 -->
+          <article class="card doctor-card" aria-label="Dr. Priya Perera, Cardiologist">
+            <img src="images/doctor_001.png" onerror="this.onerror=null;this.src='images/avatar.svg';"
+              alt="Profile photo of Dr. Priya Perera" class="doctor-avatar-img" width="84" height="84" loading="lazy">
+            <h3 class="doctor-name">Dr. Priya Perera</h3>
+            <p class="doctor-specialty text-muted">Cardiology</p>
+            <div class="star-rating" aria-label="Rating: 4.9 out of 5 stars">
+              <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
+              <span class="rating-number">4.9</span>
+              <span class="rating-count">(187)</span>
+            </div>
+            <p class="doctor-experience text-muted">18+ years experience</p>
+            <a href="profile.html?doctor=001" class="btn-primary btn-card"
+              aria-label="View profile for Dr. Priya Perera">View Profile</a>
+          </article>
+
+          <!-- Doctor Card 2 -->
+          <article class="card doctor-card" aria-label="Dr. Roshan Dissanayake, Cardiologist">
+            <img src="images/doctor_005.png" onerror="this.onerror=null;this.src='images/avatar.svg';"
+              alt="Profile photo of Dr. Roshan Dissanayake" class="doctor-avatar-img" width="84" height="84"
+              loading="lazy">
+            <h3 class="doctor-name">Dr. Roshan Dissanayake</h3>
+            <p class="doctor-specialty text-muted">Cardiology</p>
+            <div class="star-rating" aria-label="Rating: 5.0 out of 5 stars">
+              <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
+              <span class="rating-number">5.0</span>
+              <span class="rating-count">(312)</span>
+            </div>
+            <p class="doctor-experience text-muted">20+ years experience</p>
+            <a href="profile.html?doctor=005" class="btn-primary btn-card"
+              aria-label="View profile for Dr. Roshan Dissanayake">View Profile</a>
+          </article>
+
+          <!-- Doctor Card 3 -->
+          <article class="card doctor-card" aria-label="Dr. Emily Wickramasinghe, Pediatrician">
+            <img src="images/doctor_019.png" onerror="this.onerror=null;this.src='images/avatar.svg';"
+              alt="Profile photo of Dr. Emily Wickramasinghe" class="doctor-avatar-img" width="84" height="84"
+              loading="lazy">
+            <h3 class="doctor-name">Dr. Emily Wickramasinghe</h3>
+            <p class="doctor-specialty text-muted">Pediatrics</p>
+            <div class="star-rating" aria-label="Rating: 5.0 out of 5 stars">
+              <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
+              <span class="rating-number">5.0</span>
+              <span class="rating-count">(198)</span>
+            </div>
+            <p class="doctor-experience text-muted">10+ years experience</p>
+            <a href="profile.html?doctor=019" class="btn-primary btn-card"
+              aria-label="View profile for Dr. Emily Wickramasinghe">View Profile</a>
+          </article>
+
+          <!-- Doctor Card 4 -->
+          <article class="card doctor-card" aria-label="Dr. Asanka Rajapaksa, Orthopedic Surgeon">
+            <img src="images/doctor_032.png" onerror="this.onerror=null;this.src='images/avatar.svg';"
+              alt="Profile photo of Dr. Asanka Rajapaksa" class="doctor-avatar-img" width="84" height="84"
+              loading="lazy">
+            <h3 class="doctor-name">Dr. Asanka Rajapaksa</h3>
+            <p class="doctor-specialty text-muted">Orthopedics</p>
+            <div class="star-rating" aria-label="Rating: 4.9 out of 5 stars">
+              <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
+              <span class="rating-number">4.9</span>
+              <span class="rating-count">(213)</span>
+            </div>
+            <p class="doctor-experience text-muted">17+ years experience</p>
+            <a href="profile.html?doctor=032" class="btn-primary btn-card"
+              aria-label="View profile for Dr. Asanka Rajapaksa">View Profile</a>
+          </article>
+
+        </div>
+
+        <div class="section-cta">
+          <a href="search.html" class="btn-outline">View All Doctors</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="fade-up section section-alt" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="testimonials-heading">What Our Patients Say</h2>
+          <div class="section-divider" aria-hidden="true"></div>
+          <p>Trusted by thousands of patients across Sri Lanka</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">&ldquo;Found an excellent cardiologist within minutes. The booking process was
+              smooth and the doctor was incredibly professional. Highly recommend HealthConnect!&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">P</div>
+              <div>
+                <strong>Priya Wickramasinghe</strong>
+                <span>Colombo</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">&ldquo;As someone who&rsquo;s not very good with technology, this website was
+              easy to use. I could find a doctor near me in Kandy and book an appointment the same day.&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">R</div>
+              <div>
+                <strong>Roshan Fernando</strong>
+                <span>Kandy</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">&ldquo;The confirmation system is excellent &mdash; I received all the details
+              immediately. My children&rsquo;s appointments are always easy to manage through HealthConnect.&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">A</div>
+              <div>
+                <strong>Amali Perera</strong>
+                <span>Galle</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="home-cta-section" aria-labelledby="cta-heading">
+    <div class="container home-cta-content">
+      <h2 id="cta-heading">Ready to Find Your Doctor?</h2>
+      <div class="home-cta-buttons">
+        <a href="search.html" class="home-cta-btn-primary">Find Doctors</a>
+        <a href="contact.html" class="home-cta-btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Column 1: Brand & Site Navigation -->
+          <div class="footer-col">
+            <a href="index.html" class="logo" aria-label="HealthConnect home">
+              <span class="logo-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+              </span>
+              HealthConnect
+            </a>
+            <p>Connecting patients with trusted healthcare providers nationwide. Book appointments online in minutes.
+            </p>
+            <nav class="footer-nav" aria-label="Footer navigation">
+              <a href="index.html">Home</a>
+              <a href="search.html">Find Doctors</a>
+              <a href="specialties.html">Specialties</a>
+              <a href="about.html">About Us</a>
+              <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copyright">&#169; 2026 HealthConnect. All rights reserved. @codeMNS</p>
+          </div>
+
+          <!-- Column 2: Contact Information -->
+          <div class="footer-col footer-contact">
+            <h3>Contact Us</h3>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015.13 12.8a19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Phone</span>
+                <a href="tel:+18005550199" class="footer-contact-value">1-800-HEALTH-1</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Email</span>
+                <a href="mailto:support@healthconnect.com" class="footer-contact-value">support@healthconnect.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Hours</span>
+                <span class="footer-contact-value">Mon &ndash; Fri: 8am &ndash; 8pm EST</span>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Address</span>
+                <span class="footer-contact-value">42 Hospital Road, Colombo 07</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Newsletter -->
+          <div class="footer-col footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>Subscribe for the latest health tips and clinic updates delivered to your inbox.</p>
+            <form class="newsletter-form" action="#"
+              onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+              <input type="email" placeholder="your.email@example.com" required
+                aria-label="Email address for newsletter">
+              <button type="submit" class="btn-primary" aria-label="Subscribe to newsletter">Subscribe</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/mobile-nav.js"></script>
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- Professional Enhancements JS -->
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

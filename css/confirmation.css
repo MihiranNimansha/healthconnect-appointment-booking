@@ -1,0 +1,162 @@
+/* ===== PAGE: CONFIRMATION ===== */
+.confirmation-page {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--color-bg-soft);
+}
+
+.confirmation-hero {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.confirmation-hero h1 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.confirmation-hero p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.confirmation-card {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.confirmation-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.confirm-section-title {
+    font-family: var(--font-family-base);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary);
+}
+
+.confirm-doctor-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.confirm-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+}
+
+.confirm-doc-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin: 0;
+    font-family: var(--font-family-base);
+}
+
+.confirm-doc-spec {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.confirm-detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.confirm-detail-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+}
+
+.confirm-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--color-text-secondary);
+    opacity: 0.4;
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+.confirm-detail-row span {
+    color: var(--color-text-secondary);
+}
+
+.patient-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.patient-info-item {
+    font-size: 0.875rem;
+}
+
+.patient-info-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-secondary);
+    margin-bottom: 1px;
+}
+
+.patient-info-value {
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.confirmation-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.confirmation-actions .btn-primary,
+.confirmation-actions .btn-outline {
+    flex: 1;
+    padding: 0.75rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.calendar-icon {
+    margin-right: 0.4rem;
+}
+
+.what-next-section {
+    max-width: 720px;
+    margin: var(--spacing-xl) auto 0;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.what-next-section h2 {
+    font-family: var(--font-family-base);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xl);
+}

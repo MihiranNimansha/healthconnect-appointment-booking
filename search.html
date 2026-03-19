@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results — HealthConnect</title>
+  <meta name="description"
+    content="Search and filter 50+ specialist doctors in Sri Lanka by specialty, city, and availability. Find your perfect healthcare provider on HealthConnect.">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/doctors.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <header>
+    <nav aria-label="Main navigation">
+      <div class="container">
+        <a href="index.html" class="logo">
+          <div class="logo-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <span class="logo-text">HealthConnect</span>
+        </a>
+        <button class="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="search.html" class="active" aria-current="page">Find Doctors</a></li>
+          <li><a href="specialties.html">Specialties</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="nav-icon-btn" aria-label="Saved Doctors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#e11d48"
+              stroke="#e11d48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+              </path>
+            </svg>
+          </button>
+          <a href="#" class="btn-sign-in">Sign In</a>
+          <a href="#" class="btn-primary btn-sm">Get Started</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content">
+
+    <!-- ===== SEARCH BAR (Top) ===== -->
+    <section class="fade-up search-page-top" aria-label="Refine your search">
+      <div class="container">
+        <div role="search" aria-label="Search for healthcare providers">
+          <div class="search-bar">
+            <div class="search-field">
+              <span class="search-dot" aria-hidden="true"></span>
+              <div class="search-field-inner">
+                <label for="search-specialty">Specialty</label>
+                <select id="search-specialty" name="specialty">
+                  <option value="all">All Specialties</option>
+                  <option value="Cardiology">Cardiology</option>
+                  <option value="General Practice">General Practice</option>
+                  <option value="Pediatrics">Pediatrics</option>
+                  <option value="Dermatology">Dermatology</option>
+                  <option value="Orthopedics">Orthopedics</option>
+                  <option value="Neurology">Neurology</option>
+                  <option value="Oncology">Oncology</option>
+                  <option value="Ophthalmology">Ophthalmology</option>
+                </select>
+              </div>
+            </div>
+            <div class="search-field">
+              <span class="search-dot" aria-hidden="true"></span>
+              <div class="search-field-inner">
+                <label for="city-filter">City</label>
+                <select id="city-filter" name="city" class="form-control" aria-label="Filter by city">
+                  <option value="all">All Cities</option>
+                  <option value="Colombo">Colombo</option>
+                  <option value="Kandy">Kandy</option>
+                  <option value="Jaffna">Jaffna</option>
+                  <option value="Negombo">Negombo</option>
+                  <option value="Galle">Galle</option>
+                  <option value="Kurunegala">Kurunegala</option>
+                </select>
+              </div>
+            </div>
+            <div class="search-field">
+              <span class="search-dot" aria-hidden="true"></span>
+              <div class="search-field-inner">
+                <label for="availability-filter">Availability</label>
+                <select id="availability-filter" name="availability" class="form-control"
+                  aria-label="Filter by availability">
+                  <option value="all">Any Availability</option>
+                  <option value="accepting">Accepting New Patients</option>
+                  <option value="not">Not Accepting</option>
+                </select>
+              </div>
+            </div>
+            <div class="search-field">
+              <span class="search-dot" aria-hidden="true"></span>
+              <div class="search-field-inner">
+                <label for="price-filter">Consultation Fee</label>
+                <select id="price-filter" name="price" class="form-control" aria-label="Filter by consultation fee">
+                  <option value="all">Any Price</option>
+                  <option value="under-2000">Under LKR 2,000</option>
+                  <option value="2000-3000">LKR 2,000 – 3,000</option>
+                  <option value="3000-5000">LKR 3,000 – 5,000</option>
+                  <option value="above-5000">Above LKR 5,000</option>
+                </select>
+              </div>
+            </div>
+            <button type="button" class="search-btn" aria-label="Search for healthcare providers">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SEARCH RESULTS SECTION ===== -->
+    <section class="fade-up search-results-section" aria-labelledby="results-heading">
+      <div class="container">
+
+        <!-- Results Header -->
+        <div class="results-header">
+          <div>
+            <h1 id="results-heading">Doctors in Sri Lanka</h1>
+            <p class="results-count" id="results-count">Searching doctors...</p>
+          </div>
+          <div class="sort-bar">
+            <label for="sort-select">Sort by:</label>
+            <select id="sort-select" name="sort">
+              <option value="best-match">Best Match</option>
+              <option value="rating">Highest Rated</option>
+              <option value="distance">Nearest</option>
+              <option value="experience">Most Experienced</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Active Filter Tags -->
+        <div class="filter-bar" aria-label="Active filters">
+          <div class="filter-tags" role="list">
+            <button class="clear-filters" type="button">Clear all</button>
+          </div>
+        </div>
+
+        <!-- Doctor Results Grid — populated dynamically by filter.js -->
+        <div class="results-grid" id="doctors-grid" aria-label="Doctor search results" role="list">
+          <!-- Doctors rendered dynamically by filter.js on DOMContentLoaded -->
+        </div>
+
+        <!-- ===== PAGINATION ===== -->
+        <nav class="pagination" aria-label="Search results pagination">
+          <button class="pagination-btn" type="button" aria-label="Previous page">Previous</button>
+          <button class="pagination-btn active" type="button" aria-label="Page 1" aria-current="page">1</button>
+          <button class="pagination-btn" type="button" aria-label="Page 2">2</button>
+          <button class="pagination-btn" type="button" aria-label="Page 3">3</button>
+          <button class="pagination-btn" type="button" aria-label="Page 4">4</button>
+          <button class="pagination-btn" type="button" aria-label="Next page">Next</button>
+        </nav>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Column 1: Brand & Site Navigation -->
+          <div class="footer-col">
+            <a href="index.html" class="logo" aria-label="HealthConnect home">
+              <span class="logo-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+              </span>
+              HealthConnect
+            </a>
+            <p>Connecting patients with trusted healthcare providers nationwide. Book appointments online in minutes.
+            </p>
+            <nav class="footer-nav" aria-label="Footer navigation">
+              <a href="index.html">Home</a>
+              <a href="search.html">Find Doctors</a>
+              <a href="specialties.html">Specialties</a>
+              <a href="about.html">About Us</a>
+              <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copyright">&#169; 2026 HealthConnect. All rights reserved. @codeMNS</p>
+          </div>
+
+          <!-- Column 2: Contact Information -->
+          <div class="footer-col footer-contact">
+            <h3>Contact Us</h3>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015.13 12.8a19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Phone</span>
+                <a href="tel:+18005550199" class="footer-contact-value">1-800-HEALTH-1</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Email</span>
+                <a href="mailto:support@healthconnect.com" class="footer-contact-value">support@healthconnect.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Hours</span>
+                <span class="footer-contact-value">Mon &ndash; Fri: 8am &ndash; 8pm EST</span>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Address</span>
+                <span class="footer-contact-value">42 Hospital Road, Colombo 07</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Newsletter -->
+          <div class="footer-col footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>Subscribe for the latest health tips and clinic updates delivered to your inbox.</p>
+            <form class="newsletter-form" action="#"
+              onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+              <input type="email" placeholder="your.email@example.com" required
+                aria-label="Email address for newsletter">
+              <button type="submit" class="btn-primary" aria-label="Subscribe to newsletter">Subscribe</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script src="js/xml-loader.js"></script>
+  <script src="js/filter.js"></script>
+  <script src="js/mobile-nav.js"></script>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- Professional Enhancements JS -->
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

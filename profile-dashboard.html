@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard — HealthConnect</title>
+    <meta name="description"
+        content="View your favorite doctors and recently viewed profiles on your HealthConnect dashboard.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <style>
+        .dashboard-page {
+            padding: var(--spacing-3xl) 0;
+            background-color: var(--color-bg-alt);
+            min-height: calc(100vh - 400px);
+        }
+
+        .dashboard-header {
+            margin-bottom: var(--spacing-2xl);
+            background: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .dashboard-avatar {
+            width: 80px;
+            height: 80px;
+            background-color: var(--color-primary-light);
+            color: var(--color-primary);
+            font-size: 2rem;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dashboard-section {
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .dashboard-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: var(--spacing-2xl);
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 2px dashed var(--color-border);
+            color: var(--color-text-light);
+        }
+
+        .empty-state svg {
+            margin-bottom: var(--spacing-md);
+            opacity: 0.5;
+        }
+
+        /* Reused card styles for simple display */
+        .dashboard-card {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+            text-decoration: none;
+            color: var(--color-text);
+            position: relative;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .dashboard-card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .dashboard-card-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+            color: var(--color-primary);
+        }
+
+        .dashboard-card-info p {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            margin-bottom: 0.3rem;
+        }
+
+        .remove-fav-btn {
+            position: absolute;
+            top: var(--spacing-sm);
+            right: var(--spacing-sm);
+            background: none;
+            border: none;
+            color: #e11d48;
+            cursor: pointer;
+            padding: 5px;
+            transition: transform var(--transition-fast);
+            z-index: 2;
+        }
+
+        .remove-fav-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- NEW TAB STYLES --- */
+        .dashboard-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: var(--spacing-xl);
+            border: 2px solid var(--color-primary);
+            border-radius: 50px;
+            padding: 5px;
+            background: white;
+            box-shadow: var(--shadow-sm);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px 24px;
+            border: none;
+            background: transparent;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-text-light);
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all var(--transition-fast);
+        }
+
+        .tab-btn.active {
+            background-color: var(--color-primary);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ===== HEADER / NAVIGATION ===== -->
+    <header>
+        <nav aria-label="Main navigation">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                    <span class="logo-text">HealthConnect</span>
+                </a>
+                <button class="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="search.html">Find Doctors</a></li>
+                    <li><a href="specialties.html">Specialties</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <!-- Handled by auth.js -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main id="main-content">
+        <div class="dashboard-page">
+            <div class="container">
+
+                <!-- Dashboard Header -->
+                <div class="dashboard-header fade-up"
+                    style="flex-direction: column; align-items: flex-start; background: transparent; box-shadow: none; padding: 0 0 var(--spacing-lg) 0;">
+                    <h1 id="user-welcome" style="font-size: 2.2rem; color: var(--color-primary);">Welcome, Profile Name!
+                    </h1>
+                    <p class="text-muted" style="font-size: 1.1rem; margin-bottom: 5px;">Manage your saved doctors and
+                        view your recent activity.</p>
+                    <p style="color: var(--color-accent); font-weight: 600; font-size: 1.1rem; font-style: italic;">Wish
+                        you speedy Recovery!</p>
+                </div>
+
+                <!-- Tabs Container -->
+                <div class="dashboard-tabs fade-up" style="animation-delay: 0.1s;">
+                    <button class="tab-btn active" data-target="favorites-tab">favourite Docs</button>
+                    <button class="tab-btn" data-target="recent-tab">Recently Docs</button>
+                </div>
+
+                <!-- Favorites Tab Content -->
+                <section id="favorites-tab" class="tab-content active fade-up" style="animation-delay: 0.2s;">
+                    <div id="favorites-grid" class="dashboard-grid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </section>
+
+                <!-- Recent Doctors Tab Content -->
+                <section id="recent-tab" class="tab-content fade-up" style="animation-delay: 0.2s;">
+                    <div id="recent-grid" class="dashboard-grid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+
+                    <!-- Column 1: Brand & Site Navigation -->
+                    <div class="footer-col">
+                        <a href="index.html" class="logo" aria-label="HealthConnect home">
+                            <span class="logo-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                                </svg>
+                            </span>
+                            HealthConnect
+                        </a>
+                        <p>Connecting patients with trusted healthcare providers nationwide. Book appointments online in
+                            minutes.</p>
+                        <nav class="footer-nav" aria-label="Footer navigation">
+                            <a href="index.html">Home</a>
+                            <a href="search.html">Find Doctors</a>
+                            <a href="specialties.html">Specialties</a>
+                            <a href="about.html">About Us</a>
+                            <a href="contact.html">Contact</a>
+                        </nav>
+                    </div>
+
+                    <!-- Column 2: Contact Information -->
+                    <div class="footer-col footer-contact">
+                        <h3>Contact Us</h3>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                                    height="16">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015.13 12.8a19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                                </svg>
+                            </span>
+                            <div class="footer-contact-text">
+                                <span class="footer-contact-label">Phone</span>
+                                <a href="tel:+18005550199" class="footer-contact-value">1-800-HEALTH-1</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                                    height="16">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </span>
+                            <div class="footer-contact-text">
+                                <span class="footer-contact-label">Email</span>
+                                <a href="mailto:support@healthconnect.com"
+                                    class="footer-contact-value">support@healthconnect.com</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                                    height="16">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </span>
+                            <div class="footer-contact-text">
+                                <span class="footer-contact-label">Hours</span>
+                                <span class="footer-contact-value">Mon &ndash; Fri: 8am &ndash; 8pm EST</span>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                                    height="16">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </span>
+                            <div class="footer-contact-text">
+                                <span class="footer-contact-label">Address</span>
+                                <span class="footer-contact-value">42 Hospital Road, Colombo 07</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Newsletter -->
+                    <div class="footer-col footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe for the latest health tips and clinic updates delivered to your inbox.</p>
+                        <form class="newsletter-form" action="#"
+                            onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                            <input type="email" placeholder="your.email@example.com" required
+                                aria-label="Email address for newsletter">
+                            <button type="submit" class="btn-primary"
+                                aria-label="Subscribe to newsletter">Subscribe</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="copyright-bar">
+            <div class="container">
+                <p>&#169; 2026 HealthConnect. All rights reserved. @codeMNS</p>
+                <nav class="copyright-links" aria-label="Legal links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="about.html">About</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="js/auth.js"></script>
+    <script src="js/xml-loader.js"></script> <!-- To get doctor data -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Redirect if not logged in
+            if (!Auth.isLoggedIn()) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            const user = Auth.getCurrentUser();
+            document.getElementById('user-welcome').textContent = 'Welcome, ' + user.name + '!';
+
+            // Tab Switching Logic
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active from all
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+
+                    // Add active to clicked and target
+                    btn.classList.add('active');
+                    const targetId = btn.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // Wait for XML loader to populate doctors
+            const interval = setInterval(() => {
+                if (typeof doctors !== 'undefined' && doctors.length > 0) {
+                    clearInterval(interval);
+                    renderDashboard();
+                }
+            }, 50);
+
+            function renderDashboard() {
+                // 1. Render Favorites
+                const favIds = Auth.getFavorites();
+                const favGrid = document.getElementById('favorites-grid');
+
+                if (favIds.length === 0) {
+                    favGrid.innerHTML = `
+                <div class="empty-state">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <h3>No favorites yet</h3>
+                    <p style="margin-top:10px;">Browse our directory to find and save doctors to your favorites list.</p>
+                    <a href="search.html" class="btn-primary" style="margin-top:15px; display:inline-block;">Find Doctors</a>
+                </div>`;
+                    favGrid.style.display = 'block'; // Remove grid layout for empty state
+                } else {
+                    favGrid.className = 'results-grid'; // Use global css grid
+                    favIds.forEach(id => {
+                        const doc = getDoctorById(id);
+                        if (doc) {
+                            // Re-use standard card rendering from xml-loader.js
+                            const cardWrapper = document.createElement('div');
+                            cardWrapper.innerHTML = renderDoctorCard(doc);
+
+                            // Adjust favorite button action inside the card to also reload/remove if needed
+                            const favBtn = cardWrapper.querySelector('.favorite-btn');
+                            if (favBtn) {
+                                favBtn.onclick = function (e) {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    Auth.toggleFavorite(doc.id);
+                                    cardWrapper.remove();
+                                    if (document.querySelectorAll('#favorites-tab .result-card').length === 0) {
+                                        window.location.reload();
+                                    }
+                                };
+                            }
+                            favGrid.appendChild(cardWrapper.firstElementChild);
+                        }
+                    });
+                }
+
+                // 2. Render Recent Doctors
+                const recents = Auth.getRecentDoctors();
+                const recentGrid = document.getElementById('recent-grid');
+
+                if (recents.length === 0) {
+                    recentGrid.innerHTML = `
+                <div class="empty-state">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <h3>No recent activity</h3>
+                    <p style="margin-top:10px;">Doctors you view will appear here for quick access later.</p>
+                </div>`;
+                    recentGrid.style.display = 'block';
+                } else {
+                    recentGrid.className = 'results-grid'; // Use global css grid
+                    recents.forEach(docObj => {
+                        const doc = getDoctorById(docObj.id); // Get full details
+                        if (doc) {
+                            const cardWrapper = document.createElement('div');
+                            cardWrapper.innerHTML = renderDoctorCard(doc);
+                            recentGrid.appendChild(cardWrapper.firstElementChild);
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
