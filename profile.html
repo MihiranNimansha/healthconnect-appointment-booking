@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,6 +15,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/auth.css">
   <link rel="stylesheet" href="css/profile.css">
 </head>
@@ -91,7 +92,7 @@
               <h1 class="sidebar-name">Doctor Name</h1>
               <p class="sidebar-specialty text-muted">Specialty</p>
 
-              <div class="star-rating" aria-label="Rating: 5.0 out of 5 stars, recent reviews">
+              <div class="star-rating" role="img" aria-label="Rating: 5.0 out of 5 stars, recent reviews">
                 <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
                 <span class="rating-number">5.0</span>
                 <span class="rating-count">(124 reviews)</span>
@@ -187,107 +188,121 @@
               <div class="calendar-wrapper" role="application" aria-label="Appointment calendar">
                 <div class="calendar-header">
                   <button class="calendar-nav-btn" type="button" aria-label="Previous month">&#8249;</button>
-                  <h4><span id="calendar-month-title">Loading...</span></h4>
+                  <h3><span id="calendar-month-title">Loading...</span></h3>
                   <button class="calendar-nav-btn" type="button" aria-label="Next month">&#8250;</button>
                 </div>
                 <div class="calendar-grid" role="grid" aria-label="Calendar dates">
                   <!-- Day name headers -->
-                  <div class="calendar-day-name" role="columnheader" aria-label="Sunday">Sun</div>
-                  <div class="calendar-day-name" role="columnheader" aria-label="Monday">Mon</div>
-                  <div class="calendar-day-name" role="columnheader" aria-label="Tuesday">Tue</div>
-                  <div class="calendar-day-name" role="columnheader" aria-label="Wednesday">Wed</div>
-                  <div class="calendar-day-name" role="columnheader" aria-label="Thursday">Thu</div>
-                  <div class="calendar-day-name" role="columnheader" aria-label="Friday">Fri</div>
-                  <div class="calendar-day-name" role="columnheader" aria-label="Saturday">Sat</div>
+                  <div role="row">
+                    <div class="calendar-day-name" role="columnheader" aria-label="Sunday">Sun</div>
+                    <div class="calendar-day-name" role="columnheader" aria-label="Monday">Mon</div>
+                    <div class="calendar-day-name" role="columnheader" aria-label="Tuesday">Tue</div>
+                    <div class="calendar-day-name" role="columnheader" aria-label="Wednesday">Wed</div>
+                    <div class="calendar-day-name" role="columnheader" aria-label="Thursday">Thu</div>
+                    <div class="calendar-day-name" role="columnheader" aria-label="Friday">Fri</div>
+                    <div class="calendar-day-name" role="columnheader" aria-label="Saturday">Sat</div>
+                  </div>
 
                   <!-- Week 1 (March starts on Friday) -->
-                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
-                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
-                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
-                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
-                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 1, available">1
-                  </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 2, available">2
+                  <div role="row">
+                    <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                    <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                    <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                    <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                    <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 1, available">1
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 2, available">2
+                    </div>
                   </div>
 
                   <!-- Week 2 -->
-                  <div class="calendar-day unavailable" role="gridcell" aria-label="March 3, unavailable"
-                    aria-disabled="true">3</div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 4, available">4
+                  <div role="row">
+                    <div class="calendar-day unavailable" role="gridcell" aria-label="March 3, unavailable"
+                      aria-disabled="true">3</div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 4, available">4
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 5, available">5
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 6, available">6
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 7, available">7
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 8, available">8
+                    </div>
+                    <div class="calendar-day unavailable" role="gridcell" aria-label="March 9, unavailable"
+                      aria-disabled="true">9</div>
                   </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 5, available">5
-                  </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 6, available">6
-                  </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 7, available">7
-                  </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 8, available">8
-                  </div>
-                  <div class="calendar-day unavailable" role="gridcell" aria-label="March 9, unavailable"
-                    aria-disabled="true">9</div>
 
                   <!-- Week 3 -->
-                  <div class="calendar-day unavailable" role="gridcell" aria-label="March 10, unavailable"
-                    aria-disabled="true">10</div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 11, available">11
-                  </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 12, available">12
-                  </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 13, available">13
-                  </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 14, available">14
-                  </div>
-                  <div class="calendar-day selected" role="gridcell" tabindex="0" aria-label="March 15, selected"
-                    aria-selected="true">15</div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 16, available">16
+                  <div role="row">
+                    <div class="calendar-day unavailable" role="gridcell" aria-label="March 10, unavailable"
+                      aria-disabled="true">10</div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 11, available">11
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 12, available">12
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 13, available">13
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 14, available">14
+                    </div>
+                    <div class="calendar-day selected" role="gridcell" tabindex="0" aria-label="March 15, selected"
+                      aria-selected="true">15</div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 16, available">16
+                    </div>
                   </div>
 
                   <!-- Week 4 -->
-                  <div class="calendar-day unavailable" role="gridcell" aria-label="March 17, unavailable"
-                    aria-disabled="true">17</div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 18, available">18
+                  <div role="row">
+                    <div class="calendar-day unavailable" role="gridcell" aria-label="March 17, unavailable"
+                      aria-disabled="true">17</div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 18, available">18
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 19, available">19
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 20, available">20
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 21, available">21
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 22, available">22
+                    </div>
+                    <div class="calendar-day unavailable" role="gridcell" aria-label="March 23, unavailable"
+                      aria-disabled="true">23</div>
                   </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 19, available">19
-                  </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 20, available">20
-                  </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 21, available">21
-                  </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 22, available">22
-                  </div>
-                  <div class="calendar-day unavailable" role="gridcell" aria-label="March 23, unavailable"
-                    aria-disabled="true">23</div>
 
                   <!-- Week 5 -->
-                  <div class="calendar-day unavailable" role="gridcell" aria-label="March 24, unavailable"
-                    aria-disabled="true">24</div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 25, available">25
+                  <div role="row">
+                    <div class="calendar-day unavailable" role="gridcell" aria-label="March 24, unavailable"
+                      aria-disabled="true">24</div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 25, available">25
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 26, available">26
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 27, available">27
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 28, available">28
+                    </div>
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 29, available">29
+                    </div>
+                    <div class="calendar-day unavailable" role="gridcell" aria-label="March 30, unavailable"
+                      aria-disabled="true">30</div>
                   </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 26, available">26
-                  </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 27, available">27
-                  </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 28, available">28
-                  </div>
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 29, available">29
-                  </div>
-                  <div class="calendar-day unavailable" role="gridcell" aria-label="March 30, unavailable"
-                    aria-disabled="true">30</div>
 
                   <!-- Week 6 -->
-                  <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 31, available">31
+                  <div role="row">
+                    <div class="calendar-day available" role="gridcell" tabindex="0" aria-label="March 31, available">31
+                    </div>
+                    <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                    <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                    <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                    <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                    <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
+                    <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
                   </div>
-                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
-                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
-                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
-                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
-                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
-                  <div class="calendar-day empty" role="gridcell" aria-hidden="true"></div>
                 </div>
 
                 <!-- Calendar Legend -->
-                <div class="calendar-legend" aria-label="Calendar legend">
+                <div class="calendar-legend" role="group" aria-label="Calendar legend">
                   <div class="legend-item">
                     <span class="legend-dot selected" aria-hidden="true"></span>
                     <span>Selected</span>
@@ -345,7 +360,7 @@
             <section class="fade-up" aria-labelledby="reviews-heading">
               <div class="reviews-header">
                 <h2 id="reviews-heading">Patient Reviews</h2>
-                <div class="reviews-summary" aria-label="Overall rating: 5.0 out of 5, 124 reviews">
+                <div class="reviews-summary" role="group" aria-label="Overall rating: 5.0 out of 5, 124 reviews">
                   <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
                   <span> 5.0 </span>
                   <span class="text-muted">(124 reviews)</span>
@@ -487,3 +502,4 @@
 </body>
 
 </html>
+

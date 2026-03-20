@@ -97,6 +97,22 @@ function getElArray(parent, tag) {
 }
 
 /**
+ * Generates a five-character star string from a numeric rating.
+ * Filled stars up to the rounded value, empty stars for the rest.
+ *
+ * @param {string|number} rating - Numeric rating e.g. "4.8"
+ * @returns {string} Star string e.g. "★★★★☆"
+ */
+function buildStars(rating) {
+  const filled = Math.round(parseFloat(rating));
+  let stars = '';
+  for (let i = 0; i < 5; i++) {
+    stars += i < filled ? '\u2605' : '\u2606';
+  }
+  return stars;
+}
+
+/**
  * Parses a single <doctor> XML element into a plain JavaScript object.
  * Extracts scalar fields, arrays (languages, certifications, specializations),
  * and the nested schedule (days with time slots).
@@ -175,12 +191,7 @@ function parseDoctor(doctorNode) {
  * @returns {string} HTML string for one result card
  */
 function renderDoctorCard(doctor) {
-  // Build star display: filled (★) and empty (☆) characters
-  const filled = Math.round(parseFloat(doctor.rating));
-  let stars = '';
-  for (let i = 0; i < 5; i++) {
-    stars += i < filled ? '\u2605' : '\u2606';
-  }
+  const stars = buildStars(doctor.rating);
 
   // Encode the id in the profile URL to prevent URL injection
   const profileUrl = 'profile.html?doctor=' + encodeURIComponent(doctor.id);

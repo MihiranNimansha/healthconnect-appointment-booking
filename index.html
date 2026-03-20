@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-  <title>HealthConnect — Find Trusted Healthcare Providers</title>
+  <title>HealthConnect â€” Find Trusted Healthcare Providers</title>
   <meta name="description"
     content="HealthConnect helps you find trusted healthcare providers across Sri Lanka. Browse 50+ specialist doctors, view availability, and book appointments online.">
   <!-- Google Fonts -->
@@ -15,6 +15,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/auth.css">
   <link rel="stylesheet" href="css/home.css">
 </head>
@@ -178,15 +179,15 @@
                 <select id="hero-price" name="price">
                   <option value="">Any Price</option>
                   <option value="under-2000">Under LKR 2,000</option>
-                  <option value="2000-3000">LKR 2,000 – 3,000</option>
-                  <option value="3000-5000">LKR 3,000 – 5,000</option>
+                  <option value="2000-3000">LKR 2,000 â€“ 3,000</option>
+                  <option value="3000-5000">LKR 3,000 â€“ 5,000</option>
                   <option value="above-5000">Above LKR 5,000</option>
                 </select>
               </div>
 
             </div>
 
-            <!-- Search button — full-width strip below filters -->
+            <!-- Search button â€” full-width strip below filters -->
             <div class="hero-search-row">
               <button type="button" id="hero-search-btn" class="hero-search-btn"
                 aria-label="Search for healthcare providers">
@@ -203,7 +204,7 @@
             <!-- Quick Access -->
             <div class="hero-quick-links">
               <span class="hero-quick-label">Popular:</span>
-              <a href="search.html?specialty=General Practice" class="hero-quick-tag">General Practice</a>
+              <a href="search.html?specialty=General%20Practice" class="hero-quick-tag">General Practice</a>
               <a href="search.html?specialty=Cardiology" class="hero-quick-tag">Cardiology</a>
               <a href="search.html?specialty=Dermatology" class="hero-quick-tag">Dermatology</a>
               <a href="search.html?specialty=Pediatrics" class="hero-quick-tag">Pediatrics</a>
@@ -213,7 +214,7 @@
         </div>
 
         <!-- Glassmorphic Stats Bar -->
-        <div class="stats-glass-bar" aria-label="HealthConnect statistics">
+        <div class="stats-glass-bar" role="region" aria-label="HealthConnect statistics">
           <div class="stats-glass-grid">
             <div class="stat-glass-item">
               <span class="stat-glass-number">500+</span>
@@ -224,7 +225,7 @@
               <span class="stat-glass-label">Patients Served</span>
             </div>
             <div class="stat-glass-item">
-              <span class="stat-glass-number">4.9 <span class="star-icon">★</span></span>
+              <span class="stat-glass-number">4.9 <span class="star-icon">â˜…</span></span>
               <span class="stat-glass-label">Average Rating</span>
             </div>
             <div class="stat-glass-item">
@@ -402,7 +403,7 @@
               alt="Profile photo of Dr. Priya Perera" class="doctor-avatar-img" width="84" height="84" loading="lazy">
             <h3 class="doctor-name">Dr. Priya Perera</h3>
             <p class="doctor-specialty text-muted">Cardiology</p>
-            <div class="star-rating" aria-label="Rating: 4.9 out of 5 stars">
+            <div class="star-rating" role="img" aria-label="Rating: 4.9 out of 5 stars">
               <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
               <span class="rating-number">4.9</span>
               <span class="rating-count">(187)</span>
@@ -419,7 +420,7 @@
               loading="lazy">
             <h3 class="doctor-name">Dr. Roshan Dissanayake</h3>
             <p class="doctor-specialty text-muted">Cardiology</p>
-            <div class="star-rating" aria-label="Rating: 5.0 out of 5 stars">
+            <div class="star-rating" role="img" aria-label="Rating: 5.0 out of 5 stars">
               <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
               <span class="rating-number">5.0</span>
               <span class="rating-count">(312)</span>
@@ -436,7 +437,7 @@
               loading="lazy">
             <h3 class="doctor-name">Dr. Emily Wickramasinghe</h3>
             <p class="doctor-specialty text-muted">Pediatrics</p>
-            <div class="star-rating" aria-label="Rating: 5.0 out of 5 stars">
+            <div class="star-rating" role="img" aria-label="Rating: 5.0 out of 5 stars">
               <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
               <span class="rating-number">5.0</span>
               <span class="rating-count">(198)</span>
@@ -453,7 +454,7 @@
               loading="lazy">
             <h3 class="doctor-name">Dr. Asanka Rajapaksa</h3>
             <p class="doctor-specialty text-muted">Orthopedics</p>
-            <div class="star-rating" aria-label="Rating: 4.9 out of 5 stars">
+            <div class="star-rating" role="img" aria-label="Rating: 4.9 out of 5 stars">
               <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
               <span class="rating-number">4.9</span>
               <span class="rating-count">(213)</span>
@@ -482,7 +483,7 @@
         </div>
         <div class="testimonials-grid">
           <div class="testimonial-card">
-            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="testimonial-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="testimonial-text">&ldquo;Found an excellent cardiologist within minutes. The booking process was
               smooth and the doctor was incredibly professional. Highly recommend HealthConnect!&rdquo;</p>
             <div class="testimonial-author">
@@ -494,7 +495,7 @@
             </div>
           </div>
           <div class="testimonial-card">
-            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="testimonial-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="testimonial-text">&ldquo;As someone who&rsquo;s not very good with technology, this website was
               easy to use. I could find a doctor near me in Kandy and book an appointment the same day.&rdquo;</p>
             <div class="testimonial-author">
@@ -506,7 +507,7 @@
             </div>
           </div>
           <div class="testimonial-card">
-            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="testimonial-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="testimonial-text">&ldquo;The confirmation system is excellent &mdash; I received all the details
               immediately. My children&rsquo;s appointments are always easy to manage through HealthConnect.&rdquo;</p>
             <div class="testimonial-author">
@@ -648,3 +649,4 @@
 </body>
 
 </html>
+
