@@ -10,8 +10,6 @@
  * Validated fields: Full Name, Email, Phone, Date of Birth,
  * Gender (radio), Reason for Visit, Terms & Conditions
  *
- * Author: [Your Name]
- * Date: March 2026
  */
 
 /* =============================================

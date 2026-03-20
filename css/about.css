@@ -151,13 +151,44 @@
 }
 
 .about-mission-stat-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
 .about-mission-stat-icon {
-    font-size: 2rem;
-    line-height: 1;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 58, 138, 0.10);
+    color: var(--color-accent);
+}
+
+.about-mission-stat-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.about-mission-card-grid .about-mission-stat-card:nth-child(1) .about-mission-stat-icon {
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.12);
+}
+
+.about-mission-card-grid .about-mission-stat-card:nth-child(2) .about-mission-stat-icon {
+    color: #16a34a;
+    background: rgba(22, 163, 74, 0.12);
+}
+
+.about-mission-card-grid .about-mission-stat-card:nth-child(3) .about-mission-stat-icon {
+    color: #7c3aed;
+    background: rgba(124, 58, 237, 0.12);
+}
+
+.about-mission-card-grid .about-mission-stat-card:nth-child(4) .about-mission-stat-icon {
+    color: #db2777;
+    background: rgba(219, 39, 119, 0.12);
 }
 
 .about-mission-stat-num {
@@ -200,7 +231,7 @@
 }
 
 .about-feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
 
@@ -273,14 +304,45 @@
 }
 
 .about-value-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
 .about-value-emoji {
-    font-size: 2.25rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 58, 138, 0.10);
+    color: var(--color-accent);
     margin-bottom: 1rem;
-    display: block;
+}
+
+.about-value-emoji svg {
+    width: 28px;
+    height: 28px;
+}
+
+.about-values-grid .about-value-card:nth-child(1) .about-value-emoji {
+    color: #0ea5e9;
+    background: rgba(14, 165, 233, 0.12);
+}
+
+.about-values-grid .about-value-card:nth-child(2) .about-value-emoji {
+    color: #16a34a;
+    background: rgba(22, 163, 74, 0.12);
+}
+
+.about-values-grid .about-value-card:nth-child(3) .about-value-emoji {
+    color: #7c3aed;
+    background: rgba(124, 58, 237, 0.12);
+}
+
+.about-values-grid .about-value-card:nth-child(4) .about-value-emoji {
+    color: #dc2626;
+    background: rgba(220, 38, 38, 0.12);
 }
 
 .about-value-card h3 {
@@ -328,13 +390,40 @@
 }
 
 .about-team-badge:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
 .about-team-badge-icon {
-    font-size: 2rem;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    background: rgba(30, 58, 138, 0.10);
     flex-shrink: 0;
+}
+
+.about-team-badge-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.about-team-highlight .about-team-badge:nth-child(1) .about-team-badge-icon {
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.12);
+}
+
+.about-team-highlight .about-team-badge:nth-child(2) .about-team-badge-icon {
+    color: #7c3aed;
+    background: rgba(124, 58, 237, 0.12);
+}
+
+.about-team-highlight .about-team-badge:nth-child(3) .about-team-badge-icon {
+    color: #0f766e;
+    background: rgba(15, 118, 110, 0.12);
 }
 
 .about-team-badge div {

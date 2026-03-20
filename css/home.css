@@ -551,7 +551,7 @@
 }
 
 .step-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
@@ -644,15 +644,67 @@
 .specialty-card:hover:not(.disabled) {
     border-color: rgba(37, 99, 235, 0.3);
     box-shadow: var(--shadow-lg);
-    transform: translateY(-5px);
+    transform: translateY(-2px);
     text-decoration: none !important;
 }
 
 .specialty-emoji {
-    font-size: 3.5rem;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 1.2rem;
-    line-height: 1;
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    color: var(--color-accent);
+    background: rgba(37, 99, 235, 0.09);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08));
+}
+
+.specialty-emoji svg {
+    width: 34px;
+    height: 34px;
+}
+
+/* Color themes per specialty card for richer visual hierarchy */
+.specialties-grid .specialty-card:nth-child(1) .specialty-emoji {
+    color: #dc2626;
+    background: rgba(220, 38, 38, 0.10);
+}
+
+.specialties-grid .specialty-card:nth-child(2) .specialty-emoji {
+    color: #0ea5e9;
+    background: rgba(14, 165, 233, 0.12);
+}
+
+.specialties-grid .specialty-card:nth-child(3) .specialty-emoji {
+    color: #16a34a;
+    background: rgba(22, 163, 74, 0.12);
+}
+
+.specialties-grid .specialty-card:nth-child(4) .specialty-emoji {
+    color: #ca8a04;
+    background: rgba(202, 138, 4, 0.12);
+}
+
+.specialties-grid .specialty-card:nth-child(5) .specialty-emoji {
+    color: #7c3aed;
+    background: rgba(124, 58, 237, 0.12);
+}
+
+.specialties-grid .specialty-card:nth-child(6) .specialty-emoji {
+    color: #0f766e;
+    background: rgba(15, 118, 110, 0.12);
+}
+
+.specialties-grid .specialty-card:nth-child(7) .specialty-emoji {
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.12);
+}
+
+.specialties-grid .specialty-card:nth-child(8) .specialty-emoji {
+    color: #db2777;
+    background: rgba(219, 39, 119, 0.12);
 }
 
 .specialty-card h3 {

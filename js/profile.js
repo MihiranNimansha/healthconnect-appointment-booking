@@ -34,15 +34,6 @@ function populateProfile(id) {
     // Update Title
     document.title = doctor.name + ' — HealthConnect';
 
-    // Log this doctor to recently viewed if user is signed in
-    if (typeof Auth !== 'undefined') {
-        Auth.addRecentDoctor({
-            id: doctor.id,
-            name: doctor.name,
-            specialty: doctor.specialty,
-            rating: doctor.rating
-        });
-    }
 
     // Update Breadcrumb
     const breadcrumbSpan = document.querySelector('.breadcrumb span:last-child');

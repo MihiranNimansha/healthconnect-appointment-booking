@@ -6,8 +6,6 @@
  * Updates available appointment slots when a date is selected
  * on the calendar. Splits slots into Morning and Afternoon sections.
  *
- * Author: [Your Name]
- * Date: March 2026
  */
 
 /* =============================================

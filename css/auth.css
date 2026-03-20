@@ -121,7 +121,7 @@
     z-index: 10000;
     opacity: 0;
     visibility: hidden;
-    transition: all var(--transition-normal);
+    transition: all var(--transition-base);
     backdrop-filter: blur(4px);
 }
 
@@ -139,7 +139,7 @@
     padding: var(--spacing-xl);
     position: relative;
     transform: translateY(20px);
-    transition: transform var(--transition-normal);
+    transition: transform var(--transition-base);
     text-align: center;
 }
 

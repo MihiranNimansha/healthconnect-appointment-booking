@@ -7,8 +7,6 @@
  * the module-level `doctors` array and used by filter.js and timeslots.js.
  * No external libraries are used.
  *
- * Author: [Your Name]
- * Date: March 2026
  */
 
 /* =============================================
@@ -188,30 +186,37 @@ function renderDoctorCard(doctor) {
   const profileUrl = 'profile.html?doctor=' + encodeURIComponent(doctor.id);
 
   const isFav = typeof Auth !== 'undefined' && Auth.isFavorite(doctor.id);
-  const favBtnHtml = '<button class="favorite-btn ' + (isFav ? 'active' : '') + '" aria-label="Toggle favorite for ' + doctor.name + '" onclick="event.stopPropagation(); event.preventDefault(); if(typeof Auth !== \'undefined\') { const s = Auth.toggleFavorite(\'' + doctor.id + '\'); if(s) { const c = Auth.isFavorite(\'' + doctor.id + '\'); this.classList.toggle(\'active\', c); this.querySelector(\'svg\').setAttribute(\'fill\', c ? \'#e11d48\' : \'none\'); } }" style="position:absolute; top:12px; right:12px; background:white; border:none; border-radius:50%; padding:6px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.1); z-index:10;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="' + (isFav ? '#e11d48' : 'none') + '" stroke="#e11d48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>';
+  const avatarUrl = 'images/doctor_' + doctor.id + '.png';
+  const fallbackUrl = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(doctor.name) + '&background=random&color=fff&size=128&rounded=true&font-size=0.35&bold=true';
+  const fee = doctor.consultationFee ? doctor.consultationFee.toLocaleString() : 'N/A';
+
+  const favBtnHtml = '<button class="favorite-btn ' + (isFav ? 'active' : '') + '" aria-label="Toggle favorite for ' + doctor.name + '" onclick="event.stopPropagation(); event.preventDefault(); if(typeof Auth !== \'undefined\') { Auth.toggleFavorite(\'' + doctor.id + '\'); this.classList.toggle(\'active\'); }"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>';
 
   return (
-    '<article class="card result-card" aria-label="' + doctor.name + '" style="position:relative;">' +
-    favBtnHtml +
-    '<div class="result-card-header">' +
-    '<div class="photo-placeholder result-card-photo" role="img" ' +
-    'aria-label="Photo placeholder for ' + doctor.name + '"></div>' +
-    '<div class="result-card-info">' +
-    '<h3>' + doctor.name + '</h3>' +
-    '<p class="doctor-specialty">' + doctor.specialty + '</p>' +
-    '<div class="star-rating" aria-label="Rating: ' + doctor.rating + ' out of 5 stars">' +
-    '<span aria-hidden="true">' + stars + '</span>' +
-    '<span class="rating-number">' + doctor.rating + '</span>' +
-    '<span class="rating-count">(' + doctor.reviewCount + ')</span>' +
-    '</div>' +
-    '</div>' +
-    '</div>' +
-    '<div class="result-card-details">' +
-    '<div class="detail-row"><span class="detail-dot" aria-hidden="true"></span><span>' + doctor.experience + '</span></div>' +
-    '<div class="detail-row"><span class="detail-dot" aria-hidden="true"></span><span>' + doctor.hospital + '</span></div>' +
-    '<div class="detail-row"><span class="detail-dot" aria-hidden="true"></span><span>' + doctor.distance + '</span></div>' +
-    '</div>' +
-    '<a href="' + profileUrl + '" class="btn-primary btn-card">View Available Slots</a>' +
+    '<article class="card result-card" aria-label="' + doctor.name + '">' +
+      favBtnHtml +
+      '<div class="result-card-header">' +
+        '<img src="' + avatarUrl + '" onerror="if(this.src !== \'' + fallbackUrl + '\') this.src=\'' + fallbackUrl + '\';" alt="Profile photo of ' + doctor.name + '" class="result-card-photo" width="84" height="84" loading="lazy">' +
+        '<div class="doctor-info">' +
+          '<h3 class="doctor-name">' + doctor.name + '</h3>' +
+          '<p class="doctor-specialty">' + doctor.specialty + '</p>' +
+          '<span class="badge ' + (doctor.acceptingPatients ? 'badge-success' : 'badge-closed') + '" aria-label="' + (doctor.acceptingPatients ? 'Accepting Patients' : 'Not Accepting') + '">' + (doctor.acceptingPatients ? 'Accepting Patients' : 'Not Accepting') + '</span>' +
+          '<div class="rating" aria-label="Rating: ' + doctor.rating + ' out of 5 stars">' +
+            '<span class="stars" aria-hidden="true">' + stars + '</span>' +
+            '<span class="rating-score">' + doctor.rating + '</span>' +
+            '<span class="rating-count">(' + doctor.reviewCount + ')</span>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="doctor-meta">' +
+        '<div class="doctor-meta-item"><span aria-hidden="true">&#x25CF;</span><span>' + doctor.experience + '</span></div>' +
+        '<div class="doctor-meta-item"><span aria-hidden="true">&#x25CF;</span><span>' + doctor.hospital + '</span></div>' +
+      '</div>' +
+      '<div class="doctor-price" aria-label="Consultation fee: LKR ' + fee + '">' +
+        '<span class="price-label">Consultation Fee</span>' +
+        '<span class="price-value">LKR ' + fee + '</span>' +
+      '</div>' +
+      '<a href="' + profileUrl + '" class="btn btn-primary btn-card" aria-label="View available slots for ' + doctor.name + '">View Available Slots</a>' +
     '</article>'
   );
 }
