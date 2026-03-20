@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,6 +15,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="css/auth.css">
 </head>
 
@@ -75,14 +76,12 @@
                     <form id="login-form" class="auth-form">
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="name@example.com" required
-                                aria-required="true">
+                            <input type="email" id="email" name="email" placeholder="name@example.com" required>
                         </div>
 
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" id="password" name="password" placeholder="••••••••" required
-                                aria-required="true">
+                            <input type="password" id="password" name="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
                         </div>
 
                         <div class="auth-options">
@@ -108,6 +107,7 @@
   <footer>
     <div class="footer-main">
       <div class="container">
+        <h2 class="sr-only">Footer Information</h2>
         <div class="footer-grid">
 
           <!-- Column 1: Brand & Site Navigation -->
@@ -205,25 +205,10 @@
 
     <!-- ===== JAVASCRIPT ===== -->
     <script src="js/auth.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('login-form');
-            if (form) {
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const email = document.getElementById('email').value.trim();
-                    const password = document.getElementById('password').value.trim();
-
-                    if (Auth.login(email, password)) {
-                        // Success - redirect to search page so they can start finding doctors
-                        window.location.href = 'search.html';
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="js/login-page.js"></script>
     <script src="js/mobile-nav.js"></script>
     <script src="js/main.js"></script>
 </body>
 
 </html>
+

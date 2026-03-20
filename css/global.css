@@ -2780,42 +2780,6 @@ main a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.service-link):not(.p
 }
 
 /* =============================================
-   HAMBURGER MENU (Mobile Navigation)
-   ============================================= */
-
-.hamburger-btn {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 6px;
-    flex-direction: column;
-    gap: 5px;
-    z-index: 1001;
-}
-
-.hamburger-line {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background-color: var(--color-text-primary);
-    border-radius: 2px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.hamburger-btn.is-active .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger-btn.is-active .hamburger-line:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-btn.is-active .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* =============================================
    BADGES
    ============================================= */
 
@@ -2982,65 +2946,6 @@ textarea.success {
 }
 
 @media (max-width: 768px) {
-
-    /* Hamburger visible */
-    .hamburger-btn {
-        display: flex;
-    }
-
-    /* Nav links hidden on mobile by default */
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: var(--color-bg);
-        border-top: 1px solid var(--color-border);
-        box-shadow: var(--shadow-md);
-        flex-direction: column;
-        padding: var(--spacing-md) 0;
-        z-index: 1000;
-    }
-
-    .nav-links.nav-open {
-        display: flex;
-    }
-
-    .nav-links li {
-        padding: 0;
-    }
-
-    .nav-links a {
-        display: block;
-        padding: 0.75rem var(--spacing-lg);
-        font-size: 0.95rem;
-    }
-
-    .nav-actions {
-        display: none;
-    }
-
-    .nav-actions.nav-open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: var(--color-bg);
-        border-top: 1px solid var(--color-border);
-        padding: var(--spacing-md) var(--spacing-lg);
-        gap: var(--spacing-sm);
-        z-index: 999;
-        margin-top: 0;
-    }
-
-    /* Header nav wrapper */
-    nav .container {
-        position: relative;
-    }
-
     /* Hero */
     .hero-content h1 {
         font-size: 2rem;
