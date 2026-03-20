@@ -1,10 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Sarah Johnson — HealthConnect</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <title>Doctor Profile — HealthConnect</title>
   <meta name="description"
     content="View doctor profile, credentials, patient reviews, and available appointment slots. Book your appointment on HealthConnect.">
   <!-- Google Fonts -->
@@ -25,7 +26,7 @@
   <header>
     <nav aria-label="Main navigation">
       <div class="container">
-                <a href="index.html" class="logo">
+        <a href="index.html" class="logo">
           <div class="logo-icon-box">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -46,7 +47,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-                <div class="nav-actions">
+        <div class="nav-actions">
           <button class="nav-icon-btn" aria-label="Saved Doctors">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#e11d48"
               stroke="#e11d48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -56,8 +57,9 @@
             </svg>
           </button>
           <a href="#" class="btn-sign-in">Sign In</a>
-          <a href="#" class="btn-primary btn-sm">Get Started</a>
-        </div></div>
+          <a href="index.html#how-it-works" class="btn-primary btn-sm">Get Started</a>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -72,7 +74,7 @@
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
           <a href="search.html">Search Results</a>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <span>Dr. Sarah Johnson</span>
+          <span>Doctor Profile</span>
         </nav>
 
         <!-- ===== TWO-COLUMN PROFILE LAYOUT ===== -->
@@ -86,10 +88,10 @@
               <img src="images/avatar.svg" alt="Profile photo of Dr. Priya Perera" class="profile-doctor-img"
                 id="profile-doctor-img" width="120" height="120">
 
-              <h1 class="sidebar-name">Dr. Sarah Johnson</h1>
-              <p class="sidebar-specialty text-muted">Cardiologist</p>
+              <h1 class="sidebar-name">Doctor Name</h1>
+              <p class="sidebar-specialty text-muted">Specialty</p>
 
-              <div class="star-rating" aria-label="Rating: 5.0 out of 5 stars, 124 reviews">
+              <div class="star-rating" aria-label="Rating: 5.0 out of 5 stars, recent reviews">
                 <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
                 <span class="rating-number">5.0</span>
                 <span class="rating-count">(124 reviews)</span>
@@ -99,23 +101,19 @@
               <div class="sidebar-stats" role="list" aria-label="Doctor details">
                 <div class="sidebar-stat" role="listitem">
                   <span class="stat-dot" aria-hidden="true"></span>
-                  <span><strong>Experience:</strong> 15+ years</span>
+                  <span><strong>Experience:</strong> --</span>
                 </div>
                 <div class="sidebar-stat" role="listitem">
                   <span class="stat-dot" aria-hidden="true"></span>
-                  <span><strong>Hospital:</strong> UCSF Medical Center</span>
+                  <span><strong>Hospital:</strong> --</span>
                 </div>
                 <div class="sidebar-stat" role="listitem">
                   <span class="stat-dot" aria-hidden="true"></span>
-                  <span><strong>Location:</strong> San Francisco, CA</span>
+                  <span><strong>Location:</strong> --</span>
                 </div>
                 <div class="sidebar-stat" role="listitem">
                   <span class="stat-dot" aria-hidden="true"></span>
-                  <span>2.3 miles away</span>
-                </div>
-                <div class="sidebar-stat" role="listitem">
-                  <span class="stat-dot" aria-hidden="true"></span>
-                  <span><strong>Languages:</strong> English, Spanish</span>
+                  <span><strong>Languages:</strong> --</span>
                 </div>
                 <div class="sidebar-stat sidebar-fee" role="listitem">
                   <span class="stat-dot" aria-hidden="true"></span>
@@ -123,7 +121,7 @@
                 </div>
               </div>
 
-              <a href="booking.html" class="btn-primary sidebar-book-btn">Book Appointment</a>
+
             </div>
 
             <!-- Credentials Card -->
@@ -172,16 +170,12 @@
 
             <!-- About Section -->
             <section class="fade-up" aria-labelledby="about-heading">
-              <h2 id="about-heading">About Dr. Sarah Johnson</h2>
+              <h2 id="about-heading">About Doctor</h2>
               <p>
-                Dr. Sarah Johnson is a board-certified cardiologist with over 15 years of experience in
-                diagnosing and treating cardiovascular conditions. She specializes in preventive cardiology,
-                heart disease management, and advanced cardiac imaging.
+                This doctor's profile is loading personalized information.
               </p>
               <p>
-                Dr. Johnson is committed to providing personalized, compassionate care to each of her patients.
-                She takes the time to listen to concerns and works collaboratively to develop treatment plans
-                that align with individual health goals.
+                Please wait while we sync biography, credentials, and recent patient reviews.
               </p>
             </section>
 
@@ -341,6 +335,10 @@
                 </div>
               </div>
 
+              <!-- Booking Action -->
+              <div class="booking-action-footer fade-up">
+                <a href="booking.html" class="btn-primary sidebar-book-btn">Book Appointment</a>
+              </div>
             </section>
 
             <!-- Patient Reviews Section -->
@@ -354,72 +352,8 @@
                 </div>
               </div>
 
-              <!-- Review 1 -->
-              <article class="review-card" aria-label="Review by Jennifer M.">
-                <div class="review-header">
-                  <div class="reviewer-info">
-                    <div class="reviewer-avatar" role="img" aria-label="Reviewer avatar for Jennifer M.">JM</div>
-                    <div>
-                      <p class="reviewer-name">Jennifer M.</p>
-                      <div class="star-rating" aria-label="Rating: 5 out of 5 stars">
-                        <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
-                      </div>
-                    </div>
-                  </div>
-                  <span class="review-date">2 weeks ago</span>
-                </div>
-                <p class="review-text">
-                  Dr. Johnson is exceptional! She took the time to thoroughly explain my condition and treatment
-                  options. Her compassionate approach made me feel comfortable and confident in my care plan.
-                  Highly recommend!
-                </p>
-              </article>
-
-              <!-- Review 2 -->
-              <article class="review-card" aria-label="Review by Robert T.">
-                <div class="review-header">
-                  <div class="reviewer-info">
-                    <div class="reviewer-avatar" role="img" aria-label="Reviewer avatar for Robert T.">RT</div>
-                    <div>
-                      <p class="reviewer-name">Robert T.</p>
-                      <div class="star-rating" aria-label="Rating: 5 out of 5 stars">
-                        <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
-                      </div>
-                    </div>
-                  </div>
-                  <span class="review-date">1 month ago</span>
-                </div>
-                <p class="review-text">
-                  Outstanding cardiologist! Dr. Johnson's expertise and attention to detail are remarkable. She
-                  answered all my questions and made sure I understood everything. The office staff is also very
-                  professional and friendly.
-                </p>
-              </article>
-
-              <!-- Review 3 -->
-              <article class="review-card" aria-label="Review by Maria S.">
-                <div class="review-header">
-                  <div class="reviewer-info">
-                    <div class="reviewer-avatar" role="img" aria-label="Reviewer avatar for Maria S.">MS</div>
-                    <div>
-                      <p class="reviewer-name">Maria S.</p>
-                      <div class="star-rating" aria-label="Rating: 5 out of 5 stars">
-                        <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
-                      </div>
-                    </div>
-                  </div>
-                  <span class="review-date">2 months ago</span>
-                </div>
-                <p class="review-text">
-                  I've been seeing Dr. Johnson for three years now and she's been instrumental in managing my
-                  heart condition. She's knowledgeable, caring, and always available when I have concerns.
-                  Best cardiologist in the area!
-                </p>
-              </article>
-
-              <button class="view-all-reviews" type="button" aria-label="View all 124 reviews for Dr. Sarah Johnson">
-                View All Reviews
-              </button>
+              <div id="reviews-list" aria-live="polite"></div>
+              <p class="reviews-note">Showing only the 3 most recent reviews.</p>
 
             </section>
 
@@ -433,7 +367,7 @@
     </div>
   </main>
 
-    <!-- ===== FOOTER ===== -->
+  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="footer-main">
       <div class="container">

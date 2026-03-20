@@ -148,23 +148,22 @@
     color: var(--color-text-secondary);
 }
 
-.view-all-reviews {
-    width: 100%;
-    display: block;
-    text-align: center;
-    padding: 0.65rem;
+.reviews-note {
     margin-top: var(--spacing-md);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
     font-size: 0.9rem;
     color: var(--color-text-secondary);
-    background: none;
-    cursor: pointer;
-    font-family: var(--font-family-base);
-    transition: background-color var(--transition-fast), color var(--transition-fast);
+    text-align: center;
 }
 
-.view-all-reviews:hover {
-    background-color: var(--color-bg-soft);
-    color: var(--color-text-primary);
+.booking-action-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+}
+
+.booking-action-footer .sidebar-book-btn {
+    margin-top: 0;
+    max-width: 400px;
 }

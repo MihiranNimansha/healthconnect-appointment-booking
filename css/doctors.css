@@ -31,7 +31,7 @@
 }
 
 .search-field label {
-    font-size: 0.7rem;
+    font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 700;
@@ -42,7 +42,7 @@
 .search-field select {
     border: none;
     background: transparent;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--color-text-primary);
     padding: 2px 0;
@@ -141,13 +141,13 @@
 }
 
 .result-card-info h3 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--color-primary);
     margin-bottom: 2px;
 }
 
 .doctor-specialty {
-    font-size: 0.9rem;
+    font-size: 0.98rem;
     color: var(--color-accent);
     font-weight: 600;
     margin-bottom: 8px;
@@ -162,7 +162,7 @@
 }
 
 .stars {
-    color: #f59e0b;
+    color: #b45309;
     /* Amber 500 */
     font-size: 0.9rem;
 }
@@ -175,7 +175,7 @@
 
 .rating-count {
     color: var(--color-text-secondary);
-    font-size: 0.85rem;
+    font-size: 0.92rem;
 }
 
 /* Meta Details */
@@ -194,7 +194,7 @@
     align-items: center;
     gap: 12px;
     color: var(--color-text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.96rem;
 }
 
 .detail-dot {
@@ -212,7 +212,8 @@
     padding: 10px 14px;
     border-radius: var(--radius-md);
     margin-bottom: var(--spacing-lg);
-    margin-top: auto; /* Pushes the fee and button to the bottom, aligning all cards */
+    margin-top: auto;
+    /* Pushes the fee and button to the bottom, aligning all cards */
 }
 
 .price-label {
@@ -258,7 +259,8 @@
 }
 
 .favorite-btn:hover {
-    transform: scale(1.08); /* Reverted to simpler scale without translateY per user comment "simple button hovering animation" */
+    transform: scale(1.08);
+    /* Reverted to simpler scale without translateY per user comment "simple button hovering animation" */
     background: #fee2e2;
 }
 
@@ -282,13 +284,15 @@
 }
 
 .badge-success {
-    background: #ecfdf5;
-    color: #059669;
+    background: #dcfce7;
+    color: #14532d;
+    border: 1px solid #86efac;
 }
 
 .badge-closed {
-    background: #fef2f2;
-    color: #dc2626;
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
 }
 
 /* Filter Tags (Tags above results) */

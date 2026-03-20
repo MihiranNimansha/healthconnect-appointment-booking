@@ -81,7 +81,7 @@ for (let i = 1; i <= 54; i++) {
   const lastDigit = i % 6;
   doctorSchedules[id] = schedulePatterns[patternMap[lastDigit]];
 }
-/** Tracks which doctor is currently displayed (default: Dr. Sarah Johnson). */
+/** Tracks which doctor is currently displayed (default: doctor ID 001). */
 let currentDoctorId = '001';
 
 /* =============================================
@@ -372,7 +372,7 @@ function generateCalendar() {
 /**
  * Sets the currently displayed doctor and reloads time slots.
  * Called from initCalendar() using the ?doctor= URL parameter.
- * Falls back to "001" (Dr. Sarah Johnson) if no parameter is found.
+ * Falls back to "001" if no parameter is found.
  * Reloads the currently selected day after changing the doctor id.
  *
  * @param {string} doctorId - Doctor id string e.g. "002"

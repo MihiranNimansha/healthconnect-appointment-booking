@@ -1,10 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Dashboard â€” HealthConnect</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <title>My Dashboard &mdash; HealthConnect</title>
     <meta name="description"
         content="View your favorite doctors and recently viewed profiles on your HealthConnect dashboard.">
     <!-- Google Fonts -->
@@ -136,7 +137,6 @@
         .remove-fav-btn:hover {
             transform: scale(1.1);
         }
-
     </style>
 </head>
 
@@ -177,18 +177,17 @@
 
     <!-- ===== MAIN CONTENT ===== -->
     <main id="main-content">
+        <!-- ===== HERO ===== -->
+        <section class="subpage-hero" aria-labelledby="dashboard-heading">
+            <div class="container subpage-hero-content">
+                <span class="section-pill">MY DASHBOARD</span>
+                <h1 id="dashboard-heading">Your Saved Doctors</h1>
+                <p>Manage and quickly access your favorite healthcare professionals. Review availabilities and seamlessly book your next appointment.</p>
+            </div>
+        </section>
+
         <div class="dashboard-page">
             <div class="container">
-
-                <!-- Dashboard Header -->
-                <div class="dashboard-header fade-up"
-                    style="flex-direction: column; align-items: flex-start; background: transparent; box-shadow: none; padding: 0 0 var(--spacing-lg) 0; border-bottom: 2px solid var(--color-border); margin-bottom: 2rem;">
-                    <h1 id="user-welcome" style="font-size: 2.2rem; color: var(--color-primary);">Welcome, Profile Name!
-                    </h1>
-                    <p class="text-muted" style="font-size: 1.1rem; margin-bottom: 5px;">Manage your saved favorite doctors.</p>
-                    <p style="color: var(--color-accent); font-weight: 600; font-size: 1.1rem; font-style: italic;">Wish
-                        you speedy Recovery!</p>
-                </div>
 
                 <div class="dashboard-section fade-up" style="animation-delay: 0.1s;">
                     <div id="favorites-grid" class="dashboard-grid">
@@ -310,10 +309,7 @@
                 return;
             }
 
-            const user = Auth.getCurrentUser();
-            document.getElementById('user-welcome').textContent = 'Welcome, ' + user.name + '!';
-
-
+            // No personalized welcome message
             // Wait for XML loader to populate doctors
             const interval = setInterval(() => {
                 if (typeof doctors !== 'undefined' && doctors.length > 0) {

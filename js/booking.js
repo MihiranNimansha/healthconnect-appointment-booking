@@ -19,15 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
 });
 
-function buildStarsProfile(rating) {
-    const filled = Math.round(parseFloat(rating));
-    let stars = '';
-    for (let i = 0; i < 5; i++) {
-        stars += i < filled ? '\u2605' : '\u2606';
-    }
-    return stars;
-}
-
 function populateBookingSummary(doctor) {
 
     // Breadcrumb
@@ -55,7 +46,7 @@ function populateBookingSummary(doctor) {
     if (doctorSpec) doctorSpec.textContent = doctor.specialty;
 
     const starDisplays = document.querySelectorAll('.star-rating span[aria-hidden="true"]');
-    starDisplays.forEach(el => { el.textContent = buildStarsProfile(doctor.rating); });
+    starDisplays.forEach(el => { el.textContent = buildStars(doctor.rating); });
 
     const ratingNumbers = document.querySelectorAll('.rating-number');
     ratingNumbers.forEach(el => { el.textContent = doctor.rating; });
@@ -139,10 +130,19 @@ function renderTimeSlots(slots) {
 
     container.innerHTML = ''; // Clear old
 
-    if (!slots.length) {
+    // XML schedule slots are objects: { time, period, available }
+    // Normalize to displayable time strings and ignore unavailable entries.
+    const displaySlots = (slots || [])
+        .filter(slot => {
+            if (typeof slot === 'string') return true;
+            return slot && slot.available !== false && !!slot.time;
+        })
+        .map(slot => (typeof slot === 'string' ? slot : slot.time));
+
+    if (!displaySlots.length) {
         container.innerHTML = '<p class="text-muted">No slots available on this date.</p>';
     } else {
-        slots.forEach((slot, index) => {
+        displaySlots.forEach((slotTime, index) => {
             const id = 'slot-' + index;
 
             const label = document.createElement('label');
@@ -153,7 +153,7 @@ function renderTimeSlots(slots) {
             input.type = 'radio';
             input.name = 'time-slot';
             input.id = id;
-            input.value = slot;
+            input.value = slotTime;
 
             // When a slot is clicked, remove the error status if any
             input.addEventListener('change', () => {
@@ -163,7 +163,7 @@ function renderTimeSlots(slots) {
             });
 
             const span = document.createElement('span');
-            span.textContent = slot;
+            span.textContent = slotTime;
 
             label.appendChild(input);
             label.appendChild(span);
