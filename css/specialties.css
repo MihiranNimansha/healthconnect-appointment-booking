@@ -2,92 +2,7 @@
    SPECIALTIES PAGE — specialties.css
    ========================================================= */
 
-/* ===== HERO ===== */
-.sp-hero {
-    position: relative;
-    background: radial-gradient(ellipse at 30% 50%, #1e3a8a 0%, #0f2352 35%, #0a1628 70%, #060e1e 100%);
-    padding: 5.5rem 0 4.5rem;
-    text-align: center;
-    overflow: hidden;
-    color: white;
-}
 
-.sp-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-}
-
-.sp-hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-.sp-hero-content .section-pill {
-    display: inline-block;
-    margin-bottom: 1.5rem;
-}
-
-.sp-hero-content h1 {
-    font-family: var(--font-family-display);
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 1.25rem;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-}
-
-.sp-hero-content>p {
-    font-size: 1.08rem;
-    color: rgba(200, 220, 255, 0.85);
-    max-width: 640px;
-    margin: 0 auto 3rem;
-    line-height: 1.75;
-}
-
-/* Hero Stats row */
-.sp-hero-stats {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
-
-.sp-hero-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.35rem;
-}
-
-.sp-stat-number {
-    font-size: 2.25rem;
-    font-weight: 800;
-    color: #ffffff;
-    letter-spacing: -0.03em;
-}
-
-.sp-stat-label {
-    font-size: 0.82rem;
-    color: rgba(180, 200, 255, 0.75);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-}
-
-.sp-stat-divider {
-    width: 1px;
-    height: 48px;
-    background: rgba(255, 255, 255, 0.15);
-}
 
 /* ===== CARDS SECTION ===== */
 .sp-cards-section {
@@ -328,29 +243,9 @@
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-
-    .sp-hero-stats {
-        gap: 1.75rem;
-    }
-
-    .sp-stat-divider {
-        display: none;
-    }
 }
 
 @media (max-width: 600px) {
-    .sp-hero {
-        padding: 4rem 0 3rem;
-    }
-
-    .sp-hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .sp-hero-stats {
-        flex-direction: column;
-        gap: 1rem;
-    }
 
     .sp-cards-section {
         padding: 3rem 0;

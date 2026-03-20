@@ -17,7 +17,7 @@
 }
 
 .hero-sub {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-lg);
 }
@@ -68,18 +68,18 @@
 
 .doctor-name {
     font-family: var(--font-family-base);
-    font-size: 1rem;
+    font-size: 1.08rem;
     font-weight: 700;
     margin: 0;
 }
 
 .doctor-specialty {
-    font-size: 0.875rem;
+    font-size: 0.96rem;
     margin: 0;
 }
 
 .doctor-experience {
-    font-size: 0.875rem;
+    font-size: 0.96rem;
     margin: 0;
 }
 
@@ -181,13 +181,13 @@
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    color: rgba(180, 200, 255, 0.8) !important;
+    color: #f8fafc !important;
     font-weight: 600;
     font-size: 0.97rem;
     padding: 0.83rem 2.2rem;
     border-radius: 50px;
     text-decoration: none;
-    border: 1.5px solid rgba(150, 180, 255, 0.35);
+    border: 1.5px solid rgba(191, 219, 254, 0.8);
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
@@ -414,7 +414,7 @@
 .hero-quick-label {
     font-size: 0.8rem;
     font-weight: 600;
-    color: #94a3b8;
+    color: #334155;
     margin-right: 0.1rem;
 }
 
@@ -504,7 +504,7 @@
 
 .stat-glass-label {
     font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.75);
+    color: #e2e8f0;
     font-weight: 500;
 }
 
@@ -578,7 +578,7 @@
 
 .step-card p {
     color: var(--color-text-secondary);
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 /* --- Specialties Section Emoji Redesign --- */

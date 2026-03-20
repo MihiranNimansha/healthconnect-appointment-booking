@@ -133,34 +133,16 @@ function filterDoctors(specialty, city, availability, priceRange) {
 }
 
 /**
- * Generates a five-character star string from a numeric rating.
- * Filled stars () up to the rounded value, empty stars () for the rest.
- *
- * @param {string|number} rating - Numeric rating e.g. "4.8"
- * @returns {string} Star string e.g. ""
- */
-function buildStars(rating) {
-  const filled = Math.round(parseFloat(rating));
-  let stars = '';
-  for (let i = 0; i < 5; i++) {
-    stars += i < filled ? '\u2605' : '\u2606'; //  / 
-  }
-  return stars;
-}
-
-/**
  * Sorts a copy of the doctors array by the specified criteria.
  *
  * @param {Array}  arr     - Array of doctor objects
- * @param {string} sortBy  - Sort key: "best-match" | "rating" | "distance" | "experience" | "price-asc" | "price-desc"
+ * @param {string} sortBy  - Sort key: "best-match" | "rating" | "experience" | "price-asc" | "price-desc"
  * @returns {Array} New sorted array (original is not mutated)
  */
 function sortDoctors(arr, sortBy) {
   var copy = arr.slice();
   if (sortBy === 'rating') {
     copy.sort(function (a, b) { return parseFloat(b.rating) - parseFloat(a.rating); });
-  } else if (sortBy === 'distance') {
-    copy.sort(function (a, b) { return parseFloat(a.distance) - parseFloat(b.distance); });
   } else if (sortBy === 'experience') {
     copy.sort(function (a, b) {
       return parseInt(b.experience, 10) - parseInt(a.experience, 10);
@@ -388,7 +370,7 @@ function renderPaginationUI(doctorsArray, totalPages) {
   prevBtn.textContent = 'Previous';
   prevBtn.setAttribute('aria-label', 'Previous page');
   if (currentPage === 1) prevBtn.disabled = true;
-  prevBtn.addEventListener('click', function() {
+  prevBtn.addEventListener('click', function () {
     if (currentPage > 1) {
       currentPage--;
       renderDoctorCards(doctorsArray);
@@ -405,8 +387,8 @@ function renderPaginationUI(doctorsArray, totalPages) {
     pageBtn.textContent = i;
     pageBtn.setAttribute('aria-label', 'Page ' + i);
     if (i === currentPage) pageBtn.setAttribute('aria-current', 'page');
-    
-    pageBtn.addEventListener('click', function() {
+
+    pageBtn.addEventListener('click', function () {
       if (currentPage !== i) {
         currentPage = i;
         renderDoctorCards(doctorsArray);
@@ -423,7 +405,7 @@ function renderPaginationUI(doctorsArray, totalPages) {
   nextBtn.textContent = 'Next';
   nextBtn.setAttribute('aria-label', 'Next page');
   if (currentPage === totalPages) nextBtn.disabled = true;
-  nextBtn.addEventListener('click', function() {
+  nextBtn.addEventListener('click', function () {
     if (currentPage < totalPages) {
       currentPage++;
       renderDoctorCards(doctorsArray);
