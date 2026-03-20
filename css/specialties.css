@@ -114,7 +114,7 @@
 }
 
 .sp-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
 
@@ -164,10 +164,52 @@
 }
 
 .sp-card-icon {
-    font-size: 2.25rem;
-    line-height: 1;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.95);
     flex-shrink: 0;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+.sp-card-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+/* Keep icon colors aligned with each specialty header tone */
+.sp-card-header--red .sp-card-icon {
+    color: #fecaca;
+}
+
+.sp-card-header--orange .sp-card-icon {
+    color: #fed7aa;
+}
+
+.sp-card-header--green .sp-card-icon {
+    color: #bbf7d0;
+}
+
+.sp-card-header--yellow .sp-card-icon {
+    color: #fde68a;
+}
+
+.sp-card-header--purple .sp-card-icon {
+    color: #ddd6fe;
+}
+
+.sp-card-header--teal .sp-card-icon {
+    color: #99f6e4;
+}
+
+.sp-card-header--blue .sp-card-icon {
+    color: #bfdbfe;
+}
+
+.sp-card-header--indigo .sp-card-icon {
+    color: #c7d2fe;
 }
 
 .sp-card-title {

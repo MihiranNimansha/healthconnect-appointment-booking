@@ -6,9 +6,13 @@
  * Filters doctors by specialty and city from the doctorsData array.
  * Works with more than two filter options as required.
  *
- * Author: [Your Name]
- * Date: March 2026
  */
+
+/* =============================================
+   PAGINATION STATE
+   ============================================= */
+let currentPage = 1;
+const ITEMS_PER_PAGE = 9;
 
 /* =============================================
    FALLBACK DOCTOR DATA
@@ -189,10 +193,22 @@ function renderDoctorCards(doctorsArray) {
     noResults.className = 'no-results-message';
     noResults.textContent = 'No doctors found for this filter. Please try a different selection.';
     grid.appendChild(noResults);
+    // Hide pagination
+    const paginationContainer = document.querySelector('.pagination');
+    if (paginationContainer) paginationContainer.style.display = 'none';
     return;
   }
 
-  doctorsArray.forEach(function (doctor) {
+  // --- PAGINATION SLICE ---
+  const totalPages = Math.ceil(doctorsArray.length / ITEMS_PER_PAGE);
+  if (currentPage > totalPages) currentPage = totalPages;
+  if (currentPage < 1) currentPage = 1;
+
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const pageItems = doctorsArray.slice(startIndex, endIndex);
+
+  pageItems.forEach(function (doctor) {
     const stars = buildStars(doctor.rating);
 
     const card = document.createElement('article');
@@ -203,9 +219,9 @@ function renderDoctorCards(doctorsArray) {
     const header = document.createElement('div');
     header.className = 'result-card-header';
 
-    // Generate avatar image with fallback to ui-avatars.com
+    // Generate avatar image with fallback to ui-avatars.com (professional styled)
     const avatarUrl = 'images/doctor_' + doctor.id + '.png';
-    const fallbackUrl = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(doctor.name) + '&background=random&color=fff&size=128';
+    const fallbackUrl = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(doctor.name) + '&background=random&color=fff&size=128&rounded=true&font-size=0.35&bold=true';
 
     const avatar = document.createElement('img');
     avatar.src = avatarUrl;
@@ -269,11 +285,11 @@ function renderDoctorCards(doctorsArray) {
     header.appendChild(avatar);
     header.appendChild(info);
 
-    // ---- Meta details: experience, hospital, distance ----
+    // ---- Meta details: experience, hospital ----
     const meta = document.createElement('div');
     meta.className = 'doctor-meta';
 
-    [doctor.experience, doctor.hospital, doctor.distance].forEach(function (text) {
+    [doctor.experience, doctor.hospital].forEach(function (text) {
       const item = document.createElement('div');
       item.className = 'doctor-meta-item';
 
@@ -317,7 +333,8 @@ function renderDoctorCards(doctorsArray) {
     const isFav = typeof Auth !== 'undefined' && Auth.isFavorite(doctor.id);
     favBtn.className = 'favorite-btn ' + (isFav ? 'active' : '');
     favBtn.setAttribute('aria-label', 'Toggle favorite for ' + doctor.name);
-    favBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="' + (isFav ? '#e11d48' : 'none') + '" stroke="#e11d48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>';
+    // Using a standard crisp line-art heart, styled purely via CSS to match the feature icons
+    favBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>';
     favBtn.onclick = function (e) {
       e.stopPropagation();
       e.preventDefault();
@@ -340,6 +357,80 @@ function renderDoctorCards(doctorsArray) {
 
     grid.appendChild(card);
   });
+
+  // --- RENDER PAGINATION UI ---
+  renderPaginationUI(doctorsArray, totalPages);
+}
+
+/**
+ * Generates and updates the pagination buttons container.
+ *
+ * @param {Array} doctorsArray - The current filtered array to pass onto clicks
+ * @param {number} totalPages  - Total calculated pages
+ */
+function renderPaginationUI(doctorsArray, totalPages) {
+  const paginationContainer = document.querySelector('.pagination');
+  if (!paginationContainer) return;
+
+  paginationContainer.innerHTML = '';
+
+  if (totalPages <= 1) {
+    paginationContainer.style.display = 'none';
+    return;
+  }
+
+  paginationContainer.style.display = 'flex';
+
+  // Previous button
+  const prevBtn = document.createElement('button');
+  prevBtn.className = 'pagination-btn';
+  prevBtn.type = 'button';
+  prevBtn.textContent = 'Previous';
+  prevBtn.setAttribute('aria-label', 'Previous page');
+  if (currentPage === 1) prevBtn.disabled = true;
+  prevBtn.addEventListener('click', function() {
+    if (currentPage > 1) {
+      currentPage--;
+      renderDoctorCards(doctorsArray);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+  paginationContainer.appendChild(prevBtn);
+
+  // Page numbers
+  for (let i = 1; i <= totalPages; i++) {
+    const pageBtn = document.createElement('button');
+    pageBtn.className = 'pagination-btn' + (i === currentPage ? ' active' : '');
+    pageBtn.type = 'button';
+    pageBtn.textContent = i;
+    pageBtn.setAttribute('aria-label', 'Page ' + i);
+    if (i === currentPage) pageBtn.setAttribute('aria-current', 'page');
+    
+    pageBtn.addEventListener('click', function() {
+      if (currentPage !== i) {
+        currentPage = i;
+        renderDoctorCards(doctorsArray);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+    paginationContainer.appendChild(pageBtn);
+  }
+
+  // Next button
+  const nextBtn = document.createElement('button');
+  nextBtn.className = 'pagination-btn';
+  nextBtn.type = 'button';
+  nextBtn.textContent = 'Next';
+  nextBtn.setAttribute('aria-label', 'Next page');
+  if (currentPage === totalPages) nextBtn.disabled = true;
+  nextBtn.addEventListener('click', function() {
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderDoctorCards(doctorsArray);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+  paginationContainer.appendChild(nextBtn);
 }
 
 /**
@@ -443,6 +534,7 @@ function clearFilter() {
   }
 
   const all = filterDoctors('all', 'all', 'all', 'all');
+  currentPage = 1;
   renderDoctorCards(all);
   updateResultsCount(all.length, 'all');
   updateActiveFilters('all');
@@ -509,6 +601,8 @@ function initFilters() {
     const sortEl = document.getElementById('sort-select');
     const sortVal = sortEl ? sortEl.value : 'best-match';
     filtered = sortDoctors(filtered, sortVal);
+
+    currentPage = 1;
 
     renderDoctorCards(filtered);
     updateResultsCount(filtered.length, specialty);

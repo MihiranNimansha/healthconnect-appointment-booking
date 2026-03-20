@@ -6,8 +6,6 @@
  * (contact.html). Uses pure JavaScript — no HTML5 validation.
  * Mandatory fields: Name, Email, Subject, Message.
  *
- * Author: [Your Name]
- * Date: March 2026
  */
 
 /* =============================================

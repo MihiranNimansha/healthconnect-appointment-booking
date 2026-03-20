@@ -119,7 +119,7 @@
 }
 
 .result-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-xl);
     border-color: var(--color-accent);
 }
@@ -212,6 +212,7 @@
     padding: 10px 14px;
     border-radius: var(--radius-md);
     margin-bottom: var(--spacing-lg);
+    margin-top: auto; /* Pushes the fee and button to the bottom, aligning all cards */
 }
 
 .price-label {
@@ -235,7 +236,41 @@
     padding: 12px;
 }
 
-/* Badges */
+/* Badges & Favorite Button */
+.favorite-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #fef2f2;
+    color: #ef4444;
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    z-index: 10;
+    box-shadow: none;
+    padding: 0;
+}
+
+.favorite-btn:hover {
+    transform: scale(1.08); /* Reverted to simpler scale without translateY per user comment "simple button hovering animation" */
+    background: #fee2e2;
+}
+
+.favorite-btn svg {
+    transition: fill var(--transition-fast), transform var(--transition-fast);
+}
+
+.favorite-btn.active svg {
+    fill: currentColor;
+    transform: scale(1.1);
+}
+
 .badge {
     display: inline-block;
     padding: 4px 10px;

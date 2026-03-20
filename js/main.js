@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Elements with .fade-up class will animate when they enter the viewport
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.15 // Trigger when 15% of the element is visible
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0 // Trigger as soon as the element enters viewport minus 50px
     };
 
     const observer = new IntersectionObserver((entries, observer) => {

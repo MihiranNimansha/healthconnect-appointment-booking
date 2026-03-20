@@ -67,32 +67,7 @@ const Auth = {
         return this.getFavorites().includes(doctorId);
     },
 
-    // 3. Recent Doctors Management
-    getRecentDoctors: function () {
-        const data = localStorage.getItem(RECENT_KEY);
-        return data ? JSON.parse(data) : [];
-    },
 
-    addRecentDoctor: function (doctorObj) {
-        // Expected doctorObj shape: { id, name, specialty, image }
-        // We only track recent doctors if logged in, as requested "benefits of sign in"
-        if (!this.isLoggedIn() || !doctorObj || !doctorObj.id) return;
-
-        let recents = this.getRecentDoctors();
-
-        // Remove if already exists so we can move it to the front
-        recents = recents.filter(d => d.id !== doctorObj.id);
-
-        // Add to front
-        recents.unshift(doctorObj);
-
-        // Keep only top 10
-        if (recents.length > 10) {
-            recents.pop();
-        }
-
-        localStorage.setItem(RECENT_KEY, JSON.stringify(recents));
-    },
 
     // 4. UI Updates
     updateNavbar: function () {

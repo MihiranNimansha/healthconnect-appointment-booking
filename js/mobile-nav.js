@@ -5,8 +5,6 @@
  * Toggles the mobile navigation hamburger menu.
  * Shows/hides the .nav-links list on small screens.
  *
- * Author: [Your Name]
- * Date: March 2026
  */
 
 document.addEventListener('DOMContentLoaded', function () {

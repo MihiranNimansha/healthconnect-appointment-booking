@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Dashboard — HealthConnect</title>
+    <title>My Dashboard â€” HealthConnect</title>
     <meta name="description"
         content="View your favorite doctors and recently viewed profiles on your HealthConnect dashboard.">
     <!-- Google Fonts -->
@@ -15,6 +15,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/doctors.css">
     <style>
         .dashboard-page {
             padding: var(--spacing-3xl) 0;
@@ -136,60 +137,6 @@
             transform: scale(1.1);
         }
 
-        /* --- NEW TAB STYLES --- */
-        .dashboard-tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: var(--spacing-xl);
-            border: 2px solid var(--color-primary);
-            border-radius: 50px;
-            padding: 5px;
-            background: white;
-            box-shadow: var(--shadow-sm);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .tab-btn {
-            flex: 1;
-            padding: 12px 24px;
-            border: none;
-            background: transparent;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--color-text-light);
-            cursor: pointer;
-            border-radius: 50px;
-            transition: all var(--transition-fast);
-        }
-
-        .tab-btn.active {
-            background-color: var(--color-primary);
-            color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.4s ease-out;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 
@@ -235,34 +182,19 @@
 
                 <!-- Dashboard Header -->
                 <div class="dashboard-header fade-up"
-                    style="flex-direction: column; align-items: flex-start; background: transparent; box-shadow: none; padding: 0 0 var(--spacing-lg) 0;">
+                    style="flex-direction: column; align-items: flex-start; background: transparent; box-shadow: none; padding: 0 0 var(--spacing-lg) 0; border-bottom: 2px solid var(--color-border); margin-bottom: 2rem;">
                     <h1 id="user-welcome" style="font-size: 2.2rem; color: var(--color-primary);">Welcome, Profile Name!
                     </h1>
-                    <p class="text-muted" style="font-size: 1.1rem; margin-bottom: 5px;">Manage your saved doctors and
-                        view your recent activity.</p>
+                    <p class="text-muted" style="font-size: 1.1rem; margin-bottom: 5px;">Manage your saved favorite doctors.</p>
                     <p style="color: var(--color-accent); font-weight: 600; font-size: 1.1rem; font-style: italic;">Wish
                         you speedy Recovery!</p>
                 </div>
 
-                <!-- Tabs Container -->
-                <div class="dashboard-tabs fade-up" style="animation-delay: 0.1s;">
-                    <button class="tab-btn active" data-target="favorites-tab">favourite Docs</button>
-                    <button class="tab-btn" data-target="recent-tab">Recently Docs</button>
-                </div>
-
-                <!-- Favorites Tab Content -->
-                <section id="favorites-tab" class="tab-content active fade-up" style="animation-delay: 0.2s;">
+                <div class="dashboard-section fade-up" style="animation-delay: 0.1s;">
                     <div id="favorites-grid" class="dashboard-grid">
                         <!-- Dynamically populated -->
                     </div>
-                </section>
-
-                <!-- Recent Doctors Tab Content -->
-                <section id="recent-tab" class="tab-content fade-up" style="animation-delay: 0.2s;">
-                    <div id="recent-grid" class="dashboard-grid">
-                        <!-- Dynamically populated -->
-                    </div>
-                </section>
+                </div>
 
             </div>
         </div>
@@ -309,7 +241,7 @@
               </span>
               <div class="footer-contact-text">
                 <span class="footer-contact-label">Phone</span>
-                <a href="tel:+18005550199" class="footer-contact-value">1-800-HEALTH-1</a>
+                <a href="tel:+94112345678" class="footer-contact-value">+94 11 234 5678</a>
               </div>
             </div>
             <div class="footer-contact-item">
@@ -333,7 +265,7 @@
               </span>
               <div class="footer-contact-text">
                 <span class="footer-contact-label">Hours</span>
-                <span class="footer-contact-value">Mon &ndash; Fri: 8am &ndash; 8pm EST</span>
+                <span class="footer-contact-value">Mon - Fri: 8am - 8pm EST</span>
               </div>
             </div>
             <div class="footer-contact-item">
@@ -381,22 +313,6 @@
             const user = Auth.getCurrentUser();
             document.getElementById('user-welcome').textContent = 'Welcome, ' + user.name + '!';
 
-            // Tab Switching Logic
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active from all
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    tabContents.forEach(c => c.classList.remove('active'));
-
-                    // Add active to clicked and target
-                    btn.classList.add('active');
-                    const targetId = btn.getAttribute('data-target');
-                    document.getElementById(targetId).classList.add('active');
-                });
-            });
 
             // Wait for XML loader to populate doctors
             const interval = setInterval(() => {
@@ -437,7 +353,7 @@
                                     e.stopPropagation();
                                     Auth.toggleFavorite(doc.id);
                                     cardWrapper.remove();
-                                    if (document.querySelectorAll('#favorites-tab .result-card').length === 0) {
+                                    if (document.querySelectorAll('#favorites-grid .result-card').length === 0) {
                                         window.location.reload();
                                     }
                                 };
@@ -447,29 +363,6 @@
                     });
                 }
 
-                // 2. Render Recent Doctors
-                const recents = Auth.getRecentDoctors();
-                const recentGrid = document.getElementById('recent-grid');
-
-                if (recents.length === 0) {
-                    recentGrid.innerHTML = `
-                <div class="empty-state">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    <h3>No recent activity</h3>
-                    <p style="margin-top:10px;">Doctors you view will appear here for quick access later.</p>
-                </div>`;
-                    recentGrid.style.display = 'block';
-                } else {
-                    recentGrid.className = 'results-grid'; // Use global css grid
-                    recents.forEach(docObj => {
-                        const doc = getDoctorById(docObj.id); // Get full details
-                        if (doc) {
-                            const cardWrapper = document.createElement('div');
-                            cardWrapper.innerHTML = renderDoctorCard(doc);
-                            recentGrid.appendChild(cardWrapper.firstElementChild);
-                        }
-                    });
-                }
             }
         });
     </script>
