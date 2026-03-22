@@ -1,8 +1,6 @@
-/* =========================================================
-   ABOUT PAGE — about.css
-   ========================================================= */
+/* ========= ABOUT PAGE CSS ========== */
 
-/* ===== MISSION SECTION ===== */
+/* ===== OUR MISSION SECTION ===== */
 .about-mission {
     padding: 5rem 0;
     background-color: var(--color-bg);
@@ -41,7 +39,7 @@
     margin-top: 0.75rem;
 }
 
-/* Mission Visual: stat card grid */
+/* Our Mission Visual: stat card grid */
 .about-mission-card-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -118,7 +116,7 @@
     line-height: 1.4;
 }
 
-/* ===== FEATURES SECTION ===== */
+/* ===== Why Us SECTION ===== */
 .about-features {
     padding: 5rem 0;
     background-color: var(--color-bg-soft);
@@ -191,7 +189,7 @@
     margin: 0;
 }
 
-/* ===== VALUES SECTION ===== */
+/* ===== Our VALUES SECTION ===== */
 .about-values {
     padding: 5rem 0;
     background-color: var(--color-bg);
