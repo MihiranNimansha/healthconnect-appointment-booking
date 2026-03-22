@@ -24,13 +24,6 @@
     margin-bottom: var(--spacing-lg);
 }
 
-.sidebar-photo {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: var(--radius-lg);
-    margin-bottom: var(--spacing-md);
-}
-
 .sidebar-name {
     font-family: var(--font-family-base);
     font-size: 1.2rem;

@@ -525,7 +525,6 @@ function clearFilter() {
 /**
  * Initialises all filter event listeners on search.html.
  * Updates specialty options to all 8 Sri Lankan specialties.
- * Adds a city filter dynamically if not already present in the DOM.
  * Supports deep-linking via ?specialty= URL parameter.
  */
 function initFilters() {
@@ -543,28 +542,6 @@ function initFilters() {
       '<option value="Neurology">Neurology</option>' +
       '<option value="Oncology">Oncology</option>' +
       '<option value="Ophthalmology">Ophthalmology</option>';
-  }
-
-  // Add city filter dynamically if not already present in the HTML
-  if (!document.getElementById('city-filter')) {
-    const citySelect = document.createElement('select');
-    citySelect.id = 'city-filter';
-    citySelect.className = 'form-control';
-    citySelect.setAttribute('aria-label', 'Filter by city');
-    citySelect.innerHTML =
-      '<option value="all">All Cities</option>' +
-      '<option value="Colombo">Colombo</option>' +
-      '<option value="Kandy">Kandy</option>' +
-      '<option value="Jaffna">Jaffna</option>' +
-      '<option value="Negombo">Negombo</option>' +
-      '<option value="Galle">Galle</option>' +
-      '<option value="Kurunegala">Kurunegala</option>';
-    if (filterSelect) {
-      const specialtyField = filterSelect.closest('.search-field') || filterSelect.parentElement;
-      if (specialtyField && specialtyField.parentElement) {
-        specialtyField.parentElement.insertBefore(citySelect, specialtyField.nextSibling);
-      }
-    }
   }
 
   // Helper: apply filters and sort
@@ -622,14 +599,6 @@ function initFilters() {
       clearFilter();
     });
   }
-
-  // Wire up any static tag-dismiss buttons already in the HTML
-  const staticDismissButtons = document.querySelectorAll('.tag-dismiss');
-  staticDismissButtons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      clearFilter();
-    });
-  });
 
   // Check URL for query params to support deep-linking from the homepage
   const params = new URLSearchParams(window.location.search);

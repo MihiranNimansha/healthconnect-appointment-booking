@@ -350,10 +350,6 @@
 }
 
 @media (max-width: 600px) {
-    .contact-hero {
-        padding: 4rem 0 3rem;
-    }
-
     .contact-info-grid {
         grid-template-columns: 1fr 1fr;
     }

@@ -84,25 +84,6 @@ for (let i = 1; i <= 54; i++) {
 /** Tracks which doctor is currently displayed (default: doctor ID 001). */
 let currentDoctorId = '001';
 
-/* =============================================
-   FALLBACK SCHEDULE DATA
-   ============================================= */
-
-/**
- * Default weekly schedule used when XML doctor data is unavailable.
- * Keys are full day names; values are arrays of display time strings.
- * Sunday is empty to demonstrate the "no availability" state.
- */
-const scheduleData = {
-  "Monday":    ["9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM"],
-  "Tuesday":   ["9:00 AM","9:30 AM","10:00 AM","11:00 AM","2:00 PM","3:00 PM","4:00 PM"],
-  "Wednesday": ["10:00 AM","10:30 AM","11:00 AM","11:30 AM","1:00 PM","2:00 PM","3:00 PM","3:30 PM","4:00 PM"],
-  "Thursday":  ["9:00 AM","9:30 AM","10:00 AM","1:00 PM","1:30 PM","2:00 PM","2:30 PM"],
-  "Friday":    ["9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM"],
-  "Saturday":  ["10:00 AM","10:30 AM","11:00 AM","11:30 AM"],
-  "Sunday":    []
-};
-
 /** Tracks the currently highlighted calendar date number (default: March 15). */
 let currentSelectedDate = new Date().getDate();
 
@@ -140,17 +121,15 @@ function isMorningSlot(timeString) {
 
 /**
  * Loads and renders the available time slots for a given day name.
- * Looks up the day in scheduleData, splits by AM/PM, then calls
+ * Looks up the day in the current doctor's schedule, splits by AM/PM, then calls
  * renderTimeSlots(). Also updates the section heading.
  * Shows a "no availability" message when the day has no slots.
  *
  * @param {string} dayName - Full day name e.g. "Friday"
  */
 function loadTimeSlots(dayName) {
-  // Use the per-doctor schedule if currentDoctorId is set and valid;
-  // otherwise fall back to the generic scheduleData.
   const doctorSchedule = doctorSchedules[currentDoctorId];
-  const slots = (doctorSchedule ? doctorSchedule[dayName] : null) || scheduleData[dayName] || [];
+  const slots = doctorSchedule ? (doctorSchedule[dayName] || []) : [];
 
   // Update the "Available Times" heading with day name and full date
   const heading = document.querySelector('.available-times-heading');
