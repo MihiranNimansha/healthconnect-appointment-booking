@@ -1,95 +1,6 @@
 /* =========================================================
    ABOUT PAGE — about.css
-   HealthConnect Design System aligned
    ========================================================= */
-
-/* ===== HERO ===== */
-.about-hero {
-    position: relative;
-    background: radial-gradient(ellipse at 30% 50%, #1e3a8a 0%, #0f2352 35%, #0a1628 70%, #060e1e 100%);
-    padding: 5.5rem 0 4.5rem;
-    text-align: center;
-    overflow: hidden;
-    color: white;
-}
-
-.about-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-}
-
-.about-hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-.about-hero-content .section-pill {
-    display: inline-block;
-    margin-bottom: 1.5rem;
-}
-
-.about-hero-content h1 {
-    font-family: var(--font-family-heading);
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 1.25rem;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-}
-
-.about-hero-content>p {
-    font-size: 1.08rem;
-    color: rgba(200, 220, 255, 0.85);
-    max-width: 620px;
-    margin: 0 auto 3rem;
-    line-height: 1.75;
-}
-
-/* Hero Stats Row */
-.about-hero-stats {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-}
-
-.about-hero-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.35rem;
-}
-
-.about-stat-num {
-    font-size: 2.25rem;
-    font-weight: 800;
-    color: #ffffff;
-    font-family: var(--font-family-heading);
-    letter-spacing: -0.03em;
-}
-
-.about-stat-lbl {
-    font-size: 0.78rem;
-    color: rgba(180, 200, 255, 0.7);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-}
-
-.about-stat-sep {
-    width: 1px;
-    height: 48px;
-    background: rgba(255, 255, 255, 0.15);
-}
 
 /* ===== MISSION SECTION ===== */
 .about-mission {
@@ -360,90 +271,6 @@
     margin: 0;
 }
 
-/* ===== TEAM SECTION ===== */
-.about-team {
-    padding: 5rem 0;
-    background-color: var(--color-bg-soft);
-}
-
-.about-team-highlight {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-top: 3rem;
-}
-
-.about-team-badge {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 1.25rem 1.75rem;
-    box-shadow: var(--shadow-sm);
-    min-width: 260px;
-    flex: 1;
-    max-width: 320px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.about-team-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.about-team-badge-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-accent);
-    background: rgba(30, 58, 138, 0.10);
-    flex-shrink: 0;
-}
-
-.about-team-badge-icon svg {
-    width: 28px;
-    height: 28px;
-}
-
-.about-team-highlight .about-team-badge:nth-child(1) .about-team-badge-icon {
-    color: #2563eb;
-    background: rgba(37, 99, 235, 0.12);
-}
-
-.about-team-highlight .about-team-badge:nth-child(2) .about-team-badge-icon {
-    color: #7c3aed;
-    background: rgba(124, 58, 237, 0.12);
-}
-
-.about-team-highlight .about-team-badge:nth-child(3) .about-team-badge-icon {
-    color: #0f766e;
-    background: rgba(15, 118, 110, 0.12);
-}
-
-.about-team-badge div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-}
-
-.about-team-badge strong {
-    font-family: var(--font-family-heading);
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--color-primary);
-}
-
-.about-team-badge span {
-    font-size: 0.82rem;
-    color: var(--color-text-secondary);
-    line-height: 1.4;
-}
 
 /* ===== SHARED CTA STRIP ===== */
 .home-cta-section {
@@ -568,21 +395,9 @@
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
-
-    .about-hero-stats {
-        gap: 1.75rem;
-    }
-
-    .about-stat-sep {
-        display: none;
-    }
 }
 
 @media (max-width: 600px) {
-    .about-hero {
-        padding: 4rem 0 3rem;
-    }
-
     .about-features-grid,
     .about-values-grid {
         grid-template-columns: 1fr;
@@ -590,9 +405,5 @@
 
     .about-mission-card-grid {
         grid-template-columns: 1fr 1fr;
-    }
-
-    .about-team-badge {
-        max-width: 100%;
     }
 }

@@ -140,12 +140,6 @@
     box-shadow: var(--shadow-sm);
 }
 
-.result-card-info h3 {
-    font-size: 1.2rem;
-    color: var(--color-primary);
-    margin-bottom: 2px;
-}
-
 .doctor-specialty {
     font-size: 0.98rem;
     color: var(--color-accent);
@@ -176,31 +170,6 @@
 .rating-count {
     color: var(--color-text-secondary);
     font-size: 0.92rem;
-}
-
-/* Meta Details */
-.result-card-details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-md) 0;
-    border-top: 1px solid var(--color-bg-soft);
-    border-bottom: 1px solid var(--color-bg-soft);
-}
-
-.detail-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--color-text-secondary);
-    font-size: 0.96rem;
-}
-
-.detail-dot {
-    color: var(--color-accent);
-    font-size: 1.2rem;
-    line-height: 1;
 }
 
 /* Consultation Fee */

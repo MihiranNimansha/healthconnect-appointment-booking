@@ -5,7 +5,6 @@
 
 const AUTH_KEY = 'hc_user';
 const FAV_KEY = 'hc_favorites';
-const RECENT_KEY = 'hc_recent_doctors';
 
 const Auth = {
     // 1. Core Auth Methods

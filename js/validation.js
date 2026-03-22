@@ -554,6 +554,107 @@ function validateForm() {
    SUCCESS MESSAGE DISPLAY
    ============================================= */
 
+const CONFIRMATION_STORAGE_KEY = 'healthconnectConfirmation';
+const CONFIRMATION_FALLBACK_KEY = 'healthconnectLastConfirmation';
+
+function formatDOBForDisplay(value) {
+  if (!value) return '';
+
+  const parsed = new Date(value);
+  if (isNaN(parsed.getTime())) {
+    return value;
+  }
+
+  return parsed.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+}
+
+function selectedOptionText(selectEl) {
+  if (!selectEl || selectEl.selectedIndex < 0) return '';
+
+  const option = selectEl.options[selectEl.selectedIndex];
+  if (!option || option.value === '' || option.value === 'default') {
+    return '';
+  }
+
+  return option.textContent.trim();
+}
+
+function buildConfirmationPayload() {
+  const summaryValues = document.querySelectorAll('.summary-row-content span:last-child');
+
+  const doctorNameEl = document.querySelector('.summary-doctor-name');
+  const doctorSpecEl = document.querySelector('.summary-doctor-spec');
+  const doctorRatingEl = document.querySelector('.summary-doctor .rating-number');
+  const doctorAvatarEl = document.querySelector('.summary-doctor-img, .doctor-avatar-img');
+
+  const dateSelect = document.getElementById('appt-date');
+  const selectedDate = selectedOptionText(dateSelect) || (summaryValues[0] ? summaryValues[0].textContent.trim() : '');
+
+  const selectedTimeRadio = document.querySelector('input[name="time-slot"]:checked');
+  const selectedTime = selectedTimeRadio
+    ? selectedTimeRadio.value.trim()
+    : (summaryValues[1] ? summaryValues[1].textContent.trim() : '');
+
+  const reasonEl = document.getElementById('reason');
+  const reasonText = selectedOptionText(reasonEl);
+
+  const locationText = summaryValues[2] ? summaryValues[2].textContent.trim() : '';
+  const locationParts = locationText
+    ? locationText.split(',').map(part => part.trim()).filter(Boolean)
+    : [];
+
+  let locationName = locationParts[0] || 'HealthConnect Partner Clinic';
+  let locationLine2 = '';
+  let locationLine3 = '';
+
+  if (locationParts.length === 2) {
+    locationLine3 = locationParts[1];
+  } else if (locationParts.length > 2) {
+    locationLine2 = locationParts.slice(1, -1).join(', ');
+    locationLine3 = locationParts[locationParts.length - 1];
+  }
+
+  const randomSuffix = String(Math.floor(Math.random() * 90000) + 10000);
+
+  return {
+    confirmationNumber: 'APT-2026-' + randomSuffix,
+    doctorName: doctorNameEl ? doctorNameEl.textContent.trim() : 'Selected Doctor',
+    doctorSpecialty: doctorSpecEl ? doctorSpecEl.textContent.trim() : '',
+    doctorRating: doctorRatingEl ? doctorRatingEl.textContent.trim() : '',
+    doctorPhoto: doctorAvatarEl ? doctorAvatarEl.getAttribute('src') || '' : '',
+    appointmentDate: selectedDate,
+    appointmentTime: selectedTime,
+    locationName: locationName,
+    locationLine2: locationLine2,
+    locationLine3: locationLine3,
+    appointmentType: summaryValues[3] ? summaryValues[3].textContent.trim() : 'In Person Visit',
+    patientName: (document.getElementById('full-name') || {}).value ? document.getElementById('full-name').value.trim() : 'Patient',
+    patientEmail: (document.getElementById('email') || {}).value ? document.getElementById('email').value.trim() : '',
+    patientPhone: (document.getElementById('phone') || {}).value ? document.getElementById('phone').value.trim() : '',
+    patientDOB: formatDOBForDisplay((document.getElementById('dob') || {}).value || ''),
+    reasonForVisit: reasonText || 'Not specified',
+    createdAt: new Date().toISOString()
+  };
+}
+
+function persistConfirmationPayload(payload) {
+  try {
+    sessionStorage.setItem(CONFIRMATION_STORAGE_KEY, JSON.stringify(payload));
+  } catch (e) {
+    // Ignore session storage failures silently.
+  }
+
+  try {
+    localStorage.setItem(CONFIRMATION_FALLBACK_KEY, JSON.stringify(payload));
+  } catch (e) {
+    // Ignore local storage failures silently.
+  }
+}
+
 /**
  * Called when the form passes all validation checks.
  * Hides the form, builds a success confirmation panel in its place,
@@ -566,11 +667,12 @@ function validateForm() {
  * - A "View Confirmation" button linking to confirmation.html
  */
 function showSuccessMessage() {
-  // Capture the patient's name and email before the form is hidden
-  const nameEl = document.getElementById('full-name');
-  const emailEl = document.getElementById('email');
-  const patientName = nameEl ? nameEl.value.trim() : 'Patient';
-  const patientEmail = emailEl ? emailEl.value.trim() : '';
+  const confirmationPayload = buildConfirmationPayload();
+  persistConfirmationPayload(confirmationPayload);
+
+  const patientName = confirmationPayload.patientName;
+  const patientEmail = confirmationPayload.patientEmail;
+  const doctorName = confirmationPayload.doctorName || 'your doctor';
 
   // Get the form element and its parent so we can insert the panel nearby
   const bookingForm = document.getElementById('booking-form');
@@ -593,9 +695,6 @@ function showSuccessMessage() {
   successDiv.style.borderRadius = '0.75rem';
   successDiv.style.marginTop = '1rem';
 
-  const doctorNameEl = document.querySelector('.summary-doctor-name');
-  const doctorName = doctorNameEl ? doctorNameEl.textContent : 'your doctor';
-
   // Assemble the inner content — icon, heading, message, CTA button
   successDiv.innerHTML =
     '<div style="width:72px;height:72px;background:#16a34a;border-radius:50%;' +
@@ -608,7 +707,7 @@ function showSuccessMessage() {
     '<strong>' + patientEmail + '</strong> shortly.' +
     '</p>' +
     '<p style="color:#4a5568;max-width:480px;margin:0.5rem auto 2rem;">' +
-    'Please save your confirmation number: <strong>APT-2024-15783</strong>' +
+    'Please save your confirmation number: <strong>' + confirmationPayload.confirmationNumber + '</strong>' +
     '</p>' +
     '<a href="confirmation.html" ' +
     'style="display:inline-block;background:#1a2e44;color:white;padding:0.875rem 2rem;' +
