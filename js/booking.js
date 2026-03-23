@@ -1,5 +1,4 @@
-/**
- * booking.js
+/*booking.js
  * Dynamically populates booking.html based on the ?doctor=id URL parameter.
  */
 

@@ -63,22 +63,21 @@
 
 .auth-options {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: var(--spacing-lg);
     font-size: 0.9rem;
 }
 
-.auth-options a {
-    color: var(--color-accent);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color var(--transition-fast);
-}
-
-.auth-options a:hover {
-    color: var(--color-primary);
-    text-decoration: underline;
+.auth-options label {
+    font-weight: 400;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: var(--color-text-light);
+    white-space: nowrap;
 }
 
 .auth-submit-btn {
@@ -87,24 +86,6 @@
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: var(--spacing-lg);
-}
-
-.auth-footer {
-    text-align: center;
-    font-size: 0.95rem;
-    color: var(--color-text-light);
-}
-
-.auth-footer a {
-    color: var(--color-accent);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color var(--transition-fast);
-}
-
-.auth-footer a:hover {
-    color: var(--color-primary);
-    text-decoration: underline;
 }
 
 /* Auth Modal (for Guest users trying to favorite) */

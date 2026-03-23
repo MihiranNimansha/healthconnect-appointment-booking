@@ -1,22 +1,21 @@
 /* =========================================
    HealthConnect — Global Stylesheet
-   CM1605 Web Technology Coursework
    ========================================= */
 
 /* ===== GOOGLE FONTS IMPORT ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
-/* ===== CSS CUSTOM PROPERTIES (VARIABLES) ===== */
+/* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
-    /* Color Palette — Premium Slate & Blue */
+    /* Color Palette — Slate & Blue */
     --color-primary: #0f172a;
-    /* Slate 900 - rich dark navy */
+    /* Slate 900 - dark navy */
     --color-accent: #1e3a8a;
     /* Deep Navy Primary Hub */
     --color-bg: #ffffff;
     --color-bg-soft: #f8fafc;
     --color-bg-alt: #f8fafc;
-    /* Slate 50 - extremely soft background */
+    /* Slate 50 - soft background */
     --color-text-primary: #0f172a;
     --color-text-secondary: #475569;
     --color-text-light: #64748b;
@@ -26,14 +25,14 @@
     /* Emerald 600 */
     --color-error: #dc2626;
     --color-border: #e2e8f0;
-    /* Slate 200 - subtle premium borders */
+    /* Slate 200 - premium borders */
 
-    /* Typography — Highly professional sans-serif pairing */
+    /* Typography — professional sans-serif */
     --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-family-base: 'Inter', -apple-system, sans-serif;
     --font-family-heading: 'Outfit', sans-serif;
     --font-family-serif: 'Playfair Display', serif;
-    /* Elegant heading font */
+    /* Heading font */
     --font-size-base: 1.0625rem;
     --line-height-base: 1.7;
     --line-height-heading: 1.3;
@@ -46,16 +45,15 @@
     --spacing-xl: 2rem;
     --spacing-2xl: 3rem;
     --spacing-3xl: 4.5rem;
-    /* Reduced from 6rem to remove unwanted gaps */
 
-    /* Border Radius — Softer, modern edges */
+    /* Border Radius */
     --radius-sm: 6px;
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 24px;
     --radius-full: 9999px;
 
-    /* Shadows — Glassmorphism/Neumorphism hints, very soft and diffuse */
+    /* Shadows — Glassmorphism/Neumorphism hints */
     --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
     --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
@@ -111,7 +109,6 @@ body {
     background-color: var(--color-bg);
     line-height: var(--line-height-base);
     font-size: var(--font-size-base);
-    /* ~17px base — optimised for 18-70 age range readability */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -208,7 +205,6 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    /* Soft shadow for light nav */
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -234,7 +230,6 @@ header nav>.container {
 
 .logo-icon-box {
     background: #1e3a8a;
-    /* Deep Vibrant Blue for logo box */
     width: 38px;
     height: 38px;
     border-radius: 10px;
@@ -248,7 +243,6 @@ header nav>.container {
     font-size: 1.45rem;
     font-weight: 700;
     color: #0f172a;
-    /* Dark navy text */
     letter-spacing: -0.5px;
     font-family: var(--font-family-heading);
 }
@@ -257,20 +251,17 @@ header nav>.container {
     list-style: none;
     display: flex;
     gap: 0.25rem;
-    /* Tighter gap to prevent wrapping */
     margin: 0;
     padding: 0;
 }
 
 .nav-links a {
     color: #475569;
-    /* Slate grey text */
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
     padding: 0.5rem 0.9rem;
     border-radius: 8px;
-    /* Standard radius */
     transition: all var(--transition-base);
 }
 
@@ -315,7 +306,6 @@ header nav>.container {
     background: transparent;
     border: none;
     color: #0f172a;
-    /* Dark navy text */
     font-weight: 600;
     font-size: 1rem;
     padding: 0.5rem 1rem;
@@ -331,19 +321,13 @@ header nav>.container {
     color: white;
 }
 
-/* --- Logo --- */
 
-/* --- Nav Links --- */
-
-/* --- Nav Actions --- */
-
-/* ===== BUTTON STYLES ===== */
+/* ===== BUTTON STYLES ===== for Logo / Nav Links / Nav Actions */
 .btn-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background-color: var(--color-accent);
-    /* Vibrant Electric Blue */
     color: white !important;
     font-family: var(--font-family-base);
     font-size: 1rem;
@@ -360,7 +344,6 @@ header nav>.container {
 
 .btn-primary:hover {
     background-color: #172554;
-    /* Deepest Dark shade for hover */
     color: white !important;
     text-decoration: none;
     box-shadow: 0 6px 15px rgba(15, 23, 42, 0.35);
@@ -513,7 +496,6 @@ input::placeholder,
 textarea::placeholder {
     color: var(--color-text-secondary);
     opacity: 0.55;
-    /* Lighter placeholder so users clearly distinguish typed vs hint text */
 }
 
 select {
@@ -649,24 +631,24 @@ legend {
     align-items: center;
     gap: 0.4rem;
     font-size: 0.95rem;
-    color: var(--color-text-secondary);
+    color: #334155;
     margin-bottom: var(--spacing-lg);
     flex-wrap: wrap;
     padding: var(--spacing-md) 0;
 }
 
 .breadcrumb a {
-    color: var(--color-text-secondary);
+    color: #334155;
     text-decoration: none;
     transition: color var(--transition-fast);
 }
 
 .breadcrumb a:hover {
-    color: var(--color-accent);
+    color: #1e3a8a;
 }
 
 .breadcrumb-sep {
-    color: var(--color-border);
+    color: #64748b;
     font-size: 0.85rem;
 }
 
@@ -1070,7 +1052,7 @@ a.footer-contact-value:hover {
     color: var(--color-bg);
 }
 
-/* ===== FOOTER COPYRIGHT (Column 1, aligned with Address in Column 2) ===== */
+/* ===== FOOTER COPYRIGHT ===== */
 .footer-copyright {
     font-size: 0.78rem;
     color: #cbd5e1;
@@ -1184,11 +1166,16 @@ a.footer-contact-value:hover {
     font-size: 0.95rem;
     cursor: pointer;
     border: 1px solid transparent;
-    transition: background-color var(--transition-fast);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        color var(--transition-fast),
+        box-shadow var(--transition-fast);
     min-height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .calendar-day:hover:not(.unavailable):not(.empty) {
@@ -1199,18 +1186,48 @@ a.footer-contact-value:hover {
 .calendar-day.available.selected {
     background-color: var(--color-primary) !important;
     color: var(--color-bg) !important;
-    border-radius: var(--radius-sm);
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 2px rgba(43, 77, 167, 0.18);
     font-weight: 700;
 }
 
 .calendar-day.available {
-    font-weight: 600;
-    color: var(--color-text-primary);
+    font-weight: 700;
+    color: #064e3b;
+    background-color: #bbf7d0;
+    border-color: #15803d;
 }
 
 .calendar-day.unavailable {
-    color: var(--color-border);
+    color: #334155;
+    background-color: #e2e8f0;
+    border-color: #64748b;
+    border-style: dashed;
+    font-weight: 600;
     cursor: not-allowed;
+}
+
+.calendar-day.available::after,
+.calendar-day.unavailable::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    top: 6px;
+    right: 6px;
+}
+
+.calendar-day.available::after {
+    background-color: #15803d;
+}
+
+.calendar-day.unavailable::after {
+    background-color: #64748b;
+}
+
+.calendar-day.selected::after {
+    background-color: var(--color-bg);
 }
 
 .calendar-day.empty {
@@ -1223,13 +1240,18 @@ a.footer-contact-value:hover {
     padding: var(--spacing-sm) var(--spacing-md);
     border-top: 1px solid var(--color-border);
     font-size: 0.9rem;
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
+    flex-wrap: wrap;
 }
 
 .legend-item {
     display: flex;
     align-items: center;
     gap: 0.35rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-soft);
 }
 
 .legend-dot {
@@ -1243,13 +1265,13 @@ a.footer-contact-value:hover {
 }
 
 .legend-dot.available {
-    background-color: var(--color-bg);
-    border: 1px solid var(--color-text-secondary);
+    background-color: #15803d;
+    border: 1px solid #166534;
 }
 
 .legend-dot.unavailable {
-    background-color: var(--color-bg-soft);
-    border: 1px solid var(--color-border);
+    background-color: #94a3b8;
+    border: 1px solid #475569;
 }
 
 /* ===== TIME SLOT STYLES ===== */
@@ -1477,27 +1499,13 @@ a.footer-contact-value:hover {
     margin: 0;
 }
 
-/* =========================================
-   PHASE 2 — COMPLETE CSS SPEC ADDITIONS
-   All classes specified in the Phase 2 brief
-   that supplement the existing Phase 1 styles
-   ========================================= */
 
 /* ===== TYPOGRAPHY FINE-TUNING ===== */
 p {
     line-height: 1.7;
 }
 
-/* Nav / header link hovers should not underline inside nav blocks */
-nav a:hover,
-header a:hover,
-footer a:hover {
-    text-decoration: none;
-}
-
 /* ===== BUTTON SYSTEM — SPEC CLASSES ===== */
-
-/* Base .btn class used by all button variants */
 .btn {
     display: inline-block;
     padding: 0.6rem 1.4rem;
@@ -1519,7 +1527,6 @@ footer a:hover {
 
 /* ===== FORM CONTROL SPEC CLASS ===== */
 
-/* Generic .form-control class (complements native element selectors) */
 .form-control {
     width: 100%;
     padding: 0.65rem 0.875rem;
@@ -1571,7 +1578,6 @@ label .required-star {
 
 /* ===== NAVIGATION SPEC ALIASES ===== */
 
-/* Spec: header.site-header (HTML uses plain <header>) */
 header.site-header {
     background-color: var(--color-primary);
     position: sticky;
@@ -1581,9 +1587,6 @@ header.site-header {
 }
 
 /* ===== HERO SECTION SPEC ALIAS (UPGRADED — dark navy theme) ===== */
-
-/* Apply class="hero" to the hero <section> in index.html to activate dark theme.
-   .hero rules cascade after .hero-section, overriding the light gradient. */
 .hero {
     background: linear-gradient(135deg, #0f2744 0%, #1a2e44 40%, #1e3a5f 70%, #2563eb 100%);
     padding: 5rem 0 4rem;
@@ -1630,7 +1633,6 @@ header.site-header {
 
 /* ===== SECTION HEADING SPEC ALIAS ===== */
 
-/* Spec: .section-header (HTML uses .section-heading + .section-sub) */
 .section-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -1648,7 +1650,7 @@ header.site-header {
 
 /* ===== GRID SPEC ALIASES ===== */
 
-/* Spec: .doctors-grid (HTML uses .featured-grid) */
+/* Spec: .doctors-grid */
 .doctors-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -1662,8 +1664,8 @@ header.site-header {
 
 /* Calendar day unavailable hover reset */
 .calendar-day.unavailable:hover {
-    background: none;
-    border-color: transparent;
+    background-color: #e2e8f0;
+    border-color: #64748b;
 }
 
 /* Spec: .time-period (groups label + grid) */
@@ -1671,14 +1673,14 @@ header.site-header {
     margin-bottom: 1.25rem;
 }
 
-/* Spec: .time-slots-grid (HTML uses .timeslot-grid) */
+/* Spec: .time-slots-grid */
 .time-slots-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
 }
 
-/* Spec: .time-slot (HTML uses .timeslot-btn) */
+/* Spec: .time-slot */
 .time-slot {
     padding: 0.5rem;
     text-align: center;
@@ -1713,21 +1715,21 @@ header.site-header {
 
 /* ===== STAR RATING SPEC ALIASES ===== */
 
-/* Spec: .rating (HTML uses .star-rating) */
+/* Spec: .rating */
 .rating {
     display: flex;
     align-items: center;
     gap: 0.4rem;
 }
 
-/* Spec: .stars (HTML uses the star characters directly) */
+/* Spec: .stars */
 .stars {
     color: #b45309;
     font-size: 0.9rem;
     letter-spacing: 0.05rem;
 }
 
-/* Spec: .rating-score (HTML uses .rating-number) */
+/* Spec: .rating-score */
 .rating-score {
     font-weight: 700;
     color: var(--color-text-primary);
@@ -1784,7 +1786,7 @@ header.site-header {
     line-height: 1.5;
 }
 
-/* Spec: .sidebar — generic sticky sidebar (HTML uses .profile-sidebar / .booking-summary) */
+/* Spec: .sidebar — generic sticky sidebar */
 .sidebar {
     position: sticky;
     top: 90px;
@@ -1800,9 +1802,7 @@ header.site-header {
     background-color: var(--color-bg-soft);
 }
 
-/* ===== VALIDATION STATE CLASSES (Phase 3 JS adds these) ===== */
-
-/* Applied by validation.js showError() to any invalid input/select/textarea */
+/* ===== VALIDATION STATE CLASSES ===== */
 input.error,
 select.error,
 textarea.error {
@@ -1810,7 +1810,6 @@ textarea.error {
     box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.10);
 }
 
-/* Applied by validation.js clearError() to a successfully validated field */
 input.success,
 select.success,
 textarea.success {
@@ -1818,9 +1817,8 @@ textarea.success {
     box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.08);
 }
 
-/* ===== END OF PHASE 2 ADDITIONS ===== */
 
-/* ===== ACCESSIBILITY UTILITIES (Phase 5) ===== */
+/* ===== ACCESSIBILITY UTILITIES ===== */
 
 /* Skip navigation link — slides in on keyboard focus */
 .skip-link {
@@ -1854,13 +1852,8 @@ textarea.success {
     border: 0;
 }
 
-/* =============================================================
-   PHASE 6 ENHANCEMENTS
-   ============================================================= */
+/* ----- Usability improvements ----- */
 
-/* ----- FIX 3: Usability improvements ----- */
-
-/* Ensure base font size is comfortable for the 18–70 age range */
 body {
     font-size: 1rem;
 }
@@ -1901,11 +1894,6 @@ td {
     line-height: 1.75;
 }
 
-/* Underline links inside body content for clarity */
-main a:not(.btn):not(.btn-primary):not(.skip-link) {
-    text-decoration: underline;
-}
-
 /* High-visibility focus ring (3 px accent outline) */
 :focus-visible {
     outline: 3px solid var(--color-primary, #1a56db);
@@ -1927,7 +1915,7 @@ main a:not(.btn):not(.btn-primary):not(.skip-link) {
     font-weight: 700;
 }
 
-/* ----- FIX 4: Phone booking banner ----- */
+/* -----Phone booking banner ----- */
 .phone-banner {
     background-color: #e8f0fe;
     padding: 0.6rem 0;
@@ -1947,7 +1935,7 @@ main a:not(.btn):not(.btn-primary):not(.skip-link) {
     color: var(--color-primary-dark, #1442a8);
 }
 
-/* ----- FIX 5: Accepting-patients badge ----- */
+/* ----- Accepting-patients badge ----- */
 .badge {
     display: inline-block;
     padding: 0.2em 0.65em;
@@ -1969,18 +1957,12 @@ main a:not(.btn):not(.btn-primary):not(.skip-link) {
     color: #991b1b;
 }
 
-/* =============================================================
-   PART A — VISUAL POLISH ADDITIONS
-   ============================================================= */
 
-/* =========================================================
-   A4.5: UNIFIED SUBPAGE HERO (Contact, About, Specialties, Dashboard)
-   ========================================================= */
+/* ======== UNIFIED SUBPAGE HERO (Contact, About, Specialties, Dashboard) ======== */
 .subpage-hero {
     position: relative;
     background: radial-gradient(ellipse at 30% 50%, #1e3a8a 0%, #0f2352 35%, #0a1628 70%, #060e1e 100%);
     padding: 3.5rem 0 3.5rem;
-    /* Reduced height from 5.5rem */
     text-align: center;
     overflow: hidden;
     color: white;
@@ -2035,7 +2017,7 @@ main a:not(.btn):not(.btn-primary):not(.skip-link) {
     line-height: 1.75;
 }
 
-/* ----- A5: Testimonials ----- */
+/* ----- Testimonials ----- */
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2109,7 +2091,7 @@ main a:not(.btn):not(.btn-primary):not(.skip-link) {
     color: var(--color-text-secondary);
 }
 
-/* ----- A7: Section visual divider ----- */
+/* ----- Section visual divider ----- */
 .section-divider {
     width: 60px;
     height: 4px;
@@ -2118,9 +2100,7 @@ main a:not(.btn):not(.btn-primary):not(.skip-link) {
     margin: 0.75rem auto 1.5rem;
 }
 
-/* =============================================
-   PART B+C: Doctor Avatar Images
-   ============================================= */
+/* ===== Doctor Avatar Images ===== */
 
 /* Dynamic avatar images in search results (filter.js) */
 .doctor-avatar-img {
@@ -2130,13 +2110,12 @@ main a:not(.btn):not(.btn-primary):not(.skip-link) {
     object-fit: cover;
     border: 3px solid white;
     box-shadow: 0 6px 16px rgba(15, 23, 42, 0.15);
-    /* Premium soft shadow */
     flex-shrink: 0;
     overflow: hidden;
     background-color: var(--color-bg-soft);
 }
 
-/* Avatar in booking.html sidebar summary (48×48) */
+/* Avatar in booking.html sidebar summary */
 .booking-summary .doctor-avatar-img {
     width: 48px;
     height: 48px;
@@ -2153,9 +2132,7 @@ main a:not(.btn):not(.btn-primary):not(.skip-link) {
     display: block;
 }
 
-/* =============================================
-   BADGES
-   ============================================= */
+/* ======= BADGES ======== */
 
 .badge {
     display: inline-block;
@@ -2178,9 +2155,7 @@ main a:not(.btn):not(.btn-primary):not(.skip-link) {
     border: 1px solid #fca5a5;
 }
 
-/* =============================================
-   VALIDATED FIELD SUCCESS BORDER
-   ============================================= */
+/* ======== VALIDATED FIELD SUCCESS BORDER ========*/
 
 input.success,
 select.success,
@@ -2188,9 +2163,7 @@ textarea.success {
     border-color: #059669;
 }
 
-/* =============================================
-   SECTION DIVIDER
-   ============================================= */
+/* ======= SECTION DIVIDER ======= */
 
 .section-divider {
     width: 48px;
@@ -2200,9 +2173,7 @@ textarea.success {
     margin: 0.75rem auto 1rem;
 }
 
-/* =============================================
-   OUTLINE BUTTON
-   ============================================= */
+/* ======== OUTLINE BUTTON ======= */
 
 .btn-outline {
     display: inline-block;
@@ -2224,9 +2195,7 @@ textarea.success {
     color: var(--color-bg);
 }
 
-/* =============================================
-   NO RESULTS MESSAGE
-   ============================================= */
+/* ========= NO RESULTS MESSAGE ========*/
 
 .no-results-message {
     text-align: center;
@@ -2247,9 +2216,7 @@ textarea.success {
     margin-bottom: var(--spacing-lg);
 }
 
-/* =============================================
-   RESPONSIVE BREAKPOINTS
-   ============================================= */
+/* ======= RESPONSIVE BREAKPOINTS ======*/
 
 @media (max-width: 1024px) {
     .featured-grid {
@@ -2360,9 +2327,6 @@ textarea.success {
     }
 }
 
-/* ========================================================
-   PHASE 4: VISUAL OVERHAUL (USER REFERENCE REPLICATION)
-   ======================================================== */
 
 /* --- Navbar Updates --- */
 .nav-icon-btn {
@@ -2386,7 +2350,7 @@ textarea.success {
     font-size: 0.95rem;
 }
 
-/* Media Queries for Phase 4 */
+/* Media Queries */
 @media (max-width: 992px) {
     .hero-content h1 {
         font-size: 2.75rem;
@@ -2430,10 +2394,6 @@ textarea.success {
         width: 100%;
     }
 
-    .nav-actions {
-        display: none;
-        /* Already hidden on mobile, but just in case */
-    }
 }
 
 @media (max-width: 480px) {
@@ -2447,9 +2407,7 @@ textarea.success {
     }
 }
 
-/* ========================================================
-   FINAL POLISH: READABILITY + UX (NO LAYOUT RESTRUCTURE)
-   ======================================================== */
+/* ========= FINAL POLISH: READABILITY + UX =========*/
 
 /* Slightly larger readable base for mixed age groups (18-70). */
 :root {

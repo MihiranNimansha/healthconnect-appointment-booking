@@ -83,7 +83,8 @@
           <!-- Confirmation Number -->
           <div class="fade-up confirmation-number-box">
             <p class="confirmation-number-label">Confirmation Number</p>
-            <p class="confirmation-number"><span class="sr-only">Confirmation number: </span>APT-2024-15783</p>
+            <p class="confirmation-number"><span class="sr-only">Confirmation number: </span><span
+                id="confirmation-number-text">APT-2026-15783</span></p>
           </div>
 
           <!-- Two-column Detail Grid -->
@@ -97,11 +98,11 @@
                 <div class="photo-placeholder confirm-photo" role="img"
                   aria-label="Photo placeholder for selected doctor"></div>
                 <div>
-                  <p class="confirm-doc-name">Selected Doctor</p>
-                  <p class="confirm-doc-spec">Cardiologist</p>
+                  <p class="confirm-doc-name" id="confirm-doctor-name">Selected Doctor</p>
+                  <p class="confirm-doc-spec" id="confirm-doctor-specialty">Cardiologist</p>
                   <div class="star-rating" role="img" aria-label="Rating: 5.0 out of 5 stars">
                     <span aria-hidden="true">&#9679;&#9679;&#9679;&#9679;&#9679;</span>
-                    <span class="rating-number">5.0</span>
+                    <span class="rating-number" id="confirm-doctor-rating">5.0</span>
                   </div>
                 </div>
               </div>
@@ -111,24 +112,24 @@
                   <span class="confirm-dot" aria-hidden="true"></span>
                   <div>
                     <span class="sr-only">Date and Time:</span>
-                    <span>Friday, March 15, 2024</span><br>
-                    <span>10:30 AM &ndash; 11:00 AM</span>
+                    <span id="confirm-date">Friday, March 15, 2024</span><br>
+                    <span id="confirm-time">10:30 AM &ndash; 11:00 AM</span>
                   </div>
                 </div>
                 <div class="confirm-detail-row">
                   <span class="confirm-dot" aria-hidden="true"></span>
                   <div>
                     <span class="sr-only">Location:</span>
-                    <span>UCSF Medical Center</span><br>
-                    <span>505 Parnassus Ave</span><br>
-                    <span>San Francisco, CA 94143</span>
+                    <span id="confirm-location-name">UCSF Medical Center</span><br>
+                    <span id="confirm-location-line2">505 Parnassus Ave</span><br>
+                    <span id="confirm-location-line3">San Francisco, CA 94143</span>
                   </div>
                 </div>
                 <div class="confirm-detail-row">
                   <span class="confirm-dot" aria-hidden="true"></span>
                   <div>
                     <span class="sr-only">Appointment Type:</span>
-                    <span>In Person Visit</span>
+                    <span id="confirm-appointment-type">In Person Visit</span>
                   </div>
                 </div>
               </div>
@@ -141,23 +142,23 @@
               <div class="patient-info-list">
                 <div class="patient-info-item">
                   <p class="patient-info-label">Full Name</p>
-                  <p class="patient-info-value">John Michael Smith</p>
+                  <p class="patient-info-value" id="confirm-patient-name">John Michael Smith</p>
                 </div>
                 <div class="patient-info-item">
                   <p class="patient-info-label">Email</p>
-                  <p class="patient-info-value">john.smith@email.com</p>
+                  <p class="patient-info-value" id="confirm-patient-email">john.smith@email.com</p>
                 </div>
                 <div class="patient-info-item">
                   <p class="patient-info-label">Phone Number</p>
-                  <p class="patient-info-value">(555) 123-4567</p>
+                  <p class="patient-info-value" id="confirm-patient-phone">(555) 123-4567</p>
                 </div>
                 <div class="patient-info-item">
                   <p class="patient-info-label">Date of Birth</p>
-                  <p class="patient-info-value">January 15, 1985</p>
+                  <p class="patient-info-value" id="confirm-patient-dob">January 15, 1985</p>
                 </div>
                 <div class="patient-info-item">
                   <p class="patient-info-label">Reason for Visit</p>
-                  <p class="patient-info-value">Routine Check-up</p>
+                  <p class="patient-info-value" id="confirm-patient-reason">Routine Check-up</p>
                 </div>
               </div>
             </div>
@@ -167,11 +168,10 @@
 
           <!-- Action Buttons -->
           <div class="fade-up confirmation-actions">
-            <a href="#" class="btn-primary">
+            <button type="button" id="add-to-calendar-btn" class="btn-primary">
               <span class="calendar-icon" aria-hidden="true">&#128197;</span>
               Add to Calendar
-            </a>
-            <a href="profile.html" class="btn-outline">View Appointment</a>
+            </button>
           </div>
 
         </div>
@@ -332,6 +332,7 @@
   </button>
 
   <!-- Professional Enhancements JS -->
+  <script src="js/confirmation.js"></script>
   <script src="js/auth.js"></script>
   <script src="js/main.js"></script>
 </body>

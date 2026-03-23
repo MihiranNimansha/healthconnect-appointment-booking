@@ -1,85 +1,45 @@
-/**
- * timeslots.js
- * HealthConnect — CM1605 Web Technology Coursework
- *
- * Handles dynamic time slot display on profile.html.
- * Updates available appointment slots when a date is selected
- * on the calendar. Splits slots into Morning and Afternoon sections.
- *
+/* timeslots.js
+ * Renders doctor slots from XML on profile.html.
  */
 
-/* =============================================
-   PER-DOCTOR SCHEDULE DATA
-   ============================================= */
+/* ====== PER-DOCTOR SCHEDULE DATA ====== */
 
-/**
- * Individual doctor schedules keyed by doctor id.
- * Each sub-object maps day names to arrays of display time strings.
- * Used by loadTimeSlots() when currentDoctorId is set.
- */
-const schedulePatterns = {
-  A: {
-    Monday:    ["9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","2:00 PM","2:30 PM","3:00 PM"],
-    Tuesday:   ["9:00 AM","10:00 AM","11:00 AM","2:00 PM","3:00 PM"],
-    Wednesday: ["9:00 AM","9:30 AM","10:00 AM","10:30 AM","2:00 PM","3:00 PM","4:00 PM"],
-    Thursday:  ["9:00 AM","10:00 AM","11:00 AM","2:00 PM","3:00 PM"],
-    Friday:    ["9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","2:00 PM","3:00 PM"],
-    Saturday:  ["9:00 AM","10:00 AM","11:00 AM"],
-    Sunday:    []
-  },
-  B: {
-    Monday:    ["2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM"],
-    Tuesday:   ["9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM"],
-    Wednesday: ["2:00 PM","3:00 PM","4:00 PM"],
-    Thursday:  ["9:00 AM","10:00 AM","11:00 AM","11:30 AM"],
-    Friday:    ["2:00 PM","2:30 PM","3:00 PM","3:30 PM"],
-    Saturday:  ["9:00 AM","10:00 AM","11:00 AM"],
-    Sunday:    []
-  },
-  C: {
-    Monday:    ["9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM"],
-    Tuesday:   ["9:00 AM","9:30 AM","10:00 AM","11:00 AM"],
-    Wednesday: ["9:00 AM","10:00 AM","11:00 AM","11:30 AM"],
-    Thursday:  ["9:00 AM","9:30 AM","10:00 AM","10:30 AM"],
-    Friday:    ["9:00 AM","10:00 AM","11:00 AM"],
-    Saturday:  [],
-    Sunday:    []
-  },
-  D: {
-    Monday:    ["1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM"],
-    Tuesday:   ["1:00 PM","2:00 PM","3:00 PM","4:00 PM","4:30 PM"],
-    Wednesday: ["1:00 PM","1:30 PM","2:00 PM","3:00 PM"],
-    Thursday:  ["1:00 PM","2:00 PM","3:00 PM","3:30 PM","4:00 PM"],
-    Friday:    ["1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM"],
-    Saturday:  [],
-    Sunday:    []
-  },
-  E: {
-    Monday:    ["9:00 AM","10:00 AM","11:00 AM","2:00 PM","3:00 PM"],
-    Tuesday:   [],
-    Wednesday: ["9:00 AM","10:00 AM","11:00 AM","2:00 PM","3:00 PM"],
-    Thursday:  [],
-    Friday:    ["9:00 AM","10:00 AM","11:00 AM","1:00 PM","2:00 PM","3:00 PM"],
-    Saturday:  ["9:00 AM","10:00 AM"],
-    Sunday:    []
-  },
-  F: {
-    Monday:    ["9:00 AM","10:00 AM","11:00 AM","1:00 PM","2:00 PM","3:00 PM"],
-    Tuesday:   ["9:00 AM","10:00 AM","2:00 PM","3:00 PM","4:00 PM"],
-    Wednesday: ["9:00 AM","10:00 AM","11:00 AM","2:00 PM","3:00 PM"],
-    Thursday:  ["9:00 AM","10:00 AM","1:00 PM","2:00 PM","3:00 PM"],
-    Friday:    ["9:00 AM","10:00 AM","11:00 AM","2:00 PM","3:00 PM","4:00 PM"],
-    Saturday:  ["10:00 AM","11:00 AM"],
-    Sunday:    []
+/* Loaded from doctors.xml via xml-loader.js
+ * Shape: { [doctorId]: { [dayName]: ["9:00 AM", ...] } } */
+let doctorSchedules = {};
+
+function hydrateSchedulesFromDoctors(parsedDoctors) {
+  const nextSchedules = {};
+
+  if (!Array.isArray(parsedDoctors)) {
+    doctorSchedules = {};
+    return;
   }
-};
 
-const doctorSchedules = {};
-const patternMap = { 0: 'F', 1: 'A', 2: 'B', 3: 'C', 4: 'D', 5: 'E' };
-for (let i = 1; i <= 54; i++) {
-  const id = String(i).padStart(3, '0');
-  const lastDigit = i % 6;
-  doctorSchedules[id] = schedulePatterns[patternMap[lastDigit]];
+  parsedDoctors.forEach(function (doctor) {
+    if (!doctor || !doctor.id || !doctor.schedule) {
+      return;
+    }
+
+    const daySchedule = {};
+    Object.keys(doctor.schedule).forEach(function (dayName) {
+      const slots = Array.isArray(doctor.schedule[dayName]) ? doctor.schedule[dayName] : [];
+      daySchedule[dayName] = slots
+        .filter(function (slot) {
+          return slot && slot.available !== false;
+        })
+        .map(function (slot) {
+          return typeof slot === 'string' ? slot : (slot.time || '');
+        })
+        .filter(function (time) {
+          return time !== '';
+        });
+    });
+
+    nextSchedules[doctor.id] = daySchedule;
+  });
+
+  doctorSchedules = nextSchedules;
 }
 /** Tracks which doctor is currently displayed (default: doctor ID 001). */
 let currentDoctorId = '001';
@@ -87,9 +47,7 @@ let currentDoctorId = '001';
 /** Tracks the currently highlighted calendar date number (default: March 15). */
 let currentSelectedDate = new Date().getDate();
 
-/* =============================================
-   HELPER FUNCTIONS
-   ============================================= */
+/* ====== HELPER FUNCTIONS ====== */
 
 /**
  * Converts a date string or Date object to the full weekday name.
@@ -115,9 +73,62 @@ function isMorningSlot(timeString) {
   return timeString.includes('AM');
 }
 
-/* =============================================
-   TIME SLOT FUNCTIONS
-   ============================================= */
+function getSlotsForDay(dayName) {
+  const doctorSchedule = doctorSchedules[currentDoctorId] || {};
+  return doctorSchedule[dayName] || [];
+}
+
+function hasSlotsForDay(doctorId, dayName) {
+  const doctorSchedule = doctorSchedules[doctorId] || {};
+  const slots = doctorSchedule[dayName] || [];
+  return Array.isArray(slots) && slots.length > 0;
+}
+
+function updateAvailableTimesHeading(dayName) {
+  const heading = document.querySelector('.available-times-heading');
+  if (!heading) return null;
+
+  const now = new Date();
+  const dateObj = new Date(now.getFullYear(), now.getMonth(), currentSelectedDate);
+  const dateStr = dateObj.toLocaleDateString('en-LK', { month: 'long', day: 'numeric' });
+  heading.textContent = 'Available Times \u2014 ' + dayName + ', ' + dateStr;
+  return heading;
+}
+
+function showNoSlotsMessage(dayName, heading) {
+  let noSlotsMsg = document.getElementById('no-slots-message');
+  if (!noSlotsMsg) {
+    noSlotsMsg = document.createElement('p');
+    noSlotsMsg.id = 'no-slots-message';
+    noSlotsMsg.className = 'no-slots-message';
+    if (heading && heading.parentNode) {
+      heading.parentNode.insertBefore(noSlotsMsg, heading.nextSibling);
+    }
+  }
+  noSlotsMsg.textContent = 'No appointments available on ' + dayName + '.';
+}
+
+function hideNoSlotsMessage() {
+  const prevMsg = document.getElementById('no-slots-message');
+  if (prevMsg) prevMsg.remove();
+}
+
+function getSelectedDayName() {
+  const selectedDay = document.querySelector('.calendar-day.selected');
+  if (selectedDay) {
+    const dateNum = parseInt(selectedDay.textContent.trim(), 10);
+    if (!isNaN(dateNum)) {
+      currentSelectedDate = dateNum;
+      const now = new Date();
+      return getDayName(new Date(now.getFullYear(), now.getMonth(), dateNum));
+    }
+  }
+
+  const now = new Date();
+  return getDayName(new Date(now.getFullYear(), now.getMonth(), currentSelectedDate));
+}
+
+/* ====== TIME SLOT FUNCTIONS ====== */
 
 /**
  * Loads and renders the available time slots for a given day name.
@@ -128,18 +139,8 @@ function isMorningSlot(timeString) {
  * @param {string} dayName - Full day name e.g. "Friday"
  */
 function loadTimeSlots(dayName) {
-  const doctorSchedule = doctorSchedules[currentDoctorId];
-  const slots = doctorSchedule ? (doctorSchedule[dayName] || []) : [];
-
-  // Update the "Available Times" heading with day name and full date
-  const heading = document.querySelector('.available-times-heading');
-  if (heading) {
-    const now = new Date();
-    const dateObj = new Date(now.getFullYear(), now.getMonth(), currentSelectedDate);
-    const dateStr = dateObj.toLocaleDateString('en-LK', { month: 'long', day: 'numeric' });
-    // Use the em-dash character consistent with the static HTML
-    heading.textContent = 'Available Times \u2014 ' + dayName + ', ' + dateStr;
-  }
+  const slots = getSlotsForDay(dayName);
+  const heading = updateAvailableTimesHeading(dayName);
 
   const morningSection = document.getElementById('morning-slots');
   const afternoonSection = document.getElementById('afternoon-slots');
@@ -149,23 +150,12 @@ function loadTimeSlots(dayName) {
     if (morningSection) morningSection.style.display = 'none';
     if (afternoonSection) afternoonSection.style.display = 'none';
 
-    // Show (or update) a no-availability notice below the heading
-    let noSlotsMsg = document.getElementById('no-slots-message');
-    if (!noSlotsMsg) {
-      noSlotsMsg = document.createElement('p');
-      noSlotsMsg.id = 'no-slots-message';
-      noSlotsMsg.className = 'no-slots-message';
-      if (heading && heading.parentNode) {
-        heading.parentNode.insertBefore(noSlotsMsg, heading.nextSibling);
-      }
-    }
-    noSlotsMsg.textContent = 'No appointments available on ' + dayName + '.';
+    showNoSlotsMessage(dayName, heading);
     return;
   }
 
   // Remove the no-slots notice if it was shown for a previously selected day
-  const prevMsg = document.getElementById('no-slots-message');
-  if (prevMsg) prevMsg.remove();
+  hideNoSlotsMessage();
 
   // Restore sections that may have been hidden for a day with no slots
   if (morningSection) morningSection.style.display = '';
@@ -239,11 +229,8 @@ function renderTimeSlots(morningSlots, afternoonSlots) {
 }
 
 /**
- * Handles selection of a time slot button.
- * Deselects every other visible slot, marks the clicked one as active,
- * and updates the sidebar summary text when that element exists.
- *
- * @param {HTMLElement} slotElement - The .timeslot-btn that was clicked
+ * Selects a time slot and updates summary/button state.
+ * @param {HTMLElement} slotElement - Clicked .timeslot-btn
  */
 function selectTimeSlot(slotElement) {
   // Remove "selected" state from every currently visible slot button
@@ -274,13 +261,7 @@ function selectTimeSlot(slotElement) {
   }
 }
 
-/**
- * Initialises the calendar on profile.html.
- * 1. Attaches click (and keyboard) handlers to all .calendar-day.available cells
- * 2. On click: deselects all days, selects clicked day, loads its time slots
- * 3. Constructs a March 2024 date from the cell's text to derive the day name
- * 4. Auto-selects March 15 (Friday) so slots are visible on first page load
- */
+/* Initialize clickable calendar dates on profile.html. */
 /**
  * Generates a dynamic calendar for the current month.
  * Replaces the static March 2024 calendar in profile.html.
@@ -324,6 +305,7 @@ function generateCalendar() {
     const cell = document.createElement('div');
     const date = new Date(year, month, day);
     const dayName = date.toLocaleDateString('en-LK', { weekday: 'long' });
+    const hasAppointments = hasSlotsForDay(currentDoctorId, dayName);
 
     cell.textContent = day;
 
@@ -331,18 +313,29 @@ function generateCalendar() {
       // Past days - unavailable
       cell.className = 'calendar-day unavailable';
       cell.setAttribute('aria-label', dayName + ' ' + day + ', unavailable');
+      cell.setAttribute('aria-disabled', 'true');
     } else if (dayName === 'Sunday') {
       // Sundays - unavailable
       cell.className = 'calendar-day unavailable';
       cell.setAttribute('aria-label', 'Sunday ' + day + ', no appointments');
+      cell.setAttribute('aria-disabled', 'true');
+    } else if (!hasAppointments) {
+      // Weekday with no schedule entries for this doctor
+      cell.className = 'calendar-day unavailable';
+      cell.setAttribute('aria-label', dayName + ' ' + day + ', no appointments');
+      cell.setAttribute('aria-disabled', 'true');
     } else if (day === today) {
       // Today - selected by default
       cell.className = 'calendar-day available selected';
       cell.setAttribute('aria-label', dayName + ' ' + day + ', today, selected');
+      cell.setAttribute('tabindex', '0');
+      cell.setAttribute('role', 'gridcell');
     } else {
       // Future weekdays - available
       cell.className = 'calendar-day available';
       cell.setAttribute('aria-label', dayName + ' ' + day + ', available');
+      cell.setAttribute('tabindex', '0');
+      cell.setAttribute('role', 'gridcell');
     }
 
     grid.appendChild(cell);
@@ -361,20 +354,35 @@ function setCurrentDoctor(doctorId) {
   if (doctorSchedules[doctorId]) {
     currentDoctorId = doctorId;
   } else {
-    currentDoctorId = '001';
+    const availableDoctorIds = Object.keys(doctorSchedules);
+    currentDoctorId = availableDoctorIds.length > 0 ? availableDoctorIds[0] : '001';
   }
 
-  // Reload the time slots for the currently highlighted calendar date
-  const selectedDay = document.querySelector('.calendar-day.selected');
-  let dayName = 'Friday'; // safe default
-  if (selectedDay) {
-    const dateNum = parseInt(selectedDay.textContent.trim(), 10);
-    if (!isNaN(dateNum)) {
-      const nowS = new Date();
-      dayName = getDayName(new Date(nowS.getFullYear(), nowS.getMonth(), dateNum));
-    }
-  }
-  loadTimeSlots(dayName);
+  // Rebuild date availability state for this doctor.
+  initCalendar();
+
+  // Reload the time slots for the currently selected calendar day
+  loadTimeSlots(getSelectedDayName());
+}
+
+function clearCalendarSelection() {
+  const allDays = document.querySelectorAll('.calendar-day');
+  allDays.forEach(function (d) {
+    d.classList.remove('selected');
+    d.removeAttribute('aria-selected');
+  });
+}
+
+function selectCalendarDay(dayEl) {
+  clearCalendarSelection();
+  dayEl.classList.add('selected');
+  dayEl.setAttribute('aria-selected', 'true');
+
+  const dateNum = parseInt(dayEl.textContent.trim(), 10);
+  currentSelectedDate = dateNum;
+  const now = new Date();
+  const fullDate = new Date(now.getFullYear(), now.getMonth(), dateNum);
+  loadTimeSlots(getDayName(fullDate));
 }
 
 function initCalendar() {
@@ -385,25 +393,7 @@ function initCalendar() {
   availableDays.forEach(function (dayEl) {
     // Click handler: select the date and update the time slots section
     dayEl.addEventListener('click', function () {
-      // Clear selection state from every calendar cell
-      const allDays = document.querySelectorAll('.calendar-day');
-      allDays.forEach(function (d) {
-        d.classList.remove('selected');
-        d.removeAttribute('aria-selected');
-      });
-
-      // Mark this cell as the selected date
-      dayEl.classList.add('selected');
-      dayEl.setAttribute('aria-selected', 'true');
-
-      // Derive the day name from the numeric date shown in the cell
-      const dateNum = parseInt(dayEl.textContent.trim(), 10);
-      currentSelectedDate = dateNum;
-      const nowC = new Date();
-      const fullDate = new Date(nowC.getFullYear(), nowC.getMonth(), dateNum);
-      const dayName = getDayName(fullDate);
-
-      loadTimeSlots(dayName);
+      selectCalendarDay(dayEl);
     });
 
     // Keyboard accessibility: activate on Enter or Space
@@ -416,24 +406,25 @@ function initCalendar() {
   });
 }
 
-/* =============================================
-   INITIALISATION
-   ============================================= */
+/* ======= INITIALIZATION ======= */
 
 document.addEventListener('DOMContentLoaded', function () {
   // Guard: only run on profile.html which contains the calendar wrapper
   const calendar = document.querySelector('.calendar-wrapper');
   if (!calendar) return;
 
-  initCalendar();
+  if (typeof loadDoctorsFromXML !== 'function') {
+    console.error('HealthConnect timeslots: xml-loader.js is required to load schedules from XML.');
+    return;
+  }
 
-  // Read doctor id from URL query string (?doctor=002 etc.)
-  const urlParams = new URLSearchParams(window.location.search);
-  const doctorId = urlParams.get('doctor') || '001';
-  // setCurrentDoctor also triggers loadTimeSlots internally
-  setCurrentDoctor(doctorId);
+  loadDoctorsFromXML('xml/doctors.xml', function (parsedDoctors) {
+    hydrateSchedulesFromDoctors(parsedDoctors);
 
-  // Load time slots for today on initial page load
-  const todayName = new Date().toLocaleDateString('en-LK', { weekday: 'long' });
-  loadTimeSlots(todayName);
+    // Read doctor id from URL query string (?doctor=002 etc.)
+    const urlParams = new URLSearchParams(window.location.search);
+    const doctorId = urlParams.get('doctor') || '001';
+    // setCurrentDoctor also triggers loadTimeSlots internally
+    setCurrentDoctor(doctorId);
+  });
 });

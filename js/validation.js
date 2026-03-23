@@ -1,23 +1,12 @@
 /**
  * validation.js
- * HealthConnect — CM1605 Web Technology Coursework
- *
  * Handles all client-side form validation for the appointment
- * booking form (booking.html). Uses pure JavaScript with no
- * HTML5 validation attributes. All mandatory fields are validated
  * on form submit and in real-time on field blur.
  *
  * Validated fields: Full Name, Email, Phone, Date of Birth,
  * Gender (radio), Reason for Visit, Terms & Conditions
  *
  */
-
-/* =============================================
-   VALIDATION FUNCTIONS
-   Each function accepts the field value (or reads
-   from the DOM for radio/checkbox) and returns
-   { valid: boolean, message: string }
-   ============================================= */
 
 /**
  * Validates the patient's full name input.
@@ -550,9 +539,7 @@ function validateForm() {
   return isValid;
 }
 
-/* =============================================
-   SUCCESS MESSAGE DISPLAY
-   ============================================= */
+/* ======= SUCCESS MESSAGE DISPLAY ======= */
 
 const CONFIRMATION_STORAGE_KEY = 'healthconnectConfirmation';
 const CONFIRMATION_FALLBACK_KEY = 'healthconnectLastConfirmation';
@@ -722,9 +709,7 @@ function showSuccessMessage() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* =============================================
-   FORM SUBMIT HANDLER
-   ============================================= */
+/* ======= FORM SUBMIT HANDLER ======== */
 
 /**
  * Event handler attached to the booking form's submit event.

@@ -1,5 +1,4 @@
-/**
- * confirmation.js
+/*confirmation.js
  * Syncs confirmation page fields from the latest booking payload.
  */
 
@@ -63,6 +62,13 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    const addToCalendarBtn = document.getElementById('add-to-calendar-btn');
+    if (addToCalendarBtn) {
+      addToCalendarBtn.addEventListener('click', function () {
+        alert('Appointment Added to calender');
+      });
+    }
+
     const payload = readStoredPayload();
 
     if (!payload) {

@@ -1,8 +1,4 @@
-/* =========================================================
-   SPECIALTIES PAGE — specialties.css
-   ========================================================= */
-
-
+/* ========= SPECIALTIES PAGE CSS========= */
 
 /* ===== CARDS SECTION ===== */
 .sp-cards-section {
@@ -37,7 +33,7 @@
     opacity: 0.85;
 }
 
-/* Card Header (coloured accent strip) */
+/* Card Header */
 .sp-card-header {
     display: flex;
     align-items: center;

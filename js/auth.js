@@ -1,7 +1,5 @@
-/**
- * HealthConnect - Authentication & User State Management
- * Handles LocalStorage-based auth, favorites, and recent doctors.
- */
+/* HealthConnect - Authentication
+ * Handles LocalStorage-based auth, favorites, and recent doctors. */
 
 const AUTH_KEY = 'hc_user';
 const FAV_KEY = 'hc_favorites';

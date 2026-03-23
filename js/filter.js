@@ -1,89 +1,18 @@
-/**
- * filter.js
- * HealthConnect  CM1605 Web Technology Coursework
- *
+/*filter.js
  * Handles dynamic filtering of doctor cards on search.html.
  * Filters doctors by specialty and city from the doctorsData array.
- * Works with more than two filter options as required.
- *
  */
 
-/* =============================================
-   PAGINATION STATE
-   ============================================= */
+/* ======= PAGINATION STATE ======= */
 let currentPage = 1;
 const ITEMS_PER_PAGE = 9;
 
-/* =============================================
-   FALLBACK DOCTOR DATA
-   ============================================= */
+/* ======= DATA SOURCE ======= */
+/*Doctors loaded from xml/doctors.xml via xml-loader.js.*/
 
-/**
- * Inline fallback dataset for 54 Sri Lankan doctors across 8 specialties.
- * Used when xml-loader.js has not yet populated a shared doctors array.
- * Covers Cardiology, General Practice, Pediatrics, Dermatology,
- * Orthopedics, Neurology, Oncology, and Ophthalmology.
- */
-const doctorsData = [
-  { id: "001", name: "Dr. Priya Perera", specialty: "Cardiology", experience: "18+ years", hospital: "Nawaloka Hospital", city: "Colombo", distance: "1.2 km", rating: "4.9", reviewCount: "187", acceptingPatients: true, consultationFee: 4500 },
-  { id: "002", name: "Dr. Chaminda Fernando", specialty: "Cardiology", experience: "22+ years", hospital: "Asiri Central Hospital", city: "Colombo", distance: "2.1 km", rating: "5.0", reviewCount: "243", acceptingPatients: true, consultationFee: 5500 },
-  { id: "003", name: "Dr. Krishnan Subramaniam", specialty: "Cardiology", experience: "15+ years", hospital: "Jaffna Teaching Hospital", city: "Jaffna", distance: "3.4 km", rating: "4.8", reviewCount: "156", acceptingPatients: true, consultationFee: 4000 },
-  { id: "004", name: "Dr. Dilini Jayawardena", specialty: "Cardiology", experience: "12+ years", hospital: "Durdans Hospital", city: "Colombo", distance: "1.8 km", rating: "4.9", reviewCount: "134", acceptingPatients: false, consultationFee: 3500 },
-  { id: "005", name: "Dr. Roshan Dissanayake", specialty: "Cardiology", experience: "20+ years", hospital: "Teaching Hospital Kandy", city: "Kandy", distance: "4.5 km", rating: "5.0", reviewCount: "312", acceptingPatients: true, consultationFee: 5000 },
-  { id: "006", name: "Dr. Farook Marikar", specialty: "Cardiology", experience: "14+ years", hospital: "Lanka Hospitals", city: "Colombo", distance: "2.7 km", rating: "4.7", reviewCount: "98", acceptingPatients: true, consultationFee: 3500 },
-  { id: "007", name: "Dr. Sachini Weerasinghe", specialty: "Cardiology", experience: "10+ years", hospital: "Hemas Hospital Wattala", city: "Negombo", distance: "5.1 km", rating: "4.8", reviewCount: "112", acceptingPatients: true, consultationFee: 3000 },
-  { id: "008", name: "Dr. Rajiv Selvarajah", specialty: "Cardiology", experience: "17+ years", hospital: "Asiri Surgical Hospital", city: "Colombo", distance: "3.2 km", rating: "4.9", reviewCount: "201", acceptingPatients: false, consultationFee: 4500 },
-  { id: "009", name: "Dr. Amali Silva", specialty: "General Practice", experience: "8+ years", hospital: "Nawaloka Hospital", city: "Colombo", distance: "1.5 km", rating: "4.8", reviewCount: "203", acceptingPatients: true, consultationFee: 2000 },
-  { id: "010", name: "Dr. Nuwan Bandara", specialty: "General Practice", experience: "14+ years", hospital: "Base Hospital Kurunegala", city: "Kurunegala", distance: "2.3 km", rating: "4.7", reviewCount: "167", acceptingPatients: true, consultationFee: 2500 },
-  { id: "011", name: "Dr. Thilini Karunaratne", specialty: "General Practice", experience: "6+ years", hospital: "Ninewells Hospital", city: "Colombo", distance: "1.9 km", rating: "4.9", reviewCount: "89", acceptingPatients: true, consultationFee: 1800 },
-  { id: "012", name: "Dr. Suresh Arulpragasam", specialty: "General Practice", experience: "11+ years", hospital: "Jaffna Teaching Hospital", city: "Jaffna", distance: "3.7 km", rating: "4.8", reviewCount: "134", acceptingPatients: true, consultationFee: 2200 },
-  { id: "013", name: "Dr. Manel Ranasinghe", specialty: "General Practice", experience: "9+ years", hospital: "Karapitiya Teaching Hospital Galle", city: "Galle", distance: "4.1 km", rating: "4.6", reviewCount: "78", acceptingPatients: true, consultationFee: 2000 },
-  { id: "014", name: "Dr. Kavitha Navaratnam", specialty: "General Practice", experience: "13+ years", hospital: "Hemas Hospital Wattala", city: "Negombo", distance: "2.8 km", rating: "4.9", reviewCount: "156", acceptingPatients: false, consultationFee: 2500 },
-  { id: "015", name: "Dr. Ismail Caffoor", specialty: "General Practice", experience: "7+ years", hospital: "Lanka Hospitals", city: "Colombo", distance: "2.2 km", rating: "4.7", reviewCount: "91", acceptingPatients: true, consultationFee: 1800 },
-  { id: "016", name: "Dr. Chamari Senanayake", specialty: "General Practice", experience: "16+ years", hospital: "National Hospital of Sri Lanka", city: "Colombo", distance: "1.1 km", rating: "5.0", reviewCount: "278", acceptingPatients: true, consultationFee: 3000 },
-  { id: "017", name: "Dr. Prasad Gunawardena", specialty: "General Practice", experience: "5+ years", hospital: "Negombo District General Hospital", city: "Negombo", distance: "3.5 km", rating: "4.6", reviewCount: "67", acceptingPatients: true, consultationFee: 1500 },
-  { id: "018", name: "Dr. Vindya Kumara", specialty: "General Practice", experience: "12+ years", hospital: "Teaching Hospital Kandy", city: "Kandy", distance: "5.3 km", rating: "4.8", reviewCount: "143", acceptingPatients: true, consultationFee: 2200 },
-  { id: "019", name: "Dr. Emily Wickramasinghe", specialty: "Pediatrics", experience: "10+ years", hospital: "Asiri Central Hospital", city: "Colombo", distance: "2.4 km", rating: "5.0", reviewCount: "198", acceptingPatients: true, consultationFee: 2500 },
-  { id: "020", name: "Dr. Murugesan Sivanesan", specialty: "Pediatrics", experience: "16+ years", hospital: "Jaffna Teaching Hospital", city: "Jaffna", distance: "4.2 km", rating: "4.9", reviewCount: "221", acceptingPatients: true, consultationFee: 3500 },
-  { id: "021", name: "Dr. Nadeesha Rajapaksa", specialty: "Pediatrics", experience: "8+ years", hospital: "Durdans Hospital", city: "Colombo", distance: "1.7 km", rating: "4.8", reviewCount: "112", acceptingPatients: true, consultationFee: 2200 },
-  { id: "022", name: "Dr. Tharaka Senanayake", specialty: "Pediatrics", experience: "13+ years", hospital: "Teaching Hospital Kandy", city: "Kandy", distance: "3.9 km", rating: "4.9", reviewCount: "167", acceptingPatients: false, consultationFee: 3000 },
-  { id: "023", name: "Dr. Anusha Balasingham", specialty: "Pediatrics", experience: "11+ years", hospital: "Karapitiya Teaching Hospital Galle", city: "Galle", distance: "5.6 km", rating: "4.7", reviewCount: "89", acceptingPatients: true, consultationFee: 2800 },
-  { id: "024", name: "Dr. Lahiru Jayawardena", specialty: "Pediatrics", experience: "6+ years", hospital: "Hemas Hospital Wattala", city: "Negombo", distance: "2.6 km", rating: "4.8", reviewCount: "78", acceptingPatients: true, consultationFee: 2000 },
-  { id: "025", name: "Dr. Prabhath Dissanayake", specialty: "Pediatrics", experience: "19+ years", hospital: "Lanka Hospitals", city: "Colombo", distance: "2.9 km", rating: "5.0", reviewCount: "289", acceptingPatients: true, consultationFee: 4000 },
-  { id: "026", name: "Dr. Sanduni Perera", specialty: "Dermatology", experience: "9+ years", hospital: "Ninewells Hospital", city: "Colombo", distance: "2.1 km", rating: "4.8", reviewCount: "145", acceptingPatients: true, consultationFee: 2800 },
-  { id: "027", name: "Dr. Ratnasingham Jeyarajah", specialty: "Dermatology", experience: "14+ years", hospital: "Jaffna Teaching Hospital", city: "Jaffna", distance: "3.8 km", rating: "4.9", reviewCount: "178", acceptingPatients: true, consultationFee: 3500 },
-  { id: "028", name: "Dr. Kalani Fernando", specialty: "Dermatology", experience: "7+ years", hospital: "Asiri Surgical Hospital", city: "Colombo", distance: "1.6 km", rating: "4.7", reviewCount: "97", acceptingPatients: true, consultationFee: 2500 },
-  { id: "029", name: "Dr. Harsha Gunawardena", specialty: "Dermatology", experience: "21+ years", hospital: "Durdans Hospital", city: "Colombo", distance: "2.3 km", rating: "5.0", reviewCount: "267", acceptingPatients: false, consultationFee: 5000 },
-  { id: "030", name: "Dr. Nimali Wickramasinghe", specialty: "Dermatology", experience: "11+ years", hospital: "Teaching Hospital Kandy", city: "Kandy", distance: "4.7 km", rating: "4.8", reviewCount: "134", acceptingPatients: true, consultationFee: 3000 },
-  { id: "031", name: "Dr. Nazeer Thassim", specialty: "Dermatology", experience: "8+ years", hospital: "Lanka Hospitals", city: "Colombo", distance: "3.1 km", rating: "4.6", reviewCount: "86", acceptingPatients: true, consultationFee: 2500 },
-  { id: "032", name: "Dr. Asanka Rajapaksa", specialty: "Orthopedics", experience: "17+ years", hospital: "Nawaloka Hospital", city: "Colombo", distance: "1.4 km", rating: "4.9", reviewCount: "213", acceptingPatients: true, consultationFee: 4500 },
-  { id: "033", name: "Dr. Niroshan Bandara", specialty: "Orthopedics", experience: "13+ years", hospital: "Teaching Hospital Kandy", city: "Kandy", distance: "4.3 km", rating: "4.8", reviewCount: "167", acceptingPatients: true, consultationFee: 3500 },
-  { id: "034", name: "Dr. Shankar Krishnan", specialty: "Orthopedics", experience: "20+ years", hospital: "Colombo South Teaching Hospital", city: "Colombo", distance: "3.7 km", rating: "5.0", reviewCount: "298", acceptingPatients: false, consultationFee: 5500 },
-  { id: "035", name: "Dr. Tharindi Ranasinghe", specialty: "Orthopedics", experience: "9+ years", hospital: "Asiri Central Hospital", city: "Colombo", distance: "2.5 km", rating: "4.7", reviewCount: "123", acceptingPatients: true, consultationFee: 3000 },
-  { id: "036", name: "Dr. Buddika Karunaratne", specialty: "Orthopedics", experience: "14+ years", hospital: "Karapitiya Teaching Hospital Galle", city: "Galle", distance: "5.9 km", rating: "4.8", reviewCount: "156", acceptingPatients: true, consultationFee: 3500 },
-  { id: "037", name: "Dr. Iresha Seneviratne", specialty: "Orthopedics", experience: "11+ years", hospital: "Hemas Hospital Wattala", city: "Negombo", distance: "3.3 km", rating: "4.9", reviewCount: "145", acceptingPatients: true, consultationFee: 3000 },
-  { id: "038", name: "Dr. Pradeep Jayasinghe", specialty: "Orthopedics", experience: "24+ years", hospital: "Durdans Hospital", city: "Colombo", distance: "2.0 km", rating: "5.0", reviewCount: "312", acceptingPatients: false, consultationFee: 6000 },
-  { id: "039", name: "Dr. Malini Wickramasinghe", specialty: "Neurology", experience: "16+ years", hospital: "Lanka Hospitals", city: "Colombo", distance: "2.8 km", rating: "4.9", reviewCount: "189", acceptingPatients: true, consultationFee: 4500 },
-  { id: "040", name: "Dr. Arulpragasam Sivakumar", specialty: "Neurology", experience: "12+ years", hospital: "Jaffna Teaching Hospital", city: "Jaffna", distance: "4.6 km", rating: "4.8", reviewCount: "134", acceptingPatients: true, consultationFee: 3500 },
-  { id: "041", name: "Dr. Damith Senanayake", specialty: "Neurology", experience: "18+ years", hospital: "Nawaloka Hospital", city: "Colombo", distance: "1.3 km", rating: "5.0", reviewCount: "245", acceptingPatients: true, consultationFee: 5000 },
-  { id: "042", name: "Dr. Saranga Kumara", specialty: "Neurology", experience: "8+ years", hospital: "Asiri Central Hospital", city: "Colombo", distance: "2.6 km", rating: "4.7", reviewCount: "98", acceptingPatients: false, consultationFee: 3000 },
-  { id: "043", name: "Dr. Vithura Ratnasingham", specialty: "Neurology", experience: "14+ years", hospital: "Teaching Hospital Kandy", city: "Kandy", distance: "5.2 km", rating: "4.9", reviewCount: "167", acceptingPatients: true, consultationFee: 4000 },
-  { id: "044", name: "Dr. Chamari Jayawardena", specialty: "Neurology", experience: "10+ years", hospital: "Ninewells Hospital", city: "Colombo", distance: "1.9 km", rating: "4.8", reviewCount: "112", acceptingPatients: true, consultationFee: 3000 },
-  { id: "045", name: "Dr. Sampath Rajapaksa", specialty: "Oncology", experience: "22+ years", hospital: "Nawaloka Hospital", city: "Colombo", distance: "1.6 km", rating: "5.0", reviewCount: "278", acceptingPatients: true, consultationFee: 6500 },
-  { id: "046", name: "Dr. Renuka Perera", specialty: "Oncology", experience: "15+ years", hospital: "Apeksha Hospital", city: "Colombo", distance: "2.4 km", rating: "4.9", reviewCount: "198", acceptingPatients: true, consultationFee: 5000 },
-  { id: "047", name: "Dr. Janaki Balasingham", specialty: "Oncology", experience: "11+ years", hospital: "Jaffna Teaching Hospital", city: "Jaffna", distance: "5.1 km", rating: "4.8", reviewCount: "145", acceptingPatients: false, consultationFee: 4000 },
-  { id: "048", name: "Dr. Vimukthi Dissanayake", specialty: "Oncology", experience: "19+ years", hospital: "Lanka Hospitals", city: "Colombo", distance: "3.2 km", rating: "4.9", reviewCount: "223", acceptingPatients: true, consultationFee: 5500 },
-  { id: "049", name: "Dr. Nadeeka Fernando", specialty: "Oncology", experience: "8+ years", hospital: "Asiri Surgical Hospital", city: "Colombo", distance: "2.1 km", rating: "4.7", reviewCount: "87", acceptingPatients: true, consultationFee: 3500 },
-  { id: "050", name: "Dr. Vindya Karunaratne", specialty: "Ophthalmology", experience: "13+ years", hospital: "Nawaloka Hospital", city: "Colombo", distance: "1.8 km", rating: "4.9", reviewCount: "167", acceptingPatients: true, consultationFee: 3500 },
-  { id: "051", name: "Dr. Thirugnana Murugesan", specialty: "Ophthalmology", experience: "18+ years", hospital: "Jaffna Teaching Hospital", city: "Jaffna", distance: "4.4 km", rating: "5.0", reviewCount: "234", acceptingPatients: true, consultationFee: 4500 },
-  { id: "052", name: "Dr. Kasun Weerasinghe", specialty: "Ophthalmology", experience: "9+ years", hospital: "Durdans Hospital", city: "Colombo", distance: "2.3 km", rating: "4.8", reviewCount: "123", acceptingPatients: true, consultationFee: 2800 },
-  { id: "053", name: "Dr. Sulochana Ranasinghe", specialty: "Ophthalmology", experience: "15+ years", hospital: "Teaching Hospital Kandy", city: "Kandy", distance: "4.8 km", rating: "4.9", reviewCount: "189", acceptingPatients: false, consultationFee: 4000 },
-  { id: "054", name: "Dr. Harith Ismail", specialty: "Ophthalmology", experience: "11+ years", hospital: "Asiri Central Hospital", city: "Colombo", distance: "2.7 km", rating: "4.8", reviewCount: "145", acceptingPatients: true, consultationFee: 3000 }
-];
+let doctorsData = [];
 
-/* =============================================
-   FILTER FUNCTIONS
-   ============================================= */
+/* ======== FILTER FUNCTIONS ========*/
 
 /**
  * Filters the doctorsData array by specialty and city.
@@ -133,7 +62,7 @@ function filterDoctors(specialty, city, availability, priceRange) {
 }
 
 /**
- * Sorts a copy of the doctors array by the specified criteria.
+ Sorts a copy of the doctors array by the specified criteria.
  *
  * @param {Array}  arr     - Array of doctor objects
  * @param {string} sortBy  - Sort key: "best-match" | "rating" | "experience" | "price-asc" | "price-desc"
@@ -201,7 +130,7 @@ function renderDoctorCards(doctorsArray) {
     const header = document.createElement('div');
     header.className = 'result-card-header';
 
-    // Generate avatar image with fallback to ui-avatars.com (professional styled)
+    // Generate avatar image with fallback to ui-avatars.com 
     const avatarUrl = 'images/doctor_' + doctor.id + '.png';
     const fallbackUrl = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(doctor.name) + '&background=random&color=fff&size=128&rounded=true&font-size=0.35&bold=true';
 
@@ -315,7 +244,7 @@ function renderDoctorCards(doctorsArray) {
     const isFav = typeof Auth !== 'undefined' && Auth.isFavorite(doctor.id);
     favBtn.className = 'favorite-btn ' + (isFav ? 'active' : '');
     favBtn.setAttribute('aria-label', 'Toggle favorite for ' + doctor.name);
-    // Using a standard crisp line-art heart, styled purely via CSS to match the feature icons
+    // Using a standard crisp line-art heart
     favBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>';
     favBtn.onclick = function (e) {
       e.stopPropagation();
@@ -523,7 +452,7 @@ function clearFilter() {
 }
 
 /**
- * Initialises all filter event listeners on search.html.
+ * Initializes all filter event listeners on search.html.
  * Updates specialty options to all 8 Sri Lankan specialties.
  * Supports deep-linking via ?specialty= URL parameter.
  */
@@ -640,12 +569,22 @@ function initFilters() {
   updateActiveFilters(initSpecialty);
 }
 
-/* =============================================
-   INITIALISATION
-   ============================================= */
+/* ====== INITIALIZATION ====== */
 
 document.addEventListener('DOMContentLoaded', function () {
   const grid = document.getElementById('doctors-grid');
   if (!grid) return; // Only run on search.html
+
+  if (typeof loadDoctorsFromXML === 'function') {
+    loadDoctorsFromXML('xml/doctors.xml', function (parsed) {
+      doctorsData = Array.isArray(parsed) ? parsed : [];
+      initFilters();
+    });
+    return;
+  }
+
+  // Failsafe: run with empty data if xml-loader is unavailable.
+  console.error('HealthConnect filter: xml-loader.js is not available; rendering empty results.');
+  doctorsData = [];
   initFilters();
 });

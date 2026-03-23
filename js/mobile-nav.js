@@ -1,10 +1,6 @@
-/**
- * mobile-nav.js
- * HealthConnect — CM1605 Web Technology Coursework
- *
+/* mobile-nav.js
  * Toggles the mobile navigation hamburger menu.
  * Shows/hides the .nav-links list on small screens.
- *
  */
 
 document.addEventListener('DOMContentLoaded', function () {
