@@ -1,24 +1,16 @@
 /**
  * xml-loader.js
- * HealthConnect — CM1605 Web Technology Coursework
- *
  * Loads and parses the doctors.xml data file using the browser's
  * built-in XMLHttpRequest API. Parsed doctor objects are stored in
  * the module-level `doctors` array and used by filter.js and timeslots.js.
- * No external libraries are used.
- *
  */
 
-/* =============================================
-   MODULE STATE
-   ============================================= */
+/* ========= MODULE STATE ========== */
 
 /** Stores all parsed doctor objects after the XML file is loaded. */
 let doctors = [];
 
-/* =============================================
-   XML LOADING AND PARSING
-   ============================================= */
+/* ========= XML LOADING AND PARSING ========= */
 
 /**
  * Loads doctor data from the XML file using XMLHttpRequest.
@@ -33,13 +25,25 @@ let doctors = [];
 function loadDoctorsFromXML(xmlFilePath, callback) {
   const xhr = new XMLHttpRequest();
 
-  // Use asynchronous GET; responseType "document" returns a parsed XML DOM
+  // Use asynchronous GET; fallback to DOMParser if responseXML is empty.
   xhr.open('GET', xmlFilePath, true);
   xhr.responseType = 'document';
 
   xhr.onload = function () {
     if (xhr.status >= 200 && xhr.status < 300) {
-      const xmlDoc = xhr.responseXML;
+      let xmlDoc = xhr.responseXML;
+
+      if (!xmlDoc && xhr.responseText) {
+        try {
+          xmlDoc = new DOMParser().parseFromString(xhr.responseText, 'application/xml');
+          if (xmlDoc.querySelector('parsererror')) {
+            xmlDoc = null;
+          }
+        } catch (e) {
+          xmlDoc = null;
+        }
+      }
+
       if (!xmlDoc) {
         console.error('HealthConnect xml-loader: received empty or non-XML response from', xmlFilePath);
         callback([]);
@@ -132,6 +136,8 @@ function parseDoctor(doctorNode) {
   const distance = getElText(doctorNode, 'distance');
   const rating = getElText(doctorNode, 'rating');
   const reviewCount = getElText(doctorNode, 'reviewCount');
+  const acceptingPatients = getElText(doctorNode, 'acceptingPatients').toLowerCase() === 'true';
+  const phone = getElText(doctorNode, 'phone');
   const about = getElText(doctorNode, 'about');
   const education = getElText(doctorNode, 'education');
   const residency = getElText(doctorNode, 'residency');
@@ -170,6 +176,8 @@ function parseDoctor(doctorNode) {
     distance,
     rating,
     reviewCount,
+    acceptingPatients,
+    phone,
     about,
     education,
     residency,

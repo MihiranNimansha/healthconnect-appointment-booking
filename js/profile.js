@@ -1,5 +1,4 @@
-/**
- * profile.js
+/* profile.js
  * Dynamically populates profile.html based on the ?doctor=id URL parameter.
  */
 

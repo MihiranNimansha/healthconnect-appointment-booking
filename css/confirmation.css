@@ -132,8 +132,7 @@
     margin-bottom: var(--spacing-xl);
 }
 
-.confirmation-actions .btn-primary,
-.confirmation-actions .btn-outline {
+.confirmation-actions .btn-primary {
     flex: 1;
     padding: 0.75rem;
     text-align: center;

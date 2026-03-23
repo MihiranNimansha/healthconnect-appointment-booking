@@ -1,16 +1,5 @@
-/**
- * contact-validation.js
- * HealthConnect — CM1605 Web Technology Coursework
- *
- * Handles client-side form validation for the contact form
- * (contact.html). Uses pure JavaScript — no HTML5 validation.
- * Mandatory fields: Name, Email, Subject, Message.
- *
+/*HealthConnect - Contact Form Validation
  */
-
-/* =============================================
-   VALIDATION FUNCTIONS
-   ============================================= */
 
 /**
  * Validates a non-empty text value.
@@ -46,9 +35,9 @@ function validateContactEmail(value) {
 }
 
 /**
- * Validates a select dropdown (must not be "default" placeholder).
- * @param {string} value
- * @returns {{ valid: boolean, message: string }}
+Validates a select dropdown
+ @param {string} value
+ @returns {{ valid: boolean, message: string }}
  */
 function validateContactSubject(value) {
     if (!value || value === '' || value === 'default') {
@@ -57,9 +46,7 @@ function validateContactSubject(value) {
     return { valid: true, message: '' };
 }
 
-/* =============================================
-   UI HELPERS
-   ============================================= */
+/* ===== UI HELPERS ===*/
 
 function showContactError(fieldId, message) {
     var inputEl = document.getElementById(fieldId);
@@ -87,9 +74,7 @@ function clearContactError(fieldId) {
     }
 }
 
-/* =============================================
-   MASTER VALIDATION
-   ============================================= */
+/* ====== MASTER VALIDATION ======*/
 
 function validateContactForm() {
     var isValid = true;
@@ -121,9 +106,7 @@ function validateContactForm() {
     return isValid;
 }
 
-/* =============================================
-   SUCCESS MESSAGE
-   ============================================= */
+/* ======== SUCCESS MESSAGE ======== */
 
 function showContactSuccess() {
     var form = document.getElementById('contact-form');
@@ -158,9 +141,7 @@ function showContactSuccess() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* =============================================
-   EVENT LISTENERS
-   ============================================= */
+/* ======= EVENT LISTENERS ======= */
 
 document.addEventListener('DOMContentLoaded', function () {
     var contactForm = document.getElementById('contact-form');

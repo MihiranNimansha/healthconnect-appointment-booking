@@ -1,7 +1,4 @@
-/**
- * HealthConnect - Main Interactions
- * Professional UI/UX Enhancements for Viva
- */
+/*HealthConnect - Main Interactions*/
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Back to Top Button Logic

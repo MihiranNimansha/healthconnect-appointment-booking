@@ -1,7 +1,5 @@
-/**
- * specialties-sync.js
- * Syncs specialty card availability badges with doctors loaded from XML.
- */
+/*specialties-sync.js
+ * Syncs specialty card availability badges with doctors loaded from XML.*/
 
 (function () {
   function toTitleCaseLabel(count) {
