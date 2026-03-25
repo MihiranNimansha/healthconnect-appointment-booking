@@ -17,8 +17,8 @@
     --color-bg-alt: #f8fafc;
     /* Slate 50 - soft background */
     --color-text-primary: #0f172a;
-    --color-text-secondary: #475569;
-    --color-text-light: #64748b;
+    --color-text-secondary: #1f2937;
+    --color-text-light: #334155;
     --color-primary-light: #e0e7ff;
     /* Slate 600 - softer but high contrast */
     --color-success: #059669;
@@ -33,7 +33,7 @@
     --font-family-heading: 'Outfit', sans-serif;
     --font-family-serif: 'Playfair Display', serif;
     /* Heading font */
-    --font-size-base: 1.0625rem;
+    --font-size-base: 1.125rem;
     --line-height-base: 1.7;
     --line-height-heading: 1.3;
 
@@ -727,7 +727,7 @@ legend {
 }
 
 .sort-bar label {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
     white-space: nowrap;
     margin: 0;
@@ -735,7 +735,7 @@ legend {
 
 .sort-bar select {
     width: auto;
-    font-size: 0.95rem;
+    font-size: 1rem;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
 }
@@ -771,7 +771,7 @@ legend {
     align-items: center;
     justify-content: center;
     color: var(--color-text-secondary);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 /* ===== SEARCH BAR ===== */
@@ -812,7 +812,7 @@ legend {
 }
 
 .search-field-inner label {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -824,7 +824,7 @@ legend {
 .search-field-inner select {
     border: none;
     padding: 0;
-    font-size: 0.95rem;
+    font-size: 1rem;
     box-shadow: none !important;
     border-radius: 0;
     background-image: none;
@@ -843,7 +843,7 @@ legend {
     border: none;
     padding: 0.75rem 1.75rem;
     font-family: var(--font-family-base);
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: background-color var(--transition-base);
@@ -918,18 +918,26 @@ footer {
 /* ===== FOOTER SITE NAV (inline row in Brand column) ===== */
 .footer-nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem 1rem;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.25rem 0.75rem;
     margin-top: var(--spacing-md);
     padding-top: var(--spacing-md);
     border-top: 1px solid rgba(255, 255, 255, 0.10);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.footer-nav::-webkit-scrollbar {
+    display: none;
 }
 
 .footer-nav a {
-    font-size: 0.92rem;
+    font-size: 0.85rem;
     color: #e2e8f0;
     text-decoration: none;
     transition: color var(--transition-fast);
+    white-space: nowrap;
 }
 
 .footer-nav a:hover {
@@ -968,7 +976,7 @@ footer {
 }
 
 .footer-contact-label {
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.07em;
@@ -1054,8 +1062,8 @@ a.footer-contact-value:hover {
 
 /* ===== FOOTER COPYRIGHT ===== */
 .footer-copyright {
-    font-size: 0.78rem;
-    color: #cbd5e1;
+    font-size: 0.7rem;
+    color: #94a3b8;
     margin-top: auto;
     margin-bottom: 0;
     padding-top: var(--spacing-sm);
@@ -1781,7 +1789,7 @@ header.site-header {
 
 .step-content p {
     color: var(--color-text-secondary);
-    font-size: 0.875rem;
+    font-size: 1rem;
     margin: 0;
     line-height: 1.5;
 }
@@ -1855,7 +1863,7 @@ textarea.success {
 /* ----- Usability improvements ----- */
 
 body {
-    font-size: 1rem;
+    font-size: 1.125rem;
 }
 
 /* WCAG 2.5.5 — minimum 44×44 px touch targets */
@@ -1920,7 +1928,7 @@ td {
     background-color: #e8f0fe;
     padding: 0.6rem 0;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--color-text, #1e293b);
     border-bottom: 1px solid #bfcffa;
 }
@@ -1939,7 +1947,7 @@ td {
 .badge {
     display: inline-block;
     padding: 0.2em 0.65em;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     font-weight: 700;
     border-radius: 999px;
     letter-spacing: 0.02em;
@@ -1991,12 +1999,44 @@ td {
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0.4rem 1.2rem;
     border-radius: var(--radius-full);
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 1.25rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Stronger readability defaults for detail text across pages */
+.text-muted,
+.text-small,
+.error-message,
+.doctor-specialty,
+.doctor-experience,
+.summary-doctor-spec,
+.summary-row,
+.summary-row-content span,
+.confirm-doc-spec,
+.confirm-detail-row,
+.patient-info-item,
+.patient-info-value,
+.sidebar-specialty,
+.sidebar-stat,
+.reviews-summary,
+.reviews-note,
+.auth-options,
+.auth-options label,
+.filter-tag,
+.clear-filters,
+.pagination-btn,
+.calendar-day-name,
+.calendar-legend,
+.timeslot-period,
+.review-date,
+.spec-tag,
+.credential-year,
+.step-number {
+    font-size: 1rem !important;
 }
 
 .subpage-hero-content h1 {
@@ -2458,11 +2498,11 @@ textarea,
 }
 
 .text-small {
-    font-size: 0.96rem;
+    font-size: 1rem;
 }
 
 .error-message {
-    font-size: 0.96rem;
+    font-size: 1rem;
 }
 
 .breadcrumb,
@@ -2470,7 +2510,7 @@ textarea,
 .rating-count,
 .credential-year,
 .confirmation-number-label {
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 .section-sub,

@@ -257,7 +257,7 @@ function getDoctorById(id) {
 }
 
 /* =============================================
-   INITIALISATION
+   INITIALIZATION
    ============================================= */
 
 document.addEventListener('DOMContentLoaded', function () {

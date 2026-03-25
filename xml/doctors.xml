@@ -22,13 +22,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="3:30 PM" period="PM" available="false">3:30 PM</slot>
+      </day>
+      <day name="Wednesday">
+        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
         <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+      <day name="Saturday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -55,15 +60,20 @@
       <specialization>Cardiology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Tuesday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+      </day>
+      <day name="Thursday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="true">4:00 PM</slot>
       </day>
       <day name="Friday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="11:00 AM" period="AM" available="false">11:00 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
       </day>
     </schedule>
     <consultationFee>5500</consultationFee>
@@ -91,14 +101,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="7:30 AM" period="AM" available="true">7:30 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="5:00 PM" period="PM" available="true">5:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:30 AM" period="AM" available="true">10:30 AM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
+      </day>
+      <day name="Sunday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="12:00 PM" period="PM" available="false">12:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>4000</consultationFee>
@@ -124,14 +138,19 @@
       <specialization>Cardiology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Wednesday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="12:00 PM" period="PM" available="true">12:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="4:30 PM" period="PM" available="true">4:30 PM</slot>
+      </day>
+      <day name="Saturday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="false">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -158,15 +177,20 @@
       <specialization>Cardiology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
+      <day name="Tuesday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
-      </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="5:30 PM" period="PM" available="true">5:30 PM</slot>
+      </day>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:00 AM" period="AM" available="false">10:00 AM</slot>
+        <slot time="3:30 PM" period="PM" available="true">3:30 PM</slot>
+      </day>
+      <day name="Sunday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
       </day>
     </schedule>
     <consultationFee>5000</consultationFee>
@@ -194,14 +218,20 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
+      </day>
+      <day name="Wednesday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="false">4:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>3500</consultationFee>
@@ -228,13 +258,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="3:30 PM" period="PM" available="false">3:30 PM</slot>
+      </day>
+      <day name="Wednesday">
+        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
         <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+      <day name="Saturday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -262,15 +297,20 @@
       <specialization>Cardiology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Tuesday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+      </day>
+      <day name="Thursday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="true">4:00 PM</slot>
       </day>
       <day name="Friday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="11:00 AM" period="AM" available="false">11:00 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
       </day>
     </schedule>
     <consultationFee>4500</consultationFee>
@@ -297,14 +337,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="7:30 AM" period="AM" available="true">7:30 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="5:00 PM" period="PM" available="true">5:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:30 AM" period="AM" available="true">10:30 AM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
+      </day>
+      <day name="Sunday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="12:00 PM" period="PM" available="false">12:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>2000</consultationFee>
@@ -330,14 +374,19 @@
       <specialization>General Practice</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Wednesday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="12:00 PM" period="PM" available="true">12:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="4:30 PM" period="PM" available="true">4:30 PM</slot>
+      </day>
+      <day name="Saturday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="false">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -364,15 +413,20 @@
       <specialization>General Practice</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
+      <day name="Tuesday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
-      </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="5:30 PM" period="PM" available="true">5:30 PM</slot>
+      </day>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:00 AM" period="AM" available="false">10:00 AM</slot>
+        <slot time="3:30 PM" period="PM" available="true">3:30 PM</slot>
+      </day>
+      <day name="Sunday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
       </day>
     </schedule>
     <consultationFee>1800</consultationFee>
@@ -400,14 +454,20 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
+      </day>
+      <day name="Wednesday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="false">4:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>2200</consultationFee>
@@ -434,13 +494,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="3:30 PM" period="PM" available="false">3:30 PM</slot>
+      </day>
+      <day name="Wednesday">
+        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
         <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+      <day name="Saturday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -468,15 +533,20 @@
       <specialization>General Practice</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Tuesday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+      </day>
+      <day name="Thursday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="true">4:00 PM</slot>
       </day>
       <day name="Friday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="11:00 AM" period="AM" available="false">11:00 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
       </day>
     </schedule>
     <consultationFee>2500</consultationFee>
@@ -504,14 +574,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="7:30 AM" period="AM" available="true">7:30 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="5:00 PM" period="PM" available="true">5:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:30 AM" period="AM" available="true">10:30 AM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
+      </day>
+      <day name="Sunday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="12:00 PM" period="PM" available="false">12:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>1800</consultationFee>
@@ -537,14 +611,19 @@
       <specialization>General Practice</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Wednesday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="12:00 PM" period="PM" available="true">12:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="4:30 PM" period="PM" available="true">4:30 PM</slot>
+      </day>
+      <day name="Saturday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="false">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -571,15 +650,20 @@
       <specialization>General Practice</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
+      <day name="Tuesday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
-      </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="5:30 PM" period="PM" available="true">5:30 PM</slot>
+      </day>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:00 AM" period="AM" available="false">10:00 AM</slot>
+        <slot time="3:30 PM" period="PM" available="true">3:30 PM</slot>
+      </day>
+      <day name="Sunday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
       </day>
     </schedule>
     <consultationFee>1500</consultationFee>
@@ -606,14 +690,20 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
+      </day>
+      <day name="Wednesday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="false">4:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>2200</consultationFee>
@@ -640,13 +730,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="3:30 PM" period="PM" available="false">3:30 PM</slot>
+      </day>
+      <day name="Wednesday">
+        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
         <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+      <day name="Saturday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -674,15 +769,20 @@
       <specialization>Pediatrics</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Tuesday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+      </day>
+      <day name="Thursday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="true">4:00 PM</slot>
       </day>
       <day name="Friday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="11:00 AM" period="AM" available="false">11:00 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
       </day>
     </schedule>
     <consultationFee>3500</consultationFee>
@@ -709,14 +809,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="7:30 AM" period="AM" available="true">7:30 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="5:00 PM" period="PM" available="true">5:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:30 AM" period="AM" available="true">10:30 AM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
+      </day>
+      <day name="Sunday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="12:00 PM" period="PM" available="false">12:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>2200</consultationFee>
@@ -742,14 +846,19 @@
       <specialization>Pediatrics</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Wednesday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="12:00 PM" period="PM" available="true">12:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="4:30 PM" period="PM" available="true">4:30 PM</slot>
+      </day>
+      <day name="Saturday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="false">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -777,15 +886,20 @@
       <specialization>Pediatrics</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
+      <day name="Tuesday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
-      </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="5:30 PM" period="PM" available="true">5:30 PM</slot>
+      </day>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:00 AM" period="AM" available="false">10:00 AM</slot>
+        <slot time="3:30 PM" period="PM" available="true">3:30 PM</slot>
+      </day>
+      <day name="Sunday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
       </day>
     </schedule>
     <consultationFee>2800</consultationFee>
@@ -812,14 +926,20 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
+      </day>
+      <day name="Wednesday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="false">4:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>2000</consultationFee>
@@ -846,13 +966,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="3:30 PM" period="PM" available="false">3:30 PM</slot>
+      </day>
+      <day name="Wednesday">
+        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
         <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+      <day name="Saturday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -879,15 +1004,20 @@
       <specialization>Dermatology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Tuesday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+      </day>
+      <day name="Thursday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="true">4:00 PM</slot>
       </day>
       <day name="Friday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="11:00 AM" period="AM" available="false">11:00 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
       </day>
     </schedule>
     <consultationFee>2800</consultationFee>
@@ -915,14 +1045,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="7:30 AM" period="AM" available="true">7:30 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="5:00 PM" period="PM" available="true">5:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:30 AM" period="AM" available="true">10:30 AM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
+      </day>
+      <day name="Sunday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="12:00 PM" period="PM" available="false">12:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>3500</consultationFee>
@@ -948,14 +1082,19 @@
       <specialization>Dermatology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Wednesday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="12:00 PM" period="PM" available="true">12:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="4:30 PM" period="PM" available="true">4:30 PM</slot>
+      </day>
+      <day name="Saturday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="false">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -982,15 +1121,20 @@
       <specialization>Dermatology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
+      <day name="Tuesday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
-      </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="5:30 PM" period="PM" available="true">5:30 PM</slot>
+      </day>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:00 AM" period="AM" available="false">10:00 AM</slot>
+        <slot time="3:30 PM" period="PM" available="true">3:30 PM</slot>
+      </day>
+      <day name="Sunday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
       </day>
     </schedule>
     <consultationFee>5000</consultationFee>
@@ -1017,14 +1161,20 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
+      </day>
+      <day name="Wednesday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="false">4:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>3000</consultationFee>
@@ -1052,13 +1202,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="3:30 PM" period="PM" available="false">3:30 PM</slot>
+      </day>
+      <day name="Wednesday">
+        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
         <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+      <day name="Saturday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -1085,15 +1240,20 @@
       <specialization>Orthopedics</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Tuesday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+      </day>
+      <day name="Thursday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="true">4:00 PM</slot>
       </day>
       <day name="Friday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="11:00 AM" period="AM" available="false">11:00 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
       </day>
     </schedule>
     <consultationFee>4500</consultationFee>
@@ -1120,14 +1280,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="7:30 AM" period="AM" available="true">7:30 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="5:00 PM" period="PM" available="true">5:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:30 AM" period="AM" available="true">10:30 AM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
+      </day>
+      <day name="Sunday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="12:00 PM" period="PM" available="false">12:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>3500</consultationFee>
@@ -1154,14 +1318,19 @@
       <specialization>Orthopedics</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Wednesday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="12:00 PM" period="PM" available="true">12:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="4:30 PM" period="PM" available="true">4:30 PM</slot>
+      </day>
+      <day name="Saturday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="false">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -1188,15 +1357,20 @@
       <specialization>Orthopedics</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
+      <day name="Tuesday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
-      </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="5:30 PM" period="PM" available="true">5:30 PM</slot>
+      </day>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:00 AM" period="AM" available="false">10:00 AM</slot>
+        <slot time="3:30 PM" period="PM" available="true">3:30 PM</slot>
+      </day>
+      <day name="Sunday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
       </day>
     </schedule>
     <consultationFee>3000</consultationFee>
@@ -1223,14 +1397,20 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
+      </day>
+      <day name="Wednesday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="false">4:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>3500</consultationFee>
@@ -1257,13 +1437,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="3:30 PM" period="PM" available="false">3:30 PM</slot>
+      </day>
+      <day name="Wednesday">
+        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
         <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+      <day name="Saturday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -1290,15 +1475,20 @@
       <specialization>Orthopedics</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Tuesday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+      </day>
+      <day name="Thursday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="true">4:00 PM</slot>
       </day>
       <day name="Friday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="11:00 AM" period="AM" available="false">11:00 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
       </day>
     </schedule>
     <consultationFee>6000</consultationFee>
@@ -1325,14 +1515,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="7:30 AM" period="AM" available="true">7:30 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="5:00 PM" period="PM" available="true">5:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:30 AM" period="AM" available="true">10:30 AM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
+      </day>
+      <day name="Sunday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="12:00 PM" period="PM" available="false">12:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>4500</consultationFee>
@@ -1359,14 +1553,19 @@
       <specialization>Neurology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Wednesday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="12:00 PM" period="PM" available="true">12:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="4:30 PM" period="PM" available="true">4:30 PM</slot>
+      </day>
+      <day name="Saturday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="false">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -1393,15 +1592,20 @@
       <specialization>Neurology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
+      <day name="Tuesday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
-      </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="5:30 PM" period="PM" available="true">5:30 PM</slot>
+      </day>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:00 AM" period="AM" available="false">10:00 AM</slot>
+        <slot time="3:30 PM" period="PM" available="true">3:30 PM</slot>
+      </day>
+      <day name="Sunday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
       </day>
     </schedule>
     <consultationFee>5000</consultationFee>
@@ -1428,14 +1632,20 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
+      </day>
+      <day name="Wednesday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="false">4:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>3000</consultationFee>
@@ -1463,13 +1673,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="3:30 PM" period="PM" available="false">3:30 PM</slot>
+      </day>
+      <day name="Wednesday">
+        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
         <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+      <day name="Saturday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -1496,15 +1711,20 @@
       <specialization>Neurology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Tuesday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+      </day>
+      <day name="Thursday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="true">4:00 PM</slot>
       </day>
       <day name="Friday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="11:00 AM" period="AM" available="false">11:00 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
       </day>
     </schedule>
     <consultationFee>3000</consultationFee>
@@ -1531,14 +1751,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="7:30 AM" period="AM" available="true">7:30 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="5:00 PM" period="PM" available="true">5:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:30 AM" period="AM" available="true">10:30 AM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
+      </day>
+      <day name="Sunday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="12:00 PM" period="PM" available="false">12:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>6500</consultationFee>
@@ -1564,14 +1788,19 @@
       <specialization>Oncology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Wednesday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="12:00 PM" period="PM" available="true">12:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="4:30 PM" period="PM" available="true">4:30 PM</slot>
+      </day>
+      <day name="Saturday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="false">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -1599,15 +1828,20 @@
       <specialization>Oncology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
+      <day name="Tuesday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
-      </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="5:30 PM" period="PM" available="true">5:30 PM</slot>
+      </day>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:00 AM" period="AM" available="false">10:00 AM</slot>
+        <slot time="3:30 PM" period="PM" available="true">3:30 PM</slot>
+      </day>
+      <day name="Sunday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
       </day>
     </schedule>
     <consultationFee>4000</consultationFee>
@@ -1634,14 +1868,20 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
+      </day>
+      <day name="Wednesday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="false">4:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>5500</consultationFee>
@@ -1668,13 +1908,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="3:30 PM" period="PM" available="false">3:30 PM</slot>
+      </day>
+      <day name="Wednesday">
+        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
         <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+      <day name="Saturday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -1701,15 +1946,20 @@
       <specialization>Ophthalmology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Tuesday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+      </day>
+      <day name="Thursday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="true">4:00 PM</slot>
       </day>
       <day name="Friday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="11:00 AM" period="AM" available="false">11:00 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
       </day>
     </schedule>
     <consultationFee>3500</consultationFee>
@@ -1737,14 +1987,18 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="7:30 AM" period="AM" available="true">7:30 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="5:00 PM" period="PM" available="true">5:00 PM</slot>
       </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:30 AM" period="AM" available="true">10:30 AM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
+      </day>
+      <day name="Sunday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="12:00 PM" period="PM" available="false">12:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>4500</consultationFee>
@@ -1770,14 +2024,19 @@
       <specialization>Ophthalmology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+      <day name="Wednesday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="12:00 PM" period="PM" available="true">12:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="4:30 PM" period="PM" available="true">4:30 PM</slot>
+      </day>
+      <day name="Saturday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="false">9:30 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
       </day>
     </schedule>
@@ -1804,15 +2063,20 @@
       <specialization>Ophthalmology</specialization>
     </specializations>
     <schedule>
-      <day name="Monday">
+      <day name="Tuesday">
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
-      </day>
-      <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
         <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="1:30 PM" period="PM" available="true">1:30 PM</slot>
+        <slot time="5:30 PM" period="PM" available="true">5:30 PM</slot>
+      </day>
+      <day name="Thursday">
+        <slot time="8:30 AM" period="AM" available="true">8:30 AM</slot>
+        <slot time="10:00 AM" period="AM" available="false">10:00 AM</slot>
+        <slot time="3:30 PM" period="PM" available="true">3:30 PM</slot>
+      </day>
+      <day name="Sunday">
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
       </day>
     </schedule>
     <consultationFee>4000</consultationFee>
@@ -1840,14 +2104,20 @@
     </specializations>
     <schedule>
       <day name="Monday">
+        <slot time="8:00 AM" period="AM" available="true">8:00 AM</slot>
         <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
+        <slot time="11:30 AM" period="AM" available="true">11:30 AM</slot>
+        <slot time="2:30 PM" period="PM" available="true">2:30 PM</slot>
+      </day>
+      <day name="Wednesday">
         <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="2:00 PM" period="PM" available="true">2:00 PM</slot>
+        <slot time="1:00 PM" period="PM" available="true">1:00 PM</slot>
+        <slot time="4:00 PM" period="PM" available="false">4:00 PM</slot>
       </day>
       <day name="Friday">
-        <slot time="9:00 AM" period="AM" available="true">9:00 AM</slot>
-        <slot time="10:00 AM" period="AM" available="true">10:00 AM</slot>
-        <slot time="11:00 AM" period="AM" available="true">11:00 AM</slot>
+        <slot time="9:30 AM" period="AM" available="true">9:30 AM</slot>
+        <slot time="12:30 PM" period="PM" available="true">12:30 PM</slot>
+        <slot time="3:00 PM" period="PM" available="true">3:00 PM</slot>
       </day>
     </schedule>
     <consultationFee>3000</consultationFee>

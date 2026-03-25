@@ -68,12 +68,12 @@
 }
 
 .doctor-specialty {
-    font-size: 0.96rem;
+    font-size: 1.02rem;
     margin: 0;
 }
 
 .doctor-experience {
-    font-size: 0.96rem;
+    font-size: 1.02rem;
     margin: 0;
 }
 
@@ -81,7 +81,7 @@
     margin-top: auto;
     width: 100%;
     padding: 0.55rem 1rem;
-    font-size: 0.875rem;
+    font-size: 1rem;
 }
 
 .section-cta {
@@ -680,13 +680,13 @@
 .specialty-card h3 {
     color: var(--color-primary);
     margin-bottom: 0.75rem;
-    font-size: 1.25rem;
+    font-size: 1.32rem;
     text-decoration: none !important;
 }
 
 .specialty-card p {
     color: var(--color-text-secondary);
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.5;
     flex-grow: 1;
     margin-bottom: 1.5rem;
