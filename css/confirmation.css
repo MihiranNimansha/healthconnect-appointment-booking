@@ -41,7 +41,7 @@
 
 .confirm-section-title {
     font-family: var(--font-family-base);
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 700;
     margin-bottom: var(--spacing-md);
     color: var(--color-text-primary);
@@ -63,13 +63,13 @@
 
 .confirm-doc-name {
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1.02rem;
     margin: 0;
     font-family: var(--font-family-base);
 }
 
 .confirm-doc-spec {
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: var(--color-text-secondary);
     margin: 0;
 }
@@ -84,7 +84,7 @@
     display: flex;
     align-items: flex-start;
     gap: 0.6rem;
-    font-size: 0.875rem;
+    font-size: 1rem;
 }
 
 .confirm-dot {
@@ -108,11 +108,11 @@
 }
 
 .patient-info-item {
-    font-size: 0.875rem;
+    font-size: 1rem;
 }
 
 .patient-info-label {
-    font-size: 0.78rem;
+    font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -122,7 +122,7 @@
 
 .patient-info-value {
     color: var(--color-text-primary);
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin: 0;
 }
 

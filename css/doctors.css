@@ -158,18 +158,18 @@
 .stars {
     color: #b45309;
     /* Amber 500 */
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .rating-score {
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1.02rem;
     color: var(--color-primary);
 }
 
 .rating-count {
     color: var(--color-text-secondary);
-    font-size: 0.92rem;
+    font-size: 1rem;
 }
 
 /* Consultation Fee */
@@ -185,7 +185,7 @@
 }
 
 .price-label {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--color-text-secondary);
     text-transform: uppercase;
@@ -244,7 +244,7 @@
     display: inline-block;
     padding: 4px 10px;
     border-radius: var(--radius-full);
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 8px;

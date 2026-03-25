@@ -41,13 +41,13 @@
 
 .summary-doctor-name {
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1.02rem;
     margin: 0;
     font-family: var(--font-family-base);
 }
 
 .summary-doctor-spec {
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: var(--color-text-secondary);
     margin: 0;
 }
@@ -63,7 +63,7 @@
     display: flex;
     align-items: flex-start;
     gap: var(--spacing-sm);
-    font-size: 0.875rem;
+    font-size: 1rem;
 }
 
 .summary-icon {
@@ -78,7 +78,7 @@
 
 .summary-row-content strong {
     display: block;
-    font-size: 0.78rem;
+    font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -87,20 +87,20 @@
 }
 
 .summary-row-content span {
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: var(--color-text-primary);
 }
 
 .change-datetime-btn {
     width: 100%;
     padding: 0.55rem;
-    font-size: 0.875rem;
+    font-size: 1rem;
     margin-bottom: var(--spacing-md);
 }
 
 .important-info h3 {
     font-family: var(--font-family-base);
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
 }
@@ -114,7 +114,7 @@
 }
 
 .important-info ul li {
-    font-size: 0.82rem;
+    font-size: 1rem;
     color: var(--color-text-secondary);
 }
 
@@ -134,7 +134,7 @@
 }
 
 .booking-form-card .form-intro {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-xl);
 }
