@@ -62,23 +62,16 @@ function validateName(value) {
  * @returns {object} { valid: boolean, message: string }
  */
 function validateEmail(value) {
-  // Trim surrounding whitespace before checking
   const trimmed = value.trim();
-
-  // Fail if the field is empty
   if (trimmed.length === 0) {
     return { valid: false, message: 'Email address is required.' };
   }
-
-  // Fail if the value contains any whitespace characters
   if (/\s/.test(trimmed)) {
     return {
       valid: false,
       message: 'Email address must not contain spaces.'
     };
   }
-
-  // Check standard email structure: local-part @ domain . tld
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(trimmed)) {
     return {
@@ -86,8 +79,6 @@ function validateEmail(value) {
       message: 'Please enter a valid email address (e.g. name@example.com).'
     };
   }
-
-  // All checks passed
   return { valid: true, message: '' };
 }
 
