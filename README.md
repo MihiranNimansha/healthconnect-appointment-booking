@@ -12,7 +12,7 @@ Built with plain **HTML5, CSS3, vanilla JavaScript (ES6) and XML**. There is no 
 - **Doctor search and filtering**: filter by specialty, city, availability and price range at the same time, with five sort options and pagination (9 doctors per page). The home page search passes its choices to the results page through URL parameters.
 - **XML-driven content**: 54 doctor profiles across 8 specialties and 15 hospitals are loaded from `xml/doctors.xml` with `XMLHttpRequest` and a `DOMParser` fallback.
 - **Dynamic appointment slots**: available dates and morning/afternoon time slots are generated from each doctor's weekly schedule.
-- **Booking form with JavaScript validation**: nine validated fields with live feedback on blur, all errors shown together, and a confirmation page. The forms use `novalidate`, so HTML5 built-in validation is not relied on.
+- **Booking form with JavaScript validation**: nine validated fields with live feedback on blur, all errors shown together, and a confirmation page. The booking and contact forms use `novalidate`, so HTML5 built-in validation is not relied on there. The mock sign-in form still uses the browser's built-in `required` and `type="email"` checks.
 - **Mock sign-in and favourites**: `localStorage` based login, saved doctors and a dashboard of favourites.
 - **Responsive and accessible UI**: skip links, ARIA labels and live regions, labelled form controls, keyboard-friendly navigation and a mobile menu.
 
