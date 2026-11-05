@@ -136,30 +136,20 @@ function getSelectedDayName() {
 function loadTimeSlots(dayName) {
   const slots = getSlotsForDay(dayName);
   const heading = updateAvailableTimesHeading(dayName);
-
   const morningSection = document.getElementById('morning-slots');
   const afternoonSection = document.getElementById('afternoon-slots');
-
   if (slots.length === 0) {
-    // Hide both timeslot sections when there is no availability
     if (morningSection) morningSection.style.display = 'none';
     if (afternoonSection) afternoonSection.style.display = 'none';
 
     showNoSlotsMessage(dayName, heading);
     return;
   }
-
-  // Remove the no-slots notice if it was shown for a previously selected day
   hideNoSlotsMessage();
-
-  // Restore sections that may have been hidden for a day with no slots
   if (morningSection) morningSection.style.display = '';
   if (afternoonSection) afternoonSection.style.display = '';
-
-  // Partition the flat slots array into morning (AM) and afternoon (PM) buckets
   const morningSlots = slots.filter(function (t) { return isMorningSlot(t); });
   const afternoonSlots = slots.filter(function (t) { return !isMorningSlot(t); });
-
   renderTimeSlots(morningSlots, afternoonSlots);
 }
 

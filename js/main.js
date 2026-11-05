@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 backToTopBtn.classList.remove('visible');
             }
         });
-
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,

@@ -24,15 +24,12 @@ let doctors = [];
  */
 function loadDoctorsFromXML(xmlFilePath, callback) {
   const xhr = new XMLHttpRequest();
-
-  // Use asynchronous GET; fallback to DOMParser if responseXML is empty.
   xhr.open('GET', xmlFilePath, true);
   xhr.responseType = 'document';
 
   xhr.onload = function () {
     if (xhr.status >= 200 && xhr.status < 300) {
       let xmlDoc = xhr.responseXML;
-
       if (!xmlDoc && xhr.responseText) {
         try {
           xmlDoc = new DOMParser().parseFromString(xhr.responseText, 'application/xml');
@@ -43,19 +40,16 @@ function loadDoctorsFromXML(xmlFilePath, callback) {
           xmlDoc = null;
         }
       }
-
       if (!xmlDoc) {
         console.error('HealthConnect xml-loader: received empty or non-XML response from', xmlFilePath);
         callback([]);
         return;
       }
-
       // Parse every <doctor> node into a plain JS object
       const doctorNodes = Array.from(xmlDoc.querySelectorAll('doctor'));
       const parsed = doctorNodes.map(function (node) {
         return parseDoctor(node);
       });
-
       // Store in module-level array for use by filter.js / timeslots.js
       doctors = parsed;
       callback(parsed);
