@@ -33,20 +33,17 @@ function filterDoctors(specialty, city, availability, priceRange) {
       return doctor.specialty.toLowerCase() === normalised;
     });
   }
-
   if (city && city !== 'all' && city !== '') {
     result = result.filter(function (doctor) {
       return doctor.city === city;
     });
   }
-
   if (availability && availability !== 'all' && availability !== '') {
     const isAccepting = availability === 'accepting';
     result = result.filter(function (doctor) {
       return doctor.acceptingPatients === isAccepting;
     });
   }
-
   if (priceRange && priceRange !== 'all' && priceRange !== '') {
     result = result.filter(function (doctor) {
       var fee = doctor.consultationFee || 0;

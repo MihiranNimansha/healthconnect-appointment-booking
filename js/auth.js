@@ -5,14 +5,12 @@ const AUTH_KEY = 'hc_user';
 const FAV_KEY = 'hc_favorites';
 
 const Auth = {
-    // 1. Core Auth Methods
     login: function (email, password) {
-        // Simple mock authentication - accepts anything non-empty
         if (email && password) {
             const user = {
                 id: 'user_' + Math.random().toString(36).substr(2, 9),
                 email: email,
-                name: email.split('@')[0], // Generate simple name from email
+                name: email.split('@')[0], 
                 loggedInAt: new Date().toISOString()
             };
             localStorage.setItem(AUTH_KEY, JSON.stringify(user));
